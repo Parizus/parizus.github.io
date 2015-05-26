@@ -1,1 +1,62 @@
-地瓜是直男
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>微湖大周年庆抢红包活动</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/main1.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="logo col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+		<img src="img/logo.svg" />
+	</div>
+	<div id="nextTime" class="next col-xs-12" style="padding: 0px;">下次开抢时间：2015-4-15 8:00
+	</div>
+
+	<div class="row" style="margin: 0px;">
+		<div id="restOfBag" class="three-center">
+			<div id="p1" class="next big-number">50</div>
+			<div class="next">剩余红包数量
+			</div>			
+		</div>
+		
+		<div id="gainOfBag" class="three-center">
+			<div id="p2" class="next big-number">05</div>
+			<div class="next">已抢红包金额
+			</div>
+		</div>
+		
+		<div id="gainOfwenku" class="three-center">
+			<div id="p3" class="next big-number">50</div>
+			<div class="next">已抢文库积分
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		var arr=new Array("p1","p2","p3");
+		for(var i=0;i<arr.length;i++)
+		{
+			var x=document.getElementById(arr[i]).offsetWidth;
+			var z=x+"px";
+			document.getElementById(arr[i]).style.height=z;
+			document.getElementById(arr[i]).style.lineHeight=z;
+		}
+	</script>
+
+
+	<div class="next row"  style="margin: 0px; margin-top: 20px">
+		<button type="button" class="btn btn-danger"  style="font-size: 24px; font-weight: lighter;" >即将开抢</button>
+	</div>
+
+	<div class="col-md-12 col-xs-12" style="background: linear-gradient(120deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -8; padding: 0px;">
+	</div>
+	
+	<div class="col-md-12 col-xs-12" style="opacity:0.3; background: linear-gradient(240deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -7; padding: 0px;">
+	</div>
+</body>
+</html>
