@@ -3,55 +3,87 @@
 <head>
 	<meta http-equiv=Content-Type content="text/html;charset=utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>微湖大周年庆抢红包活动</title>
+	<title>点一下</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/main1.css" rel="stylesheet">
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			height: 0;
+			font-family: Microsoft YaHei,proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		.center{
+			text-align: center;
+		}
+
+		.big-number{
+			border-radius: 4px;
+			color: #b3b3b3;
+			background-color: #dff0d8;
+			font-size: 100px;
+		}
+		@media screen and (max-width: 991px) { 
+			.big-number{font-size: 90px} 
+		} 
+		/* 设置了浏览器宽度不大于992px时 abc 显示900px宽度 */ 
+		@media screen and (max-width: 768px) { 
+			.big-number{font-size: 70px} 
+		} 
+		/* 设置了浏览器宽度不大于768px时 abc 显示200px宽度 */ 
+
+		.three-center{
+			position:relative;	
+			float: left;
+			font-weight: lighter;
+
+		} 
+		@media screen and (min-width: 992px) { 
+			.three-center {margin-left:16%; width: 12%;} 
+		} 
+		/* css注释：设置了浏览器宽度不小于992px时 abc 显示1200px宽度 */ 
+
+		@media screen and (max-width: 991px) { 
+			.three-center {margin-left:13%; width: 16%;} 
+		} 
+		/* 设置了浏览器宽度不大于992px时 abc 显示900px宽度 */ 
+
+		@media screen and (max-width: 768px) { 
+			.three-center {margin-left:10%; width: 20%;} 
+		} 
+		/* 设置了浏览器宽度不大于768px时 abc 显示200px宽度 */ 
+
+	</style>
 
 </head>
 <body>
-
-	<div class="logo col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
-		<img src="img/logo.svg" />
-	</div>
-	<div id="nextTime" class="next col-xs-12" style="padding: 0px;">下次开抢时间：2015-4-15 8:00
-	</div>
-
-	<div class="row" style="margin: 0px;">
-		<div id="restOfBag" class="three-center">
-			<div id="p1" class="next big-number">50</div>
-			<div class="next">剩余红包数量
-			</div>			
-		</div>
-		
-		<div id="gainOfBag" class="three-center">
-			<div id="p2" class="next big-number">05</div>
-			<div class="next">已抢红包金额
-			</div>
-		</div>
-		
-		<div id="gainOfwenku" class="three-center">
-			<div id="p3" class="next big-number">50</div>
-			<div class="next">已抢文库积分
-			</div>
-		</div>
-	</div>
-
+	<div id="p1" class="three-center center big-number"></div>		
+	<div id="p2" class="three-center center big-number"></div>
+	<div id="p3" class="three-center center big-number"></div>
 
 	<script type="text/javascript">
-		var arr=new Array("p1","p2","p3");
-		for(var i=0;i<arr.length;i++)
-		{
-			var x=document.getElementById(arr[i]).offsetWidth;
-			var z=x+"px";
-			document.getElementById(arr[i]).style.height=z;
-			document.getElementById(arr[i]).style.lineHeight=z;
+		window.onload=function(){reheight ()};
+		window.onresize=function(){reheight ()};
+		function reheight () {
+			var arr=new Array("p1","p2","p3");
+			for(var i=0;i<arr.length;i++)
+			{
+				var x=document.getElementById(arr[i]).offsetWidth;
+				document.getElementById(arr[i]).style.height=x+"px";
+				document.getElementById(arr[i]).style.lineHeight=x+"px";
+				var y=document.documentElement.clientHeight;
+				document.getElementById(arr[i]).style.marginTop=y/2-x/2+"px";
+				console.log(x,y)
+
+			}
 		}
+		document.getElementById("p1").innerHTML="ha";
+		document.getElementById("p2").innerHTML="ha";
+		document.getElementById("p3").innerHTML="ha";
 	</script>
 
-
-	<div class="next row"  style="margin: 0px; margin-top: 20px">
-		<button type="button" class="btn btn-danger"  style="font-size: 24px; font-weight: lighter;" >即将开抢</button>
-	</div>
+<!-- 
+		<button type="button" class="btn btn-danger"  style="font-size: 24px; font-weight: lighter;" >即将开抢</button> -->
 
 	<div class="col-md-12 col-xs-12" style="background: linear-gradient(120deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -8; padding: 0px;">
 	</div>
