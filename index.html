@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>点一下</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/main1.css" rel="stylesheet">
+	<!-- <link href="css/main1.css" rel="stylesheet"> -->
 	<style type="text/css">
 		body{
 			margin: 0;
@@ -18,6 +18,8 @@
 		}
 
 		.big-number{
+			width: 100px;
+			height: 100px;
 			border-radius: 4px;
 			color: #b3b3b3;
 			background-color: #dff0d8;
@@ -33,10 +35,9 @@
 		/* 设置了浏览器宽度不大于768px时 abc 显示200px宽度 */ 
 
 		.three-center{
-			position:relative;	
+			position:relative;
 			float: left;
 			font-weight: lighter;
-
 		} 
 		@media screen and (min-width: 992px) { 
 			.three-center {margin-left:16%; width: 12%;} 
@@ -56,39 +57,30 @@
 	</style>
 
 </head>
-<body>
-	<div id="p1" class="three-center center big-number"></div>		
-	<div id="p2" class="three-center center big-number"></div>
-	<div id="p3" class="three-center center big-number"></div>
-
+<body id="bod">
 	<script type="text/javascript">
-		window.onload=function(){reheight ()};
-		window.onresize=function(){reheight ()};
-		function reheight () {
-			var arr=new Array("p1","p2","p3");
-			for(var i=0;i<arr.length;i++)
-			{
-				var x=document.getElementById(arr[i]).offsetWidth;
-				document.getElementById(arr[i]).style.height=x+"px";
-				document.getElementById(arr[i]).style.lineHeight=x+"px";
-				var y=document.documentElement.clientHeight;
-				document.getElementById(arr[i]).style.marginTop=y/2-x/2+"px";
-				console.log(x,y)
+		var divs="";
+		for (var i = 0; i < 6; i++) {
+			divs=divs+'<div id="quadrate'+i+'" class="three-center center big-number"'+'></div>';
+		};
+		document.getElementById("bod").innerHTML=divs;
 
+
+		window.onload=function(){quadrate ()};
+		window.onresize=function(){quadrate ()};
+
+		
+		function quadrate () {
+			var x=document.getElementById("quadrate1").offsetWidth;
+			for (var i = 0; i < 6; i++){
+				document.getElementById("quadrate"+i).style.height=x+"px";
+				var y=document.documentElement.clientHeight;
+				document.getElementById("quadrate"+i).style.marginTop=Math.ceil(y/3-x*2/3)+"px";
+				console.log(x,y)
 			}
 		}
-		document.getElementById("p1").innerHTML="ha";
-		document.getElementById("p2").innerHTML="ha";
-		document.getElementById("p3").innerHTML="ha";
 	</script>
-
-<!-- 
-		<button type="button" class="btn btn-danger"  style="font-size: 24px; font-weight: lighter;" >即将开抢</button> -->
-
-	<div class="col-md-12 col-xs-12" style="background: linear-gradient(120deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -8; padding: 0px;">
-	</div>
-	
-	<div class="col-md-12 col-xs-12" style="opacity:0.3; background: linear-gradient(240deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -7; padding: 0px;">
-	</div>
+	<div class="col-md-12 col-xs-12" style="background: linear-gradient(120deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -8; padding: 0px;"></div>
+	<div class="col-md-12 col-xs-12" style="opacity:0.3; background: linear-gradient(240deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -7; padding: 0px;"></div>
 </body>
 </html>
