@@ -61,13 +61,14 @@
 		<div class="block">Design</div>
 	</div>
 	<div id="content"></div>
-	<img src="back.jpg">
+	<img id="back" src="back.jpg">
 </body>
 <script type="text/javascript">
 	window.onload=function(){repos ()};
 	window.onresize=function(){repos ()};
 	ecross=document.getElementById("cross");
 	econtent=document.getElementById("content");
+	eback=document.getElementById("back");
 	function repos (argument) {
 		x=document.documentElement.clientWidth;
 		y=document.documentElement.clientHeight;
@@ -78,12 +79,16 @@
 			ecross.style.width="100%";
 			econtent.style.left=0.1*x+"px";
 			econtent.style.top=0.1*y+35+"px";
+			eback.style.height="100%";
+			eback.style.width=y+"px";
 		}
 		else{
 			ecross.style.height="100%";
 			ecross.style.width=70+"px";
 			econtent.style.left=0.1*x+35+"px";
 			econtent.style.top=0.1*y+"px";
+			eback.style.width="100%";
+			eback.style.height=x+"px";
 		};
 	}
 </script>
