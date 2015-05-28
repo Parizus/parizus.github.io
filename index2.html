@@ -64,6 +64,7 @@
 	ecross=document.getElementById("cross").style;
 	econtent=document.getElementById("content").style;
 	eback=document.getElementById("back").style;
+	document.getElementById("cross").onselectstart=function(){return false};
 	function repos (argument) {
 		x=document.documentElement.clientWidth;
 		y=document.documentElement.clientHeight;
