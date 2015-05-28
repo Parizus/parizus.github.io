@@ -18,6 +18,7 @@
 	#cross{
 		position: fixed;
 		background-color: #000000;
+		z-index: 3;
 	}
 	#content{
 		position: absolute;
@@ -29,6 +30,8 @@
 	}
 	.block{
 		/*margin-top: 20px;*/
+		margin: 0;
+		padding: 0;
 		font-size: 14px;
 		font-family: "微软雅黑";
 		text-align: center;
@@ -43,28 +46,72 @@
 	.block:hover{
 		/*opacity: 0.4;*/
 		color: #908BC5;
-		border-left:solid;
+		border-top:solid;
 		border-width: 2px;
 		/*margin-left: 2px;*/
+	}
+	.litop{
+		position: relative;
+		width: 110px;
+		top: 0px;
+		margin-left: 0px;
+		list-style-type: none;
+		display: none;
+		opacity: 0;
+		background-color:#fff;
+		transition: all 0.3s linear;
+	}
+	.lileft{
+		position: relative;
+		width: 110px;
+		top: -55px;
+		margin-left: 55px;
+		list-style-type: none;
+		display: none;
+		opacity: 0;
+		background-color:#fff;
+		transition: all 0.3s linear;
+	}
+	ul li a{
+		text-decoration:none;
+	}
+	ul:hover li{
+		display: block;
+		opacity: 1;
 	}
 </style>
 <body>
 	<div id="cross">
-		<div class="block" style="border:none;"></div>
-		<div class="block">Code</div>
-		<div class="block">Poster</div>
-		<div class="block">Design</div>
+		<ul class="block" style="border:none;"></ul>
+		<ul class="block">Code
+			<li><a href="#">1st</a></li> 
+			<li><a href="#">2nd</a></li> 
+			<li><a href="#">3rd</a></li> 
+		</ul>
+		<ul class="block">Poster
+			<li><a href="#">1st</a></li> 
+			<li><a href="#">2nd</a></li> 
+			<li><a href="#">3rd</a></li> 
+		</ul>
+		<ul class="block">Design
+			<li><a href="#">1st</a></li> 
+			<li><a href="#">2nd</a></li> 
+			<li><a href="#">3rd</a></li> 
+		</ul>
 	</div>
-	<div id="content"></div>
 	<img id="back" src="back.jpg">
+	<div id="content"></div>
 </body>
 <script type="text/javascript">
 	window.onload=function(){repos ()};
 	window.onresize=function(){repos ()};
+	// 禁止鼠标选中
+	document.getElementById("cross").onselectstart=function(){return false};
+	// 获取元素
 	ecross=document.getElementById("cross").style;
 	econtent=document.getElementById("content").style;
 	eback=document.getElementById("back").style;
-	document.getElementById("cross").onselectstart=function(){return false};
+	// *
 	function repos (argument) {
 		x=document.documentElement.clientWidth;
 		y=document.documentElement.clientHeight;
@@ -78,6 +125,7 @@
 			econtent.top=0.1*y+35+"px";
 			eback.height="100%";
 			eback.width=y+"px";
+			menuFix("top");
 		}
 		else{
 			ecross.height="100%";
@@ -86,7 +134,14 @@
 			econtent.top=0.1*y+"px";
 			eback.width="100%";
 			eback.height=x+"px";
+			menuFix("left");
 		};
+	}
+	function menuFix(pos) { 
+		var sfEls = document.getElementById("cross").getElementsByTagName("li"); 
+		for (var i=0; i<sfEls.length; i++) { 
+			sfEls[i].className="li"+pos;
+		} 
 	}
 </script>
 </html>
