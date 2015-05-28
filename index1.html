@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>点一下</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link href="css/main1.css" rel="stylesheet"> -->
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			height: 0;
+			font-family: Microsoft YaHei,proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		.center{
+			text-align: center;
+		}
+
+		.big-number{
+			width: 100px;
+			height: 100px;
+			border-radius: 4px;
+			color: #b3b3b3;
+			background-color: #dff0d8;
+			font-size: 100px;
+		}
+		@media screen and (max-width: 991px) { 
+			.big-number{font-size: 90px} 
+		} 
+		/* 设置了浏览器宽度不大于992px时 abc 显示900px宽度 */ 
+		@media screen and (max-width: 768px) { 
+			.big-number{font-size: 70px} 
+		} 
+		/* 设置了浏览器宽度不大于768px时 abc 显示200px宽度 */ 
+
+		.three-center{
+			position:relative;
+			float: left;
+			font-weight: lighter;
+		} 
+		@media screen and (min-width: 992px) { 
+			.three-center {margin-left:16%; width: 12%;} 
+		} 
+		/* css注释：设置了浏览器宽度不小于992px时 abc 显示1200px宽度 */ 
+
+		@media screen and (max-width: 991px) { 
+			.three-center {margin-left:13%; width: 16%;} 
+		} 
+		/* 设置了浏览器宽度不大于992px时 abc 显示900px宽度 */ 
+
+		@media screen and (max-width: 768px) { 
+			.three-center {margin-left:10%; width: 20%;} 
+		} 
+		/* 设置了浏览器宽度不大于768px时 abc 显示200px宽度 */ 
+
+	</style>
+
+</head>
+<body id="bod">
+	<script type="text/javascript">
+		var divs="";
+		for (var i = 0; i < 6; i++) {
+			divs=divs+'<div id="quadrate'+i+'" class="three-center center big-number"'+'></div>';
+		};
+		document.getElementById("bod").innerHTML=divs;
+
+
+		window.onload=function(){quadrate ()};
+		window.onresize=function(){quadrate ()};
+
+		
+		function quadrate () {
+			var x=document.getElementById("quadrate1").offsetWidth;
+			for (var i = 0; i < 6; i++){
+				document.getElementById("quadrate"+i).style.height=x+"px";
+				var y=document.documentElement.clientHeight;
+				document.getElementById("quadrate"+i).style.marginTop=Math.ceil(y/3-x*2/3)+"px";
+				console.log(x,y)
+			}
+		}
+	</script>
+	<div class="col-md-12 col-xs-12" style="background: linear-gradient(120deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -8; padding: 0px;"></div>
+	<div class="col-md-12 col-xs-12" style="opacity:0.3; background: linear-gradient(240deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -7; padding: 0px;"></div>
+</body>
+</html>

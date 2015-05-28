@@ -1,86 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv=Content-Type content="text/html;charset=utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>点一下</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<!-- <link href="css/main1.css" rel="stylesheet"> -->
-	<style type="text/css">
-		body{
-			margin: 0;
-			padding: 0;
-			height: 0;
-			font-family: Microsoft YaHei,proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
-		}
-		.center{
-			text-align: center;
-		}
-
-		.big-number{
-			width: 100px;
-			height: 100px;
-			border-radius: 4px;
-			color: #b3b3b3;
-			background-color: #dff0d8;
-			font-size: 100px;
-		}
-		@media screen and (max-width: 991px) { 
-			.big-number{font-size: 90px} 
-		} 
-		/* 设置了浏览器宽度不大于992px时 abc 显示900px宽度 */ 
-		@media screen and (max-width: 768px) { 
-			.big-number{font-size: 70px} 
-		} 
-		/* 设置了浏览器宽度不大于768px时 abc 显示200px宽度 */ 
-
-		.three-center{
-			position:relative;
-			float: left;
-			font-weight: lighter;
-		} 
-		@media screen and (min-width: 992px) { 
-			.three-center {margin-left:16%; width: 12%;} 
-		} 
-		/* css注释：设置了浏览器宽度不小于992px时 abc 显示1200px宽度 */ 
-
-		@media screen and (max-width: 991px) { 
-			.three-center {margin-left:13%; width: 16%;} 
-		} 
-		/* 设置了浏览器宽度不大于992px时 abc 显示900px宽度 */ 
-
-		@media screen and (max-width: 768px) { 
-			.three-center {margin-left:10%; width: 20%;} 
-		} 
-		/* 设置了浏览器宽度不大于768px时 abc 显示200px宽度 */ 
-
-	</style>
-
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=0" />
+	<title>Document</title>
 </head>
-<body id="bod">
-	<script type="text/javascript">
-		var divs="";
-		for (var i = 0; i < 6; i++) {
-			divs=divs+'<div id="quadrate'+i+'" class="three-center center big-number"'+'></div>';
-		};
-		document.getElementById("bod").innerHTML=divs;
-
-
-		window.onload=function(){quadrate ()};
-		window.onresize=function(){quadrate ()};
-
-		
-		function quadrate () {
-			var x=document.getElementById("quadrate1").offsetWidth;
-			for (var i = 0; i < 6; i++){
-				document.getElementById("quadrate"+i).style.height=x+"px";
-				var y=document.documentElement.clientHeight;
-				document.getElementById("quadrate"+i).style.marginTop=Math.ceil(y/3-x*2/3)+"px";
-				console.log(x,y)
-			}
-		}
-	</script>
-	<div class="col-md-12 col-xs-12" style="background: linear-gradient(120deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -8; padding: 0px;"></div>
-	<div class="col-md-12 col-xs-12" style="opacity:0.3; background: linear-gradient(240deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -7; padding: 0px;"></div>
+<style type="text/css">
+	body{
+		/*background-image:url(back.jpg);*/
+		/*background-repeat:no-repeat;*/
+		/*background-position:center;*/
+		position:fixed;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+	#cross{
+		position: fixed;
+		background-color: #000000;
+		z-index: 3;
+	}
+	#content{
+		position: absolute;
+		background-color: #000000;
+		opacity: 0.4;
+		margin: 0 auto; 
+		width: 80%;
+		height: 80%;
+	}
+	.block{
+		/*margin-top: 20px;*/
+		margin: 0;
+		padding: 0;
+		font-size: 14px;
+		font-family: "微软雅黑";
+		text-align: center;
+		float: left;
+		width: 55px;
+		height: 55px;
+		line-height: 55px;
+		color: #fff;
+		background-color:#000000;
+		transition: all 0.3s linear;
+	}
+	.block:hover{
+		color: #908BC5;
+		border-top:solid;
+		border-width: 2px;
+	}
+	.litop{
+		position: relative;
+		width: 110px;
+		top: 0px;
+		margin-left: 0px;
+		list-style-type: none;
+		height: 0px;
+		opacity: 0;
+		background-color:#fff;
+		transition: all 0.3s linear;
+	}
+	.lileft{
+		position: relative;
+		width: 110px;
+		top: -55px;
+		margin-left: 55px;
+		list-style-type: none;
+		height: 0px;
+		opacity: 0;
+		background-color:#fff;
+		transition: all 0.3s linear;
+	}
+	ul li a{
+		text-decoration:none;
+	}
+	ul:hover li{
+		height: 55px;
+		opacity: 1;
+	}
+</style>
+<body>
+	<div id="cross">
+		<ul class="block" style="border:none;"><img src="pa.png" style="width:55px;height:55px;"></ul>
+		<ul class="block">Code
+			<li><a href="#">1st</a></li> 
+			<li><a href="#">2nd</a></li> 
+			<li><a href="#">3rd</a></li> 
+		</ul>
+		<ul class="block">Poster
+			<li><a href="#">1st</a></li> 
+			<li><a href="#">2nd</a></li> 
+			<li><a href="#">3rd</a></li> 
+		</ul>
+		<ul class="block">Design
+			<li><a href="#">1st</a></li> 
+			<li><a href="#">2nd</a></li> 
+			<li><a href="#">3rd</a></li> 
+		</ul>
+	</div>
+	<img id="back" src="back.jpg">
+	<div id="content"></div>
 </body>
+<script type="text/javascript">
+	window.onload=function(){repos ()};
+	window.onresize=function(){repos ()};
+	// 禁止鼠标选中
+	document.getElementById("cross").onselectstart=function(){return false};
+	// 获取元素
+	ecross=document.getElementById("cross").style;
+	econtent=document.getElementById("content").style;
+	eback=document.getElementById("back").style;
+	// *
+	function repos (argument) {
+		x=document.documentElement.clientWidth;
+		y=document.documentElement.clientHeight;
+		document.body.style.height=y+"px";
+		document.body.style.width=x+"px";
+		console.log(x,y);
+		if (x<y) {
+			ecross.height=55+"px";
+			ecross.width="100%";
+			econtent.left=0.1*x+"px";
+			econtent.top=0.1*y+35+"px";
+			eback.height="100%";
+			eback.width=y+"px";
+			menuFix("top");
+		}
+		else{
+			ecross.height="100%";
+			ecross.width=55+"px";
+			econtent.left=0.1*x+35+"px";
+			econtent.top=0.1*y+"px";
+			eback.width="100%";
+			eback.height=x+"px";
+			menuFix("left");
+		};
+	}
+	function menuFix(pos) { 
+		var sfEls = document.getElementById("cross").getElementsByTagName("li"); 
+		for (var i=0; i<sfEls.length; i++) { 
+			sfEls[i].className="li"+pos;
+		} 
+	}
+</script>
 </html>
