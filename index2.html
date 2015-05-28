@@ -44,11 +44,9 @@
 		transition: all 0.3s linear;
 	}
 	.block:hover{
-		/*opacity: 0.4;*/
 		color: #908BC5;
 		border-top:solid;
 		border-width: 2px;
-		/*margin-left: 2px;*/
 	}
 	.litop{
 		position: relative;
@@ -56,7 +54,7 @@
 		top: 0px;
 		margin-left: 0px;
 		list-style-type: none;
-		display: none;
+		height: 0px;
 		opacity: 0;
 		background-color:#fff;
 		transition: all 0.3s linear;
@@ -67,7 +65,7 @@
 		top: -55px;
 		margin-left: 55px;
 		list-style-type: none;
-		display: none;
+		height: 0px;
 		opacity: 0;
 		background-color:#fff;
 		transition: all 0.3s linear;
@@ -76,13 +74,13 @@
 		text-decoration:none;
 	}
 	ul:hover li{
-		display: block;
+		height: 55px;
 		opacity: 1;
 	}
 </style>
 <body>
 	<div id="cross">
-		<ul class="block" style="border:none;"></ul>
+		<ul class="block" style="border:none;"><img src="pa.png" style="width:55px;height:55px;"></ul>
 		<ul class="block">Code
 			<li><a href="#">1st</a></li> 
 			<li><a href="#">2nd</a></li> 
