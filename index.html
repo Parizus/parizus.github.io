@@ -18,6 +18,9 @@
 	#cross{
 		position: fixed;
 		background-color: #000000;
+		border-bottom: solid;
+		border-width: 2px;
+		border-color: #000;
 		z-index: 3;
 	}
 	#content{
@@ -41,6 +44,9 @@
 		line-height: 55px;
 		color: #fff;
 		background-color:#000000;
+		border-top:solid;
+		border-width: 2px;
+		border-color: #000;
 		transition: all 0.3s linear;
 	}
 	.block:hover{
@@ -82,6 +88,40 @@
 		width: 110px;
 		opacity: 1;
 	}
+	#img1:after{
+		content:url(1A.png);
+	}
+	#p1:after{
+		
+	}
+	.card{
+		width: 290px;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		transition-property: left,top;
+		transition-duration: 2s;
+		-moz-transition-property: left,top; /* Firefox 4 */
+		-moz-transition-duration: 2s; /* Firefox 4 */
+		-webkit-transition-property: left,top; /* Safari and Chrome */
+		-webkit-transition-duration: 2s; /* Safari and Chrome */
+		-webkit-transition-timing-function: ease, ease;
+		-o-transition-property: left,top; /* Opera */
+		-o-transition-duration: 2s; /* Opera */
+		background-color: #57D5D8;
+		clear: both;
+		display: block;
+	}
+	p{
+		margin-top: 10px;
+	}
+	h5{
+		font-family: "Microsoft Yahei";
+		font-weight: lighter;
+		font-size: 16px;
+		margin: 10px;
+	}
+
 </style>
 <body>
 	<div id="cross">
@@ -103,11 +143,26 @@
 		</ul>
 	</div>
 	<img id="back" src="back.jpg">
-	<div id="content"></div>
+	<div id="content">
+
+	</div>
+	<div style="text-align:center;margin-left:auto;margin-right:auto;height:800px;overflow-y: scroll;">
+		<div class="card" id="h0"><p id="img1"></p><h5 id="p1">海滨公寓的鸟巢的设计<br/>Beachside Apartment by Nest Designs</h5></div>
+		<div class="card" id="h1"><p id="img1"></p><p id="p1"></p></div>
+		<div class="card" id="h2"><p id="img1"></p><p id="p1"></p></div>
+		<div class="card" id="h3"><p id="p1">海滨公寓的鸟巢的设计<br/>Beachside Apartment by Nest Designs</p></div>
+		<div class="card" id="h4"><p id="img1"></p><p id="p1"></p></div>
+		<div class="card" id="h5"><p id="img1"></p><p id="p1"></p></div>
+		<div class="card" id="h6"><p id="img1"></p><p id="p1"></p></div>
+		<div class="card" id="h7"><p id="img1"></p><p id="p1"></p></div>
+		<div class="card" id="h8"><p id="img1"></p><p id="p1"></p></div>
+
+	</div>
 </body>
 <script type="text/javascript">
-	window.onload=function(){repos ()};
-	window.onresize=function(){repos ()};
+	window.onload=function(){setpos (9);repos ()};
+	// window.onload=function(){repos ()};
+	window.onresize=function(){repos ();setpos (9)};
 	// 禁止鼠标选中
 	document.getElementById("cross").onselectstart=function(){return false};
 	// 获取元素
@@ -124,10 +179,10 @@
 		if (x<y) {
 			ecross.height=55+"px";
 			ecross.width="100%";
-			econtent.height=y-165+"px";
-			econtent.width=x-110+"px";
-			econtent.left=55+"px";
-			econtent.top=55+55+"px";
+			econtent.height=y-55+"px";
+			econtent.width=x+"px";
+			econtent.left=0+"px";
+			econtent.top=55+"px";
 			eback.height="100%";
 			eback.width=y+"px";
 			menuFix("top");
@@ -135,10 +190,10 @@
 		else{
 			ecross.height="100%";
 			ecross.width=55+"px";
-			econtent.height=y-110+"px";
-			econtent.width=x-165+"px";
-			econtent.left=55+55+"px";
-			econtent.top=55+"px";
+			econtent.height=y+"px";
+			econtent.width=x-55+"px";
+			econtent.left=55+"px";
+			econtent.top=0+"px";
 			eback.width="100%";
 			eback.height=x+"px";
 			menuFix("left");
@@ -149,6 +204,22 @@
 		for (var i=0; i<sfEls.length; i++) { 
 			sfEls[i].className="li"+pos;
 		} 
+	}
+	function setpos (n) {
+		var noc=Math.floor((window.innerWidth-55)/300);
+		var marginleft=(window.innerWidth+55)/2-300*noc/2-5;
+		for (var i=0;i<n;i++) {
+			var left=(i%noc)*300;
+			document.getElementById("h"+i).style.left=left+10+marginleft+"px";
+		};
+		for (k=0;k<noc;k++){
+			preHeight=document.getElementById("h"+k).offsetTop;
+			var preHeight=0;
+			for (var i=k;i<n;i=i+noc) {	
+				document.getElementById("h"+i).style.top=preHeight+10+"px";
+				var preHeight=preHeight+10+document.getElementById("h"+i).offsetHeight;	
+			};	
+		};
 	}
 </script>
 </html>
