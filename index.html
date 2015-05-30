@@ -25,8 +25,8 @@
 		background-color: #000000;
 		opacity: 0.4;
 		margin: 0 auto; 
-		width: 80%;
-		height: 80%;
+		/*width: 80%;*/
+		/*height: 80%;*/
 	}
 	.block{
 		/*margin-top: 20px;*/
@@ -50,24 +50,28 @@
 	}
 	.litop{
 		position: relative;
-		width: 110px;
+		height: 0px;
+		width: 0px;
 		top: 0px;
 		margin-left: 0px;
 		list-style-type: none;
-		height: 0px;
+		/*height: 0px;*/
 		opacity: 0;
 		background-color:#fff;
+		overflow: hidden;
 		transition: all 0.3s linear;
 	}
 	.lileft{
 		position: relative;
-		width: 110px;
+		height: 0px;
+		width: 0px;
 		top: -55px;
 		margin-left: 55px;
 		list-style-type: none;
-		height: 0px;
-		opacity: 0;
+		/*height: 0px;*/
+		/*opacity: 0;*/
 		background-color:#fff;
+		overflow: hidden;
 		transition: all 0.3s linear;
 	}
 	ul li a{
@@ -75,6 +79,7 @@
 	}
 	ul:hover li{
 		height: 55px;
+		width: 110px;
 		opacity: 1;
 	}
 </style>
@@ -119,8 +124,10 @@
 		if (x<y) {
 			ecross.height=55+"px";
 			ecross.width="100%";
-			econtent.left=0.1*x+"px";
-			econtent.top=0.1*y+35+"px";
+			econtent.height=y-165+"px";
+			econtent.width=x-110+"px";
+			econtent.left=55+"px";
+			econtent.top=55+55+"px";
 			eback.height="100%";
 			eback.width=y+"px";
 			menuFix("top");
@@ -128,8 +135,10 @@
 		else{
 			ecross.height="100%";
 			ecross.width=55+"px";
-			econtent.left=0.1*x+35+"px";
-			econtent.top=0.1*y+"px";
+			econtent.height=y-110+"px";
+			econtent.width=x-165+"px";
+			econtent.left=55+55+"px";
+			econtent.top=55+"px";
 			eback.width="100%";
 			eback.height=x+"px";
 			menuFix("left");
