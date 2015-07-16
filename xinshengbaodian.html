@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
@@ -8,18 +7,22 @@
 	body{
 		margin: 0;
 		padding: 0;
-        -moz-user-select:none;/*火狐*/
-        -webkit-user-select:none;/*webkit浏览器*/
-        -ms-user-select:none;/*IE10*/
-        -khtml-user-select:none;/*早期浏览器*/
-        user-select:none;
+		-moz-user-select:none;/*火狐*/
+		-webkit-user-select:none;/*webkit浏览器*/
+		-ms-user-select:none;/*IE10*/
+		-khtml-user-select:none;/*早期浏览器*/
+		user-select:none;
 	}
 	#cross{
 		position: fixed;
-        height: 55px;
-        width: 100%;
+		height: 55px;
+		width: 100%;
 		z-index: 3;
-        background-color: black
+		background-color: black
+	}
+	#input{
+		position: absolute;	
+		top: 100px;
 	}
 	#content{
 		position: absolute;
@@ -56,7 +59,7 @@
 		background-color:#fff;
 		overflow: hidden;
 		transition: all 0.3s linear;
-        z-index: -1;
+		z-index: -1;
 	}
 	ul li a{
 		text-decoration:none;
@@ -64,9 +67,9 @@
 	ul:hover li{
 		height: 55px;
 		width: 55px;
-        top: 0px;
+		top: 0px;
 		opacity: 1;
-        list-style-type: none;
+		list-style-type: none;
 	}
 	#img1:after{
 		content:url(1A.png);
@@ -106,7 +109,7 @@
 <body>
 	<div id="cross">
 		<ul class="block" style="border:none;">
-            <img src="Pa2.png" style="width:55px;height:55px;">
+			<img src="Pa2.png" style="width:55px;height:55px;">
 		</ul>
 		<ul class="block">Code
 			<li><a href="#">1st</a></li> 
@@ -124,7 +127,15 @@
 			<li><a href="#">3rd</a></li> 
 		</ul>
 	</div>
+	<div id="input">
+		<form action="/example/html/form_action.asp" method="get">
+			<p>First name: <input type="text" name="fname" /></p>
+			<p>Last name: <input type="text" name="lname" /></p>
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
 </body>
 <script type="text/javascript">
+	document.body.onselectstart=document.body.ondrag=function(){returnfalse;}
 </script>
 </html>
