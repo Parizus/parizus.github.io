@@ -5,6 +5,7 @@
 	<meta name="description" content="预测你的价值。">
 	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<meta name="robots" content="all">
 	<meta name="author" content="Parizus">
 	<meta name="Copyright" content="Copyright ___ All Rights Reserved.">
@@ -24,20 +25,26 @@
 			margin-right: auto;
 			font-family: "微软雅黑";
 		}
-		strong{
+		h4{
 			font-weight: normal;
+			text-align: center;
+			margin-top: 10px;
+			margin-bottom: 10px;
 		}
 		p{
+			margin: 0px;
 			text-align: center;
-			font-size: 18px;
+			font-size: 14px;
 			font-weight: lighter;
 		}
 		button{
-			padding-top: 15px;
-			padding-bottom: 15px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin-top: 10px;
 			border: none;
 			border-radius: 5px;
 			width: 120px;
+			background-color: #FFF;
 			font-size: 18px;
 			text-align: center;
 		}
@@ -52,13 +59,13 @@
 		}
 		input {
 			width: 90%; 
-			height: 45px;
+			height: 15px;
 			border: 1px solid #aaa;
 			border-radius: 5px;
 			margin-top: 5px;
 			margin-bottom: 5px;
 			padding: 10px 10px;
-			font-size: 16px;
+			font-size: 14px;
 			color: #333;
 		}
 		input:focus{
@@ -70,16 +77,15 @@
 			height:10px;
 			border-radius: 5px;
 			background:black;
+			margin-bottom: 10px;
 			position:relative;
-			margin-top: 15px;
-			margin-bottom: 15px;
 			margin-right: auto;
 			margin-left: auto;
 			text-align: center;
 		}
 		#warning{
-			margin-top: 15px;
-			margin-bottom: 15px;
+			margin-top: 10px;
+			margin-bottom: 10px;
 		}
 		.breathshut{
 			animation:myfirst 4s ease-in-out 0s alternate;
@@ -199,7 +205,8 @@
 	
 
 	<form onsubmit="return validate_form(this)" action="" enctype="" method="post">
-		<p><strong>请填写基本信息</strong></p>
+		<h4>请填写基本信息</h4>
+		<div id="light" class="breath"></div>
 		<div class="content-row-in">
 			<input onblur="check(this)" type="text" name="name" id="name" placeholder="请输入姓名（必填）">
 			<input onblur="check(this)" type="text" name="phone" placeholder="请输入电话（必填）">
@@ -208,9 +215,8 @@
 			<input onblur="check(this)" type="text" name="year" placeholder="请输入毕业年份（2010~2016）（必填）">
 			<input type="text" name="work" placeholder="作品网盘地址">
 		</div>
-		<div id="light" class="breath"></div>
 		<div id="warning"></div>
-		<button type="submit" id="btn" onfocus="blankc()">提交</button>
+		<button type="submit" id="btn" onfocus="blankc()" ontouchstart="blankc()">提交</button>
 	</form>
 </body>
 <script>
@@ -225,6 +231,7 @@
 				document.getElementById("btn").disabled=true;
 				console.log(inputs[i].placeholder)
 				warning (inputs[i].placeholder,inputs[i]);
+				inputs[i].focus();
 				break;
 			}
 			else{
@@ -252,11 +259,11 @@
 	{
 		if (obj.value==null||obj.value=="")
 		{
-			// document.getElementById("btn").disabled=true;
+			document.getElementById("btn").disabled=true;
 			warning (obj.placeholder,obj);
 		}
 		else {
-			// document.getElementById("btn").disabled=false;
+			document.getElementById("btn").disabled=false;
 			flicker(1);
 			clearwar();
 		}
@@ -295,6 +302,7 @@
 	function warning (text, obj) {
 		obj.focus();
 		flicker(2);	
+		obj.value="";
 		document.getElementById("btn").disabled=true;
 		document.getElementById("warning").innerHTML="";
 		var para=document.createElement("p");
