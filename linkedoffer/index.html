@@ -204,7 +204,7 @@
 <body>
 	
 
-	<form onsubmit="return validate_form(this)" action="" enctype="" method="post">
+	<form  id="myform" onsubmit="return validate_form(this)" action="" enctype="" method="post">
 		<h4>请填写基本信息</h4>
 		<div id="light" class="breath"></div>
 		<div class="content-row-in">
@@ -216,8 +216,8 @@
 			<input type="text" name="work" placeholder="作品网盘地址">
 		</div>
 		<div id="warning"></div>
-		<button type="submit" id="btn" onfocus="blankc()" ontouchstart="blankc()">提交</button>
 	</form>
+	<button type="submit" id="btn" onfocus="blankc()" ontouchstart="blankc();" ontouchend="test()">提交</button>
 </body>
 <script>
 	document.getElementById("name").focus();
@@ -229,13 +229,13 @@
 		for (var i=0; i<inputs.length-1; i++) {
 			if (inputs[i].value==null||inputs[i].value==""){
 				document.getElementById("btn").disabled=true;
-				console.log(inputs[i].placeholder)
-				warning (inputs[i].placeholder,inputs[i]);
+				warning (inputs[i].placeholder ,inputs[i]);
 				inputs[i].focus();
 				break;
 			}
 			else{
 				document.getElementById("btn").disabled=false;
+				// warning ("请检查您的信息",inputs[inputs.length-1]);
 			}
 		}
 	}
@@ -276,6 +276,7 @@
 			clearwar();
 		}else{ 
 			warning ("请输入正确的手机号",obj);
+			obj.value="";
 		} 
 	} 
 
@@ -287,6 +288,7 @@
 			clearwar();
 		}else{
 			warning ("请输入正确的邮箱",obj);
+			obj.value="";
 		} 
 	}
 	function checkYear(obj) {
@@ -297,17 +299,17 @@
 			clearwar();
 		}else{ 
 			warning ("请输入正确的年份，2010~2016",obj);
+			obj.value="";
 		} 
 	}
 	function warning (text, obj) {
-		obj.focus();
+		// obj.focus();
 		flicker(2);	
-		obj.value="";
 		document.getElementById("btn").disabled=true;
 		document.getElementById("warning").innerHTML="";
 		var para=document.createElement("p");
 		para.id="warningc"
-		var node=document.createTextNode(text+"!");
+		var node=document.createTextNode(text+"");
 		para.appendChild(node);
 		var element=document.getElementById("warning");
 		element.appendChild(para);	
@@ -325,6 +327,11 @@
 		if (n==2) {
 			document.getElementById('light').setAttribute("class", "breath2"); 
 		};
+	}
+	function test()
+	{
+		document.getElementById("myform").submit(); 
+		window.location.href = 'www.baidu.com';
 	}
 </script>
 </html>
