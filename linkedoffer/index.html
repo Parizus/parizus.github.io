@@ -18,23 +18,27 @@
 			font-family: "微软雅黑";
 			font-weight: lighter;
 		}
-		strong{
+		button,input{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
 			font-family: "微软雅黑";
+		}
+		strong{
 			font-weight: normal;
 		}
 		p{
 			text-align: center;
-			font-size: 12px;
+			font-size: 18px;
+			font-weight: lighter;
 		}
 		button{
-			display: block;
 			padding-top: 15px;
 			padding-bottom: 15px;
 			border: none;
 			border-radius: 5px;
-			margin-right: auto;
-			margin-left: auto;
 			width: 120px;
+			font-size: 18px;
 			text-align: center;
 		}
 		button:active{
@@ -47,29 +51,19 @@
 			outline-style: none;
 		}
 		input {
-			display: block;
-			width: 90%; 	
+			width: 90%; 
+			height: 45px;
 			border: 1px solid #aaa;
 			border-radius: 5px;
 			margin-top: 5px;
 			margin-bottom: 5px;
-			margin-left: auto;
-			margin-right: auto;
 			padding: 10px 10px;
+			font-size: 16px;
 			color: #333;
 		}
 		input:focus{
-			display: block;
-			width: 90%;
-			border: 1px solid #aaa;
-			border-radius: 5px;
 			outline-style: none;
-			margin-top: 5px;
-			margin-bottom: 5px;
-			margin-left: auto;
-			margin-right: auto;
-			padding: 10px 10px;
-			color: #333;
+			background-color: #FFF29F;
 		}
 		#light{
 			width:10px;
@@ -109,28 +103,24 @@
 		@keyframes myfirst
 		{
 			0%   {background:black; }
-			30%  {background:white; }
 			50%  {background:white; }
 			100% {background:black; }
 		}
 		@-moz-keyframes myfirst /* Firefox */
 		{
 			0%   {background:black; }
-			30%  {background:white; }
 			50%  {background:white; }
 			100% {background:black; }
 		}
 		@-webkit-keyframes myfirst /* Safari and Chrome */
 		{
 			0%   {background:black; }
-			30%  {background:white; }
 			50%  {background:white; }
 			100% {background:black; }
 		}
 		@-o-keyframes myfirst /* Opera */
 		{
 			0%   {background:black; }
-			30%  {background:white; }
 			50%  {background:white; }
 			100% {background:black; }
 		}
@@ -147,28 +137,24 @@
 		@keyframes breathw
 		{
 			0%   {background:black; }
-			30%  {background:red; }
 			50%  {background:red; }
 			100% {background:black; }
 		}
 		@-moz-keyframes breathw /* Firefox */
 		{
 			0%   {background:black; }
-			30%  {background:red; }
 			50%  {background:red; }
 			100% {background:black; }
 		}
 		@-webkit-keyframes breathw /* Safari and Chrome */
 		{
 			0%   {background:black; }
-			30%  {background:red; }
 			50%  {background:red; }
 			100% {background:black; }
 		}
 		@-o-keyframes breathw /* Opera */
 		{
 			0%   {background:black; }
-			30%  {background:red; }
 			50%  {background:red; }
 			100% {background:black; }
 		}		
@@ -185,28 +171,24 @@
 		@keyframes breathr
 		{
 			0%   {background:black; }
-			30%  {background:green; }
 			50%  {background:green; }
 			100% {background:black; }
 		}
 		@-moz-keyframes breathr /* Firefox */
 		{
 			0%   {background:black; }
-			30%  {background:green; }
 			50%  {background:green; }
 			100% {background:black; }
 		}
 		@-webkit-keyframes breathr /* Safari and Chrome */
 		{
 			0%   {background:black; }
-			30%  {background:green; }
 			50%  {background:green; }
 			100% {background:black; }
 		}
 		@-o-keyframes breathr /* Opera */
 		{
 			0%   {background:black; }
-			30%  {background:green; }
 			50%  {background:green; }
 			100% {background:black; }
 		}
@@ -233,12 +215,17 @@
 </body>
 <script>
 	document.getElementById("name").focus();
+	document.onkeypress=function(){if (event.keyCode==13)blankc();}
+	var ins = document.getElementsByTagName("input");
+	console.log(ins[0].placeholder);
 	function blankc () {
 		var inputs = document.getElementsByTagName("input");
-		for (var i=0; i<inputs.length; i++) {
+		for (var i=0; i<inputs.length-1; i++) {
 			if (inputs[i].value==null||inputs[i].value==""){
 				document.getElementById("btn").disabled=true;
-				inputs[i].focus();
+				console.log(inputs[i].placeholder)
+				warning (inputs[i].placeholder,inputs[i]);
+				break;
 			}
 			else{
 				document.getElementById("btn").disabled=false;
