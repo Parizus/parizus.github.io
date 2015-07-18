@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>提交您的作品</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="robots" content="all">
+	<meta name="author" content="Parizus">
+	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
+	<meta name="MSSmartTagsPreventParsing" content="true">
+	<meta http-equiv="imagetoolbar" content="false">
+	<!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
+	<style type="text/css">
+		body{
+			background-color: #2D2D2D;
+			color: white;
+			/*font-family: "微软雅黑";*/
+		}
+		#myform{
+			margin-top: 20px;
+		}
+		p{
+			margin: 0px;
+			text-align: center;
+			font-size: 14px;
+			font-weight: lighter;
+		}
+		button{
+			display: block;
+			margin: 0 auto;
+			font-family: "微软雅黑";
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin-top: 10px;
+			border: none;
+			border-radius: 5px;
+			width: 120px;
+			background-color: #ec8515;
+			color: white;
+			font-size: 18px;
+			text-align: center;
+		}
+		button:active{
+			background-color: #FFF6E5;
+			border: none;
+			outline-style: none;
+		}
+		button:focus{
+			background-color: #d67000;
+			border: none;
+			outline-style: none;
+		}
+		input {
+			width: 75%;
+			height: 20px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 5px;
+			border: 0px;
+			border-radius: 0px 8px 8px 0px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-size: 14px;
+			line-height: 20px;
+			overflow:hidden;
+			background-color: #fff;
+			color: #3e3a39;
+			float: right;
+		}
+		input:focus{
+			outline-style: none;
+		}
+		li {
+			list-style-type: none;
+			width: 75%;
+			height: 20px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 5px;
+			border: 0px;
+			border-radius: 0px 8px 8px 0px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-size: 14px;
+			line-height: 20px;
+			overflow:hidden;
+			background-color: #fff;
+			color: #3e3a39;
+			float: right;
+		}
+		textarea{
+			width: 100%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 8px;
+			border: 0px;
+			border-radius: 8px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-size: 14px;
+			line-height:1.5;
+			overflow:hidden;
+			background-color: #595757;
+			color: #FFF;
+			float: right;
+			resize : none;
+		}
+		input:focus{
+			outline-style: none;
+			width: 100%;
+		}
+		.inputt{
+			margin-top: 8px;
+			border-radius: 8px;
+			/*border: 1px solid #575757; */
+			height: 40px;
+			padding-left: 8px;
+			/*padding-right: 8px;*/
+			background-color: #3e3a39;
+			font-family: "微软雅黑";
+			font-size: 14px;
+			line-height: 40px;
+		}
+		#pieces2,#pieces3{
+			border:none;
+			height:auto;
+			display:none;
+			margin-top:166px;
+		}
+		.block{
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+			font-family: "微软雅黑";
+			text-align: center;
+			float: left;
+			width: 100%;
+			height: 55px;
+			line-height: 55px;
+			color: #fff;
+			background-color:#000000;
+			border-color: #000;
+			transition: all 0.3s linear;
+		}
+		.block:hover{
+			color: #12A5FF;
+			border-bottom: solid;
+			border-width: 2px;
+		}
+		ul{			
+			margin: 0px;
+		}
+		ul li{
+			position: relative;
+			width: 100%;
+			height: 55px;
+			top: -220px;
+			margin-left: 0px;
+			list-style-type: none;
+			background-color:#fff;
+			overflow: hidden;
+			transition: all 0.3s linear;
+			z-index: -1;
+		}
+		ul li a{
+			text-decoration:none;
+		}
+		ul:hover inputh{
+			display: block;
+			width: 55px;
+			top: 0px;
+			opacity: 1;
+			list-style-type: none;
+		}
+	</style>
+</head>
+<body>
+	
+
+	<form  id="myform" onsubmit="return validate_form(this)" action="" enctype="" method="post">
+		<div class="inputt">姓名
+			<li type="text" name="name" id="name"></li>
+		</div>
+		<div class="inputt">电话
+			<li type="text" name="phone"></li>
+		</div>
+		<div class="inputt">邮箱
+			<li type="text" name="email"></li>
+		</div>
+		<div class="inputt">学校
+			<li type="text" name="school"></li>
+		</div>
+		<div class="inputt">毕业年份
+			<li type="text" name="year"></li>
+		</div>
+	</form>
+	<form id="pieces" action="">
+		<div id="pieces1" class="inputt" style="border:none;" >作品一
+			<input type="text" name="work" placeholder="作品网盘地址">
+			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
+		</div>
+		<div id="pieces2" class="inputt">作品二
+			<input type="text" name="work" placeholder="作品网盘地址">
+			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
+		</div>
+		<div id="pieces3" class="inputt">作品三
+			<input type="text" name="work" placeholder="作品网盘地址">
+			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
+		</div>
+		<svg onclick="addnewform()" version="1.1" baseProfile="basic" width="70" height="20" x="0px" y="0px" viewBox="0 0 35 10"	xml:space="preserve">
+			<style type="text/css">
+				.st0{fill:none;stroke:#EB8415;stroke-width:1;stroke-miterlimit:10;}
+				.st1{fill:#EB8415;}
+				.st3{font-size:8.5px;}
+			</style>
+			<g id="XMLID_136_">
+				<circle id="XMLID_68_" class="st0" cx="5.504" cy="5" r="4"/>
+				<line id="XMLID_67_" class="st0" x1="2.964" y1="5" x2="8.044" y2="5"/>
+				<line id="XMLID_66_" class="st0" x1="5.504" y1="2.46" x2="5.504" y2="7.54"/>
+			</g>
+			<text id="XMLID_121_" transform="matrix(1 0 0 1 11.6328 7.8319)" class="st1 st2 st3">新增</text>
+		</svg>
+	</form>
+	<button type="submit" id="btn" onclick="test()">提交</button>
+</body>
+<script>
+	console.log(document.getElementsByTagName('meta')["Description"].content);
+	console.log(document.getElementsByTagName('meta')["Copyright"].content);
+	document.getElementById("name").focus();
+	document.onkeypress=function(){if (event.keyCode==13)blankc();}
+	var ins = document.getElementsByTagName("textarea");
+	function blankc () {
+		var inputs = document.getElementsByTagName("textarea");
+		for (var i=0; i<inputs.length-1; i++) {
+			if (inputs[i].value==null||inputs[i].value==""){
+				document.getElementById("btn").disabled=true;
+				warning (inputs[i].placeholder ,inputs[i]);
+				inputs[i].focus();
+				break;
+			}
+			else{
+				document.getElementById("btn").disabled=false;
+			}
+		}
+	}
+	function addnewform () {
+		var newform=document.getElementById("pieces2"); 
+		if (newform.style.display=="block") {
+			document.getElementById("pieces3").style.display="block";
+		};
+		newform.style.display="block";
+	}
+	function test()
+	{
+		document.getElementById("myform").submit(); 
+		window.location.href = 'success.html';
+	}
+</script>
+</html>
