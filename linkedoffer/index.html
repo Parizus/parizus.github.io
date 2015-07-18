@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh">
 <head>
-	<title>薪金计算</title>
-	<meta name="description" content="预测你的价值。">
+	<title>填写信息获取密匙</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
 	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<meta name="robots" content="all">
 	<meta name="author" content="Parizus">
-	<meta name="Copyright" content="Copyright ___ All Rights Reserved.">
+	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
 	<meta name="MSSmartTagsPreventParsing" content="true">
 	<meta http-equiv="imagetoolbar" content="false">
 	<!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
@@ -16,24 +16,11 @@
 		body{
 			background-color: #2D2D2D;
 			color: white;
-			font-family: "微软雅黑";
-			font-weight: lighter;
+			/*font-family: "微软雅黑";*/
 		}
-		form{
+		#myform{
 			border-top: 1px solid #575757;	
 			margin-top: 20px;
-		}
-		button{
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			font-family: "微软雅黑";
-		}
-		h4{
-			font-weight: normal;
-			text-align: center;
-			margin-top: 10px;
-			margin-bottom: 10px;
 		}
 		p{
 			margin: 0px;
@@ -42,13 +29,17 @@
 			font-weight: lighter;
 		}
 		button{
+			display: block;
+			margin: 0 auto;
+			font-family: "微软雅黑";
 			padding-top: 10px;
 			padding-bottom: 10px;
 			margin-top: 10px;
 			border: none;
 			border-radius: 5px;
 			width: 120px;
-			background-color: #FFF;
+			background-color: #ec8515;
+			color: white;
 			font-size: 18px;
 			text-align: center;
 		}
@@ -58,14 +49,18 @@
 			outline-style: none;
 		}
 		button:focus{
+			background-color: #d67000;
 			border: none;
 			outline-style: none;
 		}
 		input {
 			width: 50%;
+			padding-top: 10px;
 			border: 0px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
 			font-size: 14px;
-			font-family: "微软雅黑";
+			line-height: 14px;
+			overflow:hidden;
 			background-color: #2D2D2D;
 			color: #FFF;
 			text-align: right;
@@ -76,14 +71,17 @@
 		}
 		.inputt{
 			border-bottom: 1px solid #575757; 
-			padding: 10px;
+			height: 36px;
+			font-family: "微软雅黑";
 			font-size: 14px;
+			line-height: 36px;
 		}
 		#light{
 			width:10px;
 			height:10px;
 			border-radius: 5px;
-			background:black;
+			background:#2D2D2D;
+			margin-top: 10px;
 			margin-bottom: 10px;
 			position:relative;
 			margin-right: auto;
@@ -115,27 +113,27 @@
 		}
 		@keyframes myfirst
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:white; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 		@-moz-keyframes myfirst /* Firefox */
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:white; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 		@-webkit-keyframes myfirst /* Safari and Chrome */
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:white; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 		@-o-keyframes myfirst /* Opera */
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:white; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 		.breath2
 		{			
@@ -149,27 +147,27 @@
 		}
 		@keyframes breathw
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:red; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 		@-moz-keyframes breathw /* Firefox */
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:red; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 		@-webkit-keyframes breathw /* Safari and Chrome */
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:red; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 		@-o-keyframes breathw /* Opera */
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:red; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}		
 		.breath1
 		{			
@@ -183,27 +181,27 @@
 		}
 		@keyframes breathr
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:green; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 		@-moz-keyframes breathr /* Firefox */
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:green; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 		@-webkit-keyframes breathr /* Safari and Chrome */
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:green; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 		@-o-keyframes breathr /* Opera */
 		{
-			0%   {background:black; }
+			0%   {background:#2D2D2D; }
 			50%  {background:green; }
-			100% {background:black; }
+			100% {background:#2D2D2D; }
 		}
 
 	</style>
@@ -213,35 +211,36 @@
 
 	<form  id="myform" onsubmit="return validate_form(this)" action="" enctype="" method="post">
 		<div class="inputt">姓名
-			<input onblur="check(this)" type="text" name="name" id="name" placeholder="请输入姓名（必填）">
+			<input onblur="check(this)" type="text" name="name" id="name" placeholder="姓名为必填">
 		</div>
 		<div class="inputt">电话
-			<input onblur="check(this)" type="text" name="phone" placeholder="请输入电话（必填）">
+			<input onblur="check(this)" type="text" name="phone" placeholder="电话为必填">
 		</div>
 		<div class="inputt">邮箱
-			<input onblur="check(this)" type="text" name="email" placeholder="请输入邮箱（必填）">
+			<input onblur="check(this)" type="text" name="email" placeholder="邮箱为必填">
 		</div>
 		<div class="inputt">学校
-			<input onblur="check(this)" type="text" name="school" placeholder="请输入学校（必填）">
+			<input onblur="check(this)" type="text" name="school" placeholder="学校为必填">
 		</div>
 		<div class="inputt">毕业年份
-			<input onblur="check(this)" type="text" name="year" placeholder="请输入毕业年份（2010~2016）（必填）">
+			<input onblur="check(this)" type="text" name="year" placeholder="(2010~2016),必填">
 		</div>
 		<div class="inputt">作品网盘地址
 			<input type="text" name="work" placeholder="作品网盘地址">
 		</div>
-		<h4>请填写基本信息</h4>
+		<!-- <h4>请填写基本信息</h4> -->
 		<div id="light" class="breath"></div>
 
 		<div id="warning"></div>
 	</form>
-	<button type="submit" id="btn" onfocus="blankc()" ontouchstart="blankc();" ontouchend="test()">提交</button>
+	<button type="submit" id="btn" onfocus="blankc()" ontouchstart="blankc();" onclick="test()">提交</button>
 </body>
 <script>
+console.log(document.getElementsByTagName('meta')["Description"].content);
+	console.log(document.getElementsByTagName('meta')["Copyright"].content);
 	document.getElementById("name").focus();
 	document.onkeypress=function(){if (event.keyCode==13)blankc();}
 	var ins = document.getElementsByTagName("input");
-	console.log(ins[0].placeholder);
 	function blankc () {
 		var inputs = document.getElementsByTagName("input");
 		for (var i=0; i<inputs.length-1; i++) {
@@ -261,15 +260,15 @@
 		validate(obj);
 		switch (obj.name)
 		{
-			case "phone":
-			checkMobile(obj);
-			break;
-			case "email":
-			checkEmail(obj);
-			break;
-			case "year":
-			checkYear(obj);
-			break;
+			// case "phone":
+			// checkMobile(obj);
+			// break;
+			// case "email":
+			// checkEmail(obj);
+			// break;
+			// case "year":
+			// checkYear(obj);
+			// break;
 		}
 	}
 	function validate(obj)
@@ -348,7 +347,7 @@
 	function test()
 	{
 		document.getElementById("myform").submit(); 
-		window.location.href = 'www.baidu.com';
+		window.location.href = 'success.html';
 	}
 </script>
 </html>
