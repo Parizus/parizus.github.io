@@ -1,7 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh">
 <head>
-	<title>提交您的作品</title>
+	<title>填写信息获取密匙</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<meta http-equiv="Content-Language" content="zh-cn">
 	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
@@ -19,7 +19,6 @@
 			/*font-family: "微软雅黑";*/
 		}
 		#myform{
-			border-top: 1px solid #575757;	
 			margin-top: 20px;
 		}
 		p{
@@ -53,26 +52,63 @@
 			border: none;
 			outline-style: none;
 		}
-		li {
-			list-style-type: none;
-			width: 50%;
+		.inputt{
+			margin-top: 8px;
+			border-radius: 8px;
+			/*border: 1px solid #575757; */
+			height: 40px;
+			padding-left: 8px;
+			/*padding-right: 8px;*/
+			background-color: #3e3a39;
+			font-family: "微软雅黑";
+			font-size: 14px;
+			line-height: 40px;
+		}
+		input {
+			width: 75%;
+			height: 20px;
 			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 5px;
 			border: 0px;
+			border-radius: 0px 8px 8px 0px;
 			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
 			font-size: 14px;
-			line-height: 14px;
+			line-height: 20px;
 			overflow:hidden;
-			background-color: #2D2D2D;
-			color: #FFF;
-			text-align: right;
+			background-color: #fff;
+			color: #3e3a39;
 			float: right;
 		}
+		input:focus{
+			outline-style: none;
+		}
+		li{
+			list-style-type: none;
+			width: 75%;
+			height: 20px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 5px;
+			border: 0px;
+			border-radius: 0px 8px 8px 0px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-size: 14px;
+			line-height: 20px;
+			overflow:hidden;
+			background-color: #fff;
+			color: #3e3a39;
+			float: right;			
+		}		
 		textarea{
 			width: 100%;
+			margin-top: 10px;
 			margin-bottom: 10px;
 			padding-top: 10px;
 			padding-bottom: 10px;
+			padding-left: 6px;
 			border: 0px;
+			border-radius: 8px;
 			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
 			font-size: 14px;
 			line-height:1.5;
@@ -82,95 +118,40 @@
 			float: right;
 			resize : none;
 		}
-		input:focus{
-			outline-style: none;
-			width: 100%;
-		}
-		.inputt{
-			border-bottom: 1px solid #575757; 
-			height: 36px;
-			font-family: "微软雅黑";
-			font-size: 14px;
-			line-height: 36px;
-		}
-		.block{
-			margin: 0;
-			padding: 0;
-			font-size: 14px;
-			font-family: "微软雅黑";
-			text-align: center;
-			float: left;
-			width: 100%;
-			height: 55px;
-			line-height: 55px;
-			color: #fff;
-			background-color:#000000;
-			border-color: #000;
-			transition: all 0.3s linear;
-		}
-		.block:hover{
-			color: #12A5FF;
-			border-bottom: solid;
-			border-width: 2px;
-		}
-		ul{			
-			margin: 0px;
-		}
-		ul li{
-			position: relative;
-			width: 100%;
-			height: 55px;
-			top: -220px;
-			margin-left: 0px;
-			list-style-type: none;
-			background-color:#fff;
-			overflow: hidden;
-			transition: all 0.3s linear;
-			z-index: -1;
-		}
-		ul li a{
-			text-decoration:none;
-		}
-		ul:hover inputh{
-			display: block;
-			width: 55px;
-			top: 0px;
-			opacity: 1;
-			list-style-type: none;
+		#pieces2,#pieces3{
+			border:none;
+			height:auto;
+			display:none;
+			margin-top:166px;
 		}
 	</style>
 </head>
 <body>
 	
 
-	<form  id="myform" onsubmit="return validate_form(this)" action="" enctype="" method="post">
+	<form  id="myform" onsubmit="" action="" enctype="" method="post">
 		<div class="inputt">姓名
-			<li type="text" name="name" id="name"></li>
+			<li onblur="check(this)" name="name" ></li>
 		</div>
 		<div class="inputt">电话
-			<li type="text" name="phone"></li>
+			<li onblur="check(this)" name="phone" ></li>
 		</div>
 		<div class="inputt">邮箱
-			<li type="text" name="email"></li>
-		</div>
-		<div class="inputt">学校
-			<li type="text" name="school"></li>
+			<li onblur="check(this)" name="email" ></li>
 		</div>
 		<div class="inputt">毕业年份
-			<li type="text" name="year"></li>
+			<li onblur="check(this)" name="year"></li>
 		</div>
-	</form>
-	<form id="pieces" action="">
-		<div id="pieces1" class="inputt" style="border:none;" >作品一
-			<textarea name="" id="" cols="30" rows="1" placeholder="产品官网或demo链接"></textarea>
+		<div id="pieces1" class="inputt">作品网盘
+			<input type="text" name="work" placeholder="">
 			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
 		</div>
-		<div id="pieces2" class="inputt" style="border:none;height:auto;display:none;" >作品二
-			<textarea name="" id="" cols="30" rows="1" placeholder="产品官网或demo链接"></textarea>
+		<div id="pieces2" class="inputt">作品网盘
+			<input type="text" name="work" placeholder="作品网盘地址">
 			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
 		</div>
-		<div id="pieces3" class="inputt" style="border:none;height:auto;display:none;" >作品三
-			<textarea name="" id="" cols="30" rows="1" placeholder="产品官网或demo链接"></textarea>
+		<div id="pieces3" class="inputt">作品网盘
+			<input type="text" name="work" placeholder="作品网盘地址">
 			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
 		</div>
 		<svg onclick="addnewform()" version="1.1" baseProfile="basic" width="70" height="20" x="0px" y="0px" viewBox="0 0 35 10"	xml:space="preserve">
@@ -192,23 +173,6 @@
 <script>
 	console.log(document.getElementsByTagName('meta')["Description"].content);
 	console.log(document.getElementsByTagName('meta')["Copyright"].content);
-	document.getElementById("name").focus();
-	document.onkeypress=function(){if (event.keyCode==13)blankc();}
-	var ins = document.getElementsByTagName("textarea");
-	function blankc () {
-		var inputs = document.getElementsByTagName("textarea");
-		for (var i=0; i<inputs.length-1; i++) {
-			if (inputs[i].value==null||inputs[i].value==""){
-				document.getElementById("btn").disabled=true;
-				warning (inputs[i].placeholder ,inputs[i]);
-				inputs[i].focus();
-				break;
-			}
-			else{
-				document.getElementById("btn").disabled=false;
-			}
-		}
-	}
 	function addnewform () {
 		var newform=document.getElementById("pieces2"); 
 		if (newform.style.display=="block") {
