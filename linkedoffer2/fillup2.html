@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>填写信息获取密匙</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="robots" content="all">
+	<meta name="author" content="Parizus">
+	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
+	<meta name="MSSmartTagsPreventParsing" content="true">
+	<meta http-equiv="imagetoolbar" content="false">
+	<link href="main.css" rel="stylesheet" type="text/css"/>
+	<!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
+	<style type="text/css">
+		body{
+			background-color: #2D2D2D;
+			color: white;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+		}
+		#myform{
+			margin-top: 20px;
+		}
+		p{
+			margin: 0px;
+			text-align: center;
+			font-size: 14px;
+			font-weight: lighter;
+		}
+		input,select {
+			width: 75%;
+			/*height: 20px;*/
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 5px;
+			border: 0px;
+			border-radius: 0px 8px 8px 0px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-size: 14px;
+			line-height: 20px;
+			overflow:hidden;
+			background-color: #D6D6D6;
+			color: #3e3a39;
+			float: right;
+		}
+		input,select:focus{
+			outline-style: none;
+		}
+		select{
+			height: 40px;
+		}
+		#light{
+			width:10px;
+			height:10px;
+			border-radius: 5px;
+			background:#2D2D2D;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			position:relative;
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
+		#warning{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+		}
+		#warningc{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+		}
+		.breathshut{
+			animation:myfirst 4s ease-in-out 0s alternate;
+			/* Firefox: */
+			-moz-animation:myfirst 4s ease-in-out 0s alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:myfirst 4s ease-in-out 0s alternate;
+			/* Opera: */
+			-o-animation:myfirst 4s ease-in-out 0s alternate;
+		}
+		.breath
+		{			
+			animation:myfirst 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:myfirst 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:myfirst 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:myfirst 4s ease-in-out infinite alternate;
+		}
+		@keyframes myfirst
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-moz-keyframes myfirst /* Firefox */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-webkit-keyframes myfirst /* Safari and Chrome */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-o-keyframes myfirst /* Opera */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		.breath2
+		{			
+			animation:breathw 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:breathw 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:breathw 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:breathw 4s ease-in-out infinite alternate;
+		}
+		@keyframes breathw
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}
+		@-moz-keyframes breathw /* Firefox */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}
+		@-webkit-keyframes breathw /* Safari and Chrome */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}
+		@-o-keyframes breathw /* Opera */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}		
+		.breath1
+		{			
+			animation:breathr 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:breathr 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:breathr 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:breathr 4s ease-in-out infinite alternate;
+		}
+		@keyframes breathr
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+		@-moz-keyframes breathr /* Firefox */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+		@-webkit-keyframes breathr /* Safari and Chrome */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+		@-o-keyframes breathr /* Opera */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+
+	</style>
+</head>
+<body>
+	
+
+	<form  id="myform" onsubmit="" action="" enctype="" method="post">
+		<div class="inputt">应聘岗位
+			<select name="cars" placeholder="应聘岗位,必选">
+				<option value="volvo">Volvo</option>
+				<option value="saab">Saab</option>
+				<option value="fiat">Fiat</option>
+				<option value="audi">Audi</option>
+			</select>
+		</div>
+		<div class="inputt">期望工作城市
+			<select name="cars" placeholder="应聘岗位,必选">
+				<option value="volvo">Volvo</option>
+				<option value="saab">Saab</option>
+				<option value="fiat">Fiat</option>
+				<option value="audi">Audi</option>
+			</select>
+		</div>
+		<!-- <h4>请填写基本信息</h4> -->
+		<div id="light" class="breath"></div>
+	</form>
+	<button type="submit" id="btn" onclick="test()">提交</button>
+	<div id="footi" style="float:right;padding-top:0px;">点击右上角进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
+		<a href="qanda.html"><img src="question.png"></a>
+	</div>
+</body>
+<script>
+	console.log(document.getElementsByTagName('meta')["Description"].content);
+	console.log(document.getElementsByTagName('meta')["Copyright"].content);
+	// document.getElementById("name").focus();
+
+	function test()
+	{
+		document.getElementById("myform").submit(); 
+		window.location.href = 'success.html';
+	}
+</script>
+</html>

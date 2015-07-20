@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>申请成功</title>
+	<title>开始预测</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"> 
 	<meta http-equiv="Content-Language" content="zh-cn">
 	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
@@ -13,22 +13,32 @@
 	<meta http-equiv="imagetoolbar" content="false">
 	<link href="main.css" rel="stylesheet" type="text/css"/>
 	<style>
+		body{
+			background-image: url(background.gif);
+			background-repeat: no-repeat;
+		}
+		a{
+			display: block;
+			text-align: center;
+			margin-top: 100px;
+		}
+		button{
+			margin-top: 100px;
+			border-radius: 60px;
+			width: 120px;
+			height: 120px;
+		}
 	</style>
 </head>
-<body onload="lod()">
-	<img id="logo" src="logo.png">
-	<!-- <div id="showTime"></div> -->
+<body>
+	<h1>你想知道毕业五年内&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你能拿多少月薪吗？</h1>
+	<button type="submit" id="btn" onclick="test()">开始预测</button>
+	<a href="fillup.html" >跳过预测</a>
 </body>
 <script>
-	var cnt = 2;
-	function lod(){
-		if(cnt < 0){
-			window.location.href = "startpredict.html";
-		}else{
-			// document.getElementById("showTime").innerHTML = "页面<font color=red>" + cnt + "</font>秒后跳转";
-			cnt--;
-		}
-		setTimeout("lod()",1000);
+	function test()
+	{
+		window.location.href = 'settarget.html';
 	}
 </script>
 </html>

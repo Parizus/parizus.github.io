@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>填写信息获取密匙</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="robots" content="all">
+	<meta name="author" content="Parizus">
+	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
+	<meta name="MSSmartTagsPreventParsing" content="true">
+	<meta http-equiv="imagetoolbar" content="false">
+	<link href="main.css" rel="stylesheet" type="text/css"/>
+	<!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
+	<style type="text/css">
+		#myform{
+			margin-top: 20px;
+		}
+		p{
+			margin: 0px;
+			text-align: center;
+			font-size: 14px;
+			font-weight: lighter;
+		}
+		input,select {
+			width: 75%;
+			height: 20px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 5px;
+			border: 0px;
+			border-radius: 0px 8px 8px 0px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-size: 14px;
+			line-height: 20px;
+			overflow:hidden;
+			background-color: #D6D6D6;
+			color: #3e3a39;
+			float: right;
+		}
+		input,select:focus{
+			outline-style: none;
+		}
+		select{
+			height: 40px;
+		}
+		#light{
+			width:10px;
+			height:10px;
+			border-radius: 5px;
+			background:#2D2D2D;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			position:relative;
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
+		#warning{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+		}
+		#warningc{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+		}
+		.breathshut{
+			animation:myfirst 4s ease-in-out 0s alternate;
+			/* Firefox: */
+			-moz-animation:myfirst 4s ease-in-out 0s alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:myfirst 4s ease-in-out 0s alternate;
+			/* Opera: */
+			-o-animation:myfirst 4s ease-in-out 0s alternate;
+		}
+		.breath
+		{			
+			animation:myfirst 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:myfirst 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:myfirst 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:myfirst 4s ease-in-out infinite alternate;
+		}
+		@keyframes myfirst
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-moz-keyframes myfirst /* Firefox */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-webkit-keyframes myfirst /* Safari and Chrome */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-o-keyframes myfirst /* Opera */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		.breath2
+		{			
+			animation:breathw 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:breathw 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:breathw 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:breathw 4s ease-in-out infinite alternate;
+		}
+		@keyframes breathw
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}
+		@-moz-keyframes breathw /* Firefox */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}
+		@-webkit-keyframes breathw /* Safari and Chrome */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}
+		@-o-keyframes breathw /* Opera */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}		
+		.breath1
+		{			
+			animation:breathr 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:breathr 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:breathr 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:breathr 4s ease-in-out infinite alternate;
+		}
+		@keyframes breathr
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+		@-moz-keyframes breathr /* Firefox */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+		@-webkit-keyframes breathr /* Safari and Chrome */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+		@-o-keyframes breathr /* Opera */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+
+	</style>
+</head>
+<body>
+	
+
+	<form  id="myform" onsubmit="" action="" enctype="" method="post">
+		<div class="inputt">姓名
+			<input onblur="check(this)" type="text" name="name" id="name" placeholder="姓名为必填">
+		</div>
+		<div class="inputt">电话
+			<input onblur="check(this)" type="text" name="phone" placeholder="电话为必填">
+		</div>
+		<div class="inputt">邮箱
+			<input onblur="check(this)" type="text" name="email" placeholder="邮箱为必填">
+		</div>
+		<div class="inputt">学校
+			<input onblur="check(this)" type="text" name="school" placeholder="学校为必填">
+		</div>
+		<div class="inputt">毕业年份
+			<input onblur="check(this)" type="text" name="year" placeholder="(2010~2016),必填">
+		</div>
+		<!-- <h4>请填写基本信息</h4> -->
+		<div id="light" class="breath"></div>
+
+		<div id="warning"></div>
+	</form>
+	<button type="submit" id="btn" onfocus="blankc()" ontouchstart="blankc();" onclick="test()">下一步</button>
+	<div id="footi" style="float:right;padding-top:0px;">点击右上角进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
+		<a href="qanda.html"><img src="question.png"></a>
+	</div>
+</body>
+<script>
+console.log(document.getElementsByTagName('meta')["Description"].content);
+	console.log(document.getElementsByTagName('meta')["Copyright"].content);
+	document.getElementById("name").focus();
+	document.onkeypress=function(){if (event.keyCode==13)blankc();}
+	function blankc () {
+		var inputs = document.getElementsByTagName("input");
+		for (var i=0; i<inputs.length-1; i++) {
+			if (inputs[i].value==null||inputs[i].value==""){
+				document.getElementById("btn").disabled=true;
+				warning (inputs[i].placeholder ,inputs[i]);
+				inputs[i].focus();
+				break;
+			}
+			else{
+				document.getElementById("btn").disabled=false;
+			}
+		}
+	}
+
+	function check (obj) {
+		validate(obj);
+		switch (obj.name)
+		{
+			case "phone":
+			checkMobile(obj);
+			break;
+			case "email":
+			checkEmail(obj);
+			break;
+			case "year":
+			checkYear(obj);
+			break;
+		}
+	}
+	function validate(obj)
+	{
+		if (obj.value==null||obj.value=="")
+		{
+			document.getElementById("btn").disabled=true;
+			warning (obj.placeholder,obj);
+		}
+		else {
+			document.getElementById("btn").disabled=false;
+			flicker(1);
+			clearwar();
+		}
+	}
+	function checkMobile(obj){   
+		var regu =/^1[0-9]{1}[0-9]{9}$/; 
+		var re = new RegExp(regu); 
+		if (re.test(obj.value)) {
+			flicker(1);
+			clearwar();
+		}else{ 
+			warning ("请输入正确的手机号",obj);
+			obj.value="";
+		} 
+	} 
+
+	function checkEmail(obj){  
+		var regu = /^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/; 
+		var re = new RegExp(regu); 
+		if (re.test(obj.value)){
+			flicker(1)
+			clearwar();
+		}else{
+			warning ("请输入正确的邮箱",obj);
+			obj.value="";
+		} 
+	}
+	function checkYear(obj) {
+		var regu =/^201[0-6]{1,1}$/; 
+		var re = new RegExp(regu); 
+		if (re.test(obj.value)) { 
+			flicker(1)
+			clearwar();
+		}else{ 
+			warning ("请输入正确的年份，2010~2016",obj);
+			obj.value="";
+		} 
+	}
+	function warning (text, obj) {
+		// obj.focus();
+		flicker(2);	
+		document.getElementById("btn").disabled=true;
+		document.getElementById("warning").innerHTML="";
+		var para=document.createElement("p");
+		para.id="warningc"
+		var node=document.createTextNode(text+"");
+		para.appendChild(node);
+		var element=document.getElementById("warning");
+		element.appendChild(para);	
+	}
+	function clearwar () {
+		document.getElementById("btn").disabled=false;
+		document.getElementById("warning").innerHTML="";
+	}
+	function flicker (n) 
+	{
+		document.getElementById('light').setAttribute("class", "breathshut"); 
+		if (n==1) {
+			document.getElementById('light').setAttribute("class", "breath1"); 
+		};
+		if (n==2) {
+			document.getElementById('light').setAttribute("class", "breath2"); 
+		};
+	}
+	function test()
+	{
+		document.getElementById("myform").submit(); 
+		window.location.href = 'fillup2.html';
+	}
+</script>
+</html>

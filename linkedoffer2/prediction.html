@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>填写个性化信息</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="robots" content="all">
+	<meta name="author" content="Parizus">
+	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
+	<meta name="MSSmartTagsPreventParsing" content="true">
+	<meta http-equiv="imagetoolbar" content="false">
+	<!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
+	<style>
+		body{
+			background-color: #2D2D2D;
+			color: #DCDDDD;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+		}
+		h4,h5{
+			font-family: "微软雅黑";
+			font-weight: normal;
+			/*text-align: center;*/
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h4{
+			font-size: 16px;
+		}
+		h4{
+			margin-top: 50px;
+		}
+		button{
+			display: block;
+			margin: 0 auto;
+			font-family: "微软雅黑";
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin-top: 10px;
+			border: none;
+			border-radius: 5px;
+			width: 120px;
+			background-color: #ec8515;
+			color: white;
+			font-size: 18px;
+			text-align: center;
+		}
+		button{
+			margin-top: 50px;
+		}
+		button:active{
+			background-color: #FFF6E5;
+			border: none;
+			outline-style: none;
+		}
+		button:focus{
+			background-color: #d67000;
+			border: none;
+			outline-style: none;
+		}
+		a{
+			text-decoration: none;
+			color: #EC8515;
+		}
+		#box{
+			width: 100%;
+			border-radius: 8px;
+			background-color: #fff;
+		}
+		#footi{
+			position: fixed;
+			bottom: 10px;
+			right: 10px;
+			margin-top: 150px;
+			font-size: 14px;
+			line-height: 30px;			
+		}
+		button{
+			width: 180px;			
+		}
+	</style>
+</head>
+<body>
+	<h4>您毕业之后五年内的月薪和所选岗位的平均薪酬：</h4>
+	<div id="box"><div id="main" style="height:400px"></div></div>	
+	<h4>恭喜您！您的月薪超过了XX%的同行</h4>
+	<button type="submit" id="btn" onclick="test()">一键开启互联网招聘</button>
+	<script src="echarts-all.js"></script>
+	<script type="text/javascript">
+		var myChart = echarts.init(document.getElementById('main')); 
+
+		var option = {
+			tooltip : {
+				trigger: 'axis'
+			},
+			legend: {
+				data:['预测工资','平均工资']
+			},
+			calculable : true,
+			xAxis : [
+			{
+				type : 'category',
+				boundaryGap : false,
+				data : ['2015','2016','2017','2018','2019',]
+			}
+			],
+			yAxis : [
+			{
+				type : 'value',
+				axisLabel : {
+					formatter: '{value} 千元'
+				}
+			}
+			],
+			series : [
+			{
+				name:'预测工资',
+				type:'line',
+				data:[3, 4, 5, 6, 7, ],
+			},
+			{
+				name:'平均工资',
+				type:'line',
+				data:[3, 4, 5, 6, 9, ],
+			}
+			]
+		};
+		myChart.setOption(option); 
+
+		function test()
+		{
+			window.location.href = 'getkeys.html';
+		}
+	</script>
+</body>
+</html>
