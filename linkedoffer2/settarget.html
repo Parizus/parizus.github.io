@@ -12,13 +12,23 @@
 	<meta name="MSSmartTagsPreventParsing" content="true">
 	<meta http-equiv="imagetoolbar" content="false">
 	<link href="main.css" rel="stylesheet" type="text/css"/>
+	<script src="data.js"></script>
+	<script src="echarts-all.js"></script>
 	<!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
 	<style type="text/css">
 		#myform{
 			margin-top: 20px;
 		}
-		input,select {
+		#box{
+			width: 100%;
+			margin-top: 20px;
+			border-radius: 8px;
+			background-color: #fff;
+			/*display: none;*/
+		}
+		select {
 			width: 75%;
+			height: 40px;
 			/*height: 20px;*/
 			padding-top: 10px;
 			padding-bottom: 10px;
@@ -33,11 +43,20 @@
 			color: #3e3a39;
 			float: right;
 		}
-		input,select:focus{
+		select:focus{
 			outline-style: none;
 		}
-		select{
-			height: 40px;
+		h4,h5{
+			font-family: "微软雅黑";
+			font-weight: normal;
+			/*text-align: center;*/
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h4{
+			font-size: 16px;
+			margin-top: 50px;
 		}
 		textarea{
 			width: 100%;
@@ -58,16 +77,19 @@
 			float: right;
 			resize : none;
 		}
-		textarea:first-child{
+		textarea:first-child{/*
 			width: 75%;
 			height: 20px;
 			border-radius: 0px 8px 8px 0px;
 			margin: 0px;
 			padding-left: 5px;
-			background-color: #D6D6D6;
+			background-color: #D6D6D6;*/
+		}
+		button{
+			margin-top: 50px;
 		}
 		#footi{
-			position: fixed;
+			position: relative;
 			bottom: 10px;
 			right: 10px;
 			margin-top: 150px;
@@ -214,40 +236,54 @@
 	
 
 	<form  id="myform" onsubmit="" action="" enctype="" method="post">
-		<div class="inputt">目标岗位
-			<select name="cars" placeholder="应聘岗位,必选">
-				<option value="volvo">Volvo</option>
-				<option value="saab">Saab</option>
-				<option value="fiat">Fiat</option>
-				<option value="audi">Audi</option>
+		<div class="inputt">岗位类别
+			<select id="GWleibie">
+				<option value="1">技术类</option>
+				<option value="2">产品类</option>
+				<option value="3">设计类</option>
+				<option value="4">市场、商务、销售、运营类</option>
 			</select>
 		</div>
-		<div class="inputt">工作城市
-			<select name="cars" placeholder="应聘岗位,必选">
-				<option value="volvo">Volvo</option>
-				<option value="saab">Saab</option>
-				<option value="fiat">Fiat</option>
-				<option value="audi">Audi</option>
+		<div class="inputt">目标岗位
+			<select onfocus="changeopt(this);" id="mubiaoGW">
+			</select>
+		</div>
+		<div class="inputt">城市类别
+			<select id="CSleibie">
+				<option value="1">北上广深杭</option>
+				<option value="2">其它一线</option>
+				<option value="3">一线外的省会城市</option>
+			</select>
+		</div>
+		<div class="inputt">目标城市
+			<select onfocus="changeopt2(this);" id="mubiaoCS">
 			</select>
 		</div>
 		<div class="inputt">目标企业
-			<select name="cars" placeholder="应聘岗位,必选">
-				<option value="volvo">Volvo</option>
-				<option value="saab">Saab</option>
-				<option value="fiat">Fiat</option>
-				<option value="audi">Audi</option>
+			<select id="mubiaoQY">
+				<option value="0">已上市</option>
+				<option value="1">成熟型</option>
+				<option value="2">成长型</option>
+				<option value="3">初创型</option>
 			</select>
 		</div>
 		<div class="inputt">学历
-			<select name="cars" placeholder="应聘岗位,必选">
-				<option value="volvo">Volvo</option>
-				<option value="saab">Saab</option>
-				<option value="fiat">Fiat</option>
-				<option value="audi">Audi</option>
+			<select id="XL">
+				<option value="0">博士</option>
+				<option value="1">硕士</option>
+				<option value="2">本科</option>
+				<option value="3">专科</option>
+			</select>
+		</div>		
+		<div class="inputt">相关经历
+			<select id="JL">
+				<option value="0">互联网企业实习经历</option>
+				<option value="1">校园项目经历</option>
+				<option value="2">校外项目经历</option>
+				<option value="3">创业经历</option>
 			</select>
 		</div>
-		<div id="pieces1" style="display:none;" class="inputt">相关经历
-			<textarea name="" id="" cols="30" rows="1" placeholder="作品网盘地址"></textarea>
+		<div id="pieces1" style="display:none;padding-left: 8px;" >
 			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
 		</div>
 		<p></p>
@@ -262,10 +298,15 @@
 				<line id="XMLID_67_" class="st0" x1="2.964" y1="5" x2="8.044" y2="5"/>
 				<line id="XMLID_66_" class="st0" x1="5.504" y1="2.46" x2="5.504" y2="7.54"/>
 			</g>
-			<text id="XMLID_121_" transform="matrix(1 0 0 1 11.6328 7.8319)" class="st1 st2 st3">增加经历</text>
+			<text id="XMLID_121_" transform="matrix(1 0 0 1 11.6328 7.8319)" class="st1 st2 st3">增加描述</text>
 		</svg>
 	</form>
-	<button type="submit" id="btn" onclick="test()">提交</button>
+	<button type="submit" id="btn" onclick="calsalary ()">提交</button>
+	<h4 id="tit">您毕业之后五年内的月薪和所选岗位的平均薪酬：</h4>
+	<div id="box">
+		<div id="main" style="height:400px"></div>
+	</div>
+	<button type="submit" id="btn2" style="width: 180px;" onclick="test ()">一键开启互联网招聘</button>
 	<div id="footi" style="float:right;padding-top:0px;">点击右上角进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
 		<a href="qanda.html"><img src="question.png"></a>
 	</div>
@@ -273,15 +314,143 @@
 <script>
 	console.log(document.getElementsByTagName('meta')["Description"].content);
 	console.log(document.getElementsByTagName('meta')["Copyright"].content);
-	// document.getElementById("name").focus();
+	function changeopt (obj) {
+		switch (document.getElementById("GWleibie").value)
+		{
+			case "1":
+			fillmubiao (jishu,obj);
+			var basic=jishulei;
+			break;
+			case "2":
+			fillmubiao (chanpin,obj);
+			var basic=chanpinlei;
+			break;
+			case "3":
+			fillmubiao (sheji,obj);
+			var basic=shejilei;
+			break;
+			case "4":
+			fillmubiao (yunying,obj);
+			var basic=yunyinglei;
+			break;
+		}
+	}
+	function changeopt2 (obj) {
+		switch (document.getElementById("CSleibie").value)
+		{
+			case "1":
+			fillmubiao (yixian,obj);
+			break;
+			case "2":
+			fillmubiao (yixian2,obj);
+			var addi_CS=gongzuochengshi[5];
+			break;
+			case "3":
+			fillmubiao (shenghui,obj);
+			var addi_CS=gongzuochengshi[6];
+			break;
+		}
+	}
+	function fillmubiao (obj,pos) {
+		pos.innerHTML="";
+		for (var i = obj.length - 1; i >= 0; i--) {
+			var para=document.createElement("option");
+			para.value=i;
+			var node=document.createTextNode(obj[i]);
+			para.appendChild(node);
+			var element=pos;
+			element.appendChild(para);
+		};
+	}
+
+
 	function addnewform () {
 		var newform=document.getElementById("pieces1"); 
 		newform.style.display="block";
 	}
+	function calsalary () {
+		switch (document.getElementById("GWleibie").value)
+		{
+			case "1":
+			var basic=jishulei;
+			break;
+			case "2":
+			var basic=chanpinlei;
+			break;
+			case "3":
+			var basic=shejilei;
+			break;
+			case "4":
+			var basic=yunyinglei;
+			break;
+		};
+		switch (document.getElementById("CSleibie").value)
+		{
+			case "1":{
+				var addi_CS=gongzuochengshi[document.getElementById("mubiaoCS").value];
+			}
+			break;
+			case "2":
+			var addi_CS=gongzuochengshi[5];
+			break;
+			case "3":
+			var addi_CS=gongzuochengshi[6];
+			break;
+		};
+		var basic_GW=basic[document.getElementById("mubiaoGW").value];
+		var addi_QY=mobiaoqiye[document.getElementById("mubiaoQY").value];
+		
+		var addi_XL=xueli[document.getElementById("XL").value];
+		
+		var addi_JL=xiangguanjingli[document.getElementById("JL").value];
+		var salary=basic_GW;
+		for (var i = salary.length - 1; i >= 0; i--) {
+			salary[i]=basic_GW[i]+addi_CS[i]+addi_QY[i]+addi_XL[i]+addi_JL[i];
+		};		
+		graph (salary[0],salary[1],salary[2],salary[3],salary[4],salary[5]);
+		document.getElementById("btn").disabled=true;
+		window.scrollTo(100,500);
+	}
+	function graph (a0,a1,a2,a3,a4,a5) {
+		console.log(a0);		
+		var myChart = echarts.init(document.getElementById('main')); 
+		var option = {
+			tooltip : {
+				trigger: 'axis'
+			},
+			legend: {
+				data:['预测工资']
+			},
+			calculable : true,
+			xAxis : [
+			{
+				type : 'category',
+				boundaryGap : false,
+				data : ['初始工资','第一年','第二年','第三年','第四年','第五年',]
+			}
+			],
+			yAxis : [
+			{
+				type : 'value',
+				axisLabel : {
+					formatter: '{value}元'
+				}
+			}
+			],
+			series : [
+			{
+				name:'预测工资',
+				type:'line',
+				data:[a0, a1, a2, a3, a4, a5, ],
+			},
+			]
+		};
+		myChart.setOption(option); 
+	};
 	function test()
 	{
 		document.getElementById("myform").submit(); 
-		window.location.href = 'prediction.html';
+		window.location.href = 'getkeys.html';
 	}
 </script>
 </html>
