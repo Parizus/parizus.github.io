@@ -25,6 +25,12 @@
 			border-radius: 8px;
 			background-color: #fff;
 			/*display: none;*/
+			overflow: scroll;
+		}
+		@media screen and (max-device-width: 600px){ 
+			#main{
+				width: 600px;
+			}
 		}
 		select {
 			width: 75%;
@@ -399,6 +405,12 @@
 		var option = {
 			tooltip : {
 				trigger: 'axis'
+			},
+			toolbox: {
+				show : true,
+				feature : {
+					saveAsImage : {show: true}
+				}
 			},
 			legend: {
 				data:['预测工资','该岗位平均工资']
