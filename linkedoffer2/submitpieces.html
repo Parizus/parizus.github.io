@@ -254,15 +254,15 @@
 			<input onblur="check(this)" type="text" name="year" placeholder="(2010~2016),必填">
 		</div>
 		<div id="pieces1" class="inputt">作品网盘
-			<textarea name="" id="" cols="30" rows="1" placeholder="作品网盘地址"></textarea>
+			<input placeholder="作品网盘地址">
 			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
 		</div>
 		<div id="pieces2" class="inputt">作品网盘
-			<textarea name="" id="" cols="30" rows="1" placeholder="作品网盘地址"></textarea>
+			<input placeholder="作品网盘地址">
 			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
 		</div>
 		<div id="pieces3" class="inputt">作品网盘
-			<textarea name="" id="" cols="30" rows="1" placeholder="作品网盘地址"></textarea>
+			<input placeholder="作品网盘地址">
 			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
 		</div>
 		<svg onclick="addnewform()" version="1.1" baseProfile="basic" width="120" height="20" x="0px" y="0px" viewBox="10 0 35 10"	xml:space="preserve">
@@ -282,9 +282,9 @@
 	<div id="light" class="breath"></div>
 
 	<div id="warning"></div>
-	<button type="submit" id="btn" onfocus="blankc();blankc2();" ontouchstart="blankc();blankc2();" onclick="test()">下一步</button>
+	<button type="submit" id="btn" onfocus="blankc();" ontouchstart="blankc();" onclick="test()">下一步</button>
 	<div id="footi" style="float:right;padding-top:0px;">点击右上角进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
-		<a href="qanda.html"><img src="question.png"></a>
+		<a href="qanda.html">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
 	</div>
 </body>
 <script>
@@ -301,7 +301,7 @@
 	document.onkeypress=function(){if (event.keyCode==13)blankc();}
 	function blankc () {
 		var inputs = document.getElementsByTagName("input");
-		for (var i=0; i<inputs.length; i++) {
+		for (var i=0; i<inputs.length-2; i++) {
 			if (inputs[i].value==null||inputs[i].value==""){
 				document.getElementById("btn").disabled=true;
 				warning (inputs[i].placeholder ,inputs[i]);
@@ -309,13 +309,13 @@
 				break;
 			}
 			else{
-				// document.getElementById("btn").disabled=false;
+				blankc2();
 			}
 		}
 	}
 	function blankc2 () {
 		var textareas = document.getElementsByTagName("textarea");
-		for (var i=0; i<2; i++) {
+		for (var i=0; i<1; i++) {
 			if (textareas[i].value==null||textareas[i].value==""){
 				document.getElementById("btn").disabled=true;
 				warning (textareas[i].placeholder ,textareas[i]);
