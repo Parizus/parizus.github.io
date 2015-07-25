@@ -29,6 +29,8 @@ button{
 	font-family: "微软雅黑";
 	padding-top: 10px;
 	padding-bottom: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
 	margin-top: 10px;
 	border: none;
 	border-radius: 5px;
