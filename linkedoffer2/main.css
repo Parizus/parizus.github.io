@@ -20,8 +20,10 @@ h1{
 	text-align: center;
 }
 a{
+	border-radius: 10px 0px 10px 0px;
 	text-decoration: none;
-	color: #EC8515;
+	color: #FFF;
+	background-color: #EC8515;
 }
 button{
 	display: block;
