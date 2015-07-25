@@ -383,24 +383,25 @@
 		var addi_XL=xueli[document.getElementById("XL").value];
 		
 		var addi_JL=xiangguanjingli[document.getElementById("JL").value];
-		var salary=basic_GW;
+		var salary=[0,0,0,0,0,0];
 		for (var i = salary.length - 1; i >= 0; i--) {
 			salary[i]=basic_GW[i]+addi_CS[i]+addi_QY[i]+addi_XL[i]+addi_JL[i];
 			salary[i]=salary[i].toFixed(2);
 		};		
-		graph (salary[0],salary[1],salary[2],salary[3],salary[4],salary[5]);
+		graph (salary[0],salary[1],salary[2],salary[3],salary[4],salary[5],basic_GW[0],basic_GW[1],basic_GW[2],basic_GW[3],basic_GW[4],basic_GW[5]);
+		console.log(basic_GW);
 		document.getElementById("btn").disabled=true;
 		window.scrollTo(100,500);
 	}
-	function graph (a0,a1,a2,a3,a4,a5) {
-		console.log(a0);		
+	function graph (a0,a1,a2,a3,a4,a5,b0,b1,b2,b3,b4,b5) {
+		console.log(a0,b0);		
 		var myChart = echarts.init(document.getElementById('main')); 
 		var option = {
 			tooltip : {
 				trigger: 'axis'
 			},
 			legend: {
-				data:['预测工资']
+				data:['预测工资','该岗位平均工资']
 			},
 			calculable : true,
 			xAxis : [
@@ -423,6 +424,11 @@
 				name:'预测工资',
 				type:'line',
 				data:[a0, a1, a2, a3, a4, a5, ],
+			},
+			{
+				name:'该岗位平均工资',
+				type:'line',
+				data:[b0, b1, b2, b3, b4, b5, ],
 			},
 			]
 		};
