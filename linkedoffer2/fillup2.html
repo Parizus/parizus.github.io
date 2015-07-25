@@ -73,6 +73,14 @@
 			margin-bottom: 10px;
 			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
 		}
+		#footi{
+			position: fixed;
+			bottom: 10px;
+			right: 10px;
+			margin-top: 150px;
+			font-size: 14px;
+			color:#a1a1a1;			
+		}
 		.breathshut{
 			animation:myfirst 4s ease-in-out 0s alternate;
 			/* Firefox: */
@@ -200,7 +208,7 @@
 			</select>
 		</div>
 		<div class="inputt">目标岗位
-			<select onfocus="changeopt(this);" id="mubiaoGW">
+			<select onfocus="changeopt(this);" ontouchstart="changeopt(this);" id="mubiaoGW">
 			</select>
 		</div>
 		<div class="inputt">城市类别
@@ -211,14 +219,14 @@
 			</select>
 		</div>
 		<div class="inputt">目标城市
-			<select onfocus="changeopt2(this);" id="mubiaoCS">
+			<select onfocus="changeopt(this);" ontouchstart="changeopt(this);" id="mubiaoCS">
 			</select>
 		</div>
 		<!-- <h4>请填写基本信息</h4> -->
 		<div id="light" class="breath"></div>
 	</form>
 	<button type="submit" id="btn" onclick="test()">提交</button>
-	<div id="footi" style="float:right;padding-top:0px;">点击右上角进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
+	<div id="footi">点击右上角进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
 		<a href="qanda.html">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
 	</div>
 </body>
