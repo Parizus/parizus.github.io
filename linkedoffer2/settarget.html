@@ -286,20 +286,6 @@
 		<div id="pieces1" style="display:none;padding-left: 8px;" >
 			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
 		</div>
-		<p></p>
-		<svg onclick="addnewform()" version="1.1" baseProfile="basic" width="120" height="20" x="0px" y="0px" viewBox="10 0 35 10"	xml:space="preserve">
-			<style type="text/css">
-				.st0{fill:none;stroke:#EB8415;stroke-width:1;stroke-miterlimit:10;}
-				.st1{fill:#EB8415;}
-				.st3{font-size:8.5px;}
-			</style>
-			<g id="XMLID_136_">
-				<circle id="XMLID_68_" class="st0" cx="5.504" cy="5" r="4"/>
-				<line id="XMLID_67_" class="st0" x1="2.964" y1="5" x2="8.044" y2="5"/>
-				<line id="XMLID_66_" class="st0" x1="5.504" y1="2.46" x2="5.504" y2="7.54"/>
-			</g>
-			<text id="XMLID_121_" transform="matrix(1 0 0 1 11.6328 7.8319)" class="st1 st2 st3">增加描述</text>
-		</svg>
 	</form>
 	<button type="submit" id="btn" onclick="calsalary ()">提交</button>
 	<h4 id="tit">您毕业之后五年内的月薪和所选岗位的平均薪酬：</h4>
@@ -361,12 +347,6 @@
 			var element=pos;
 			element.appendChild(para);
 		};
-	}
-
-
-	function addnewform () {
-		var newform=document.getElementById("pieces1"); 
-		newform.style.display="block";
 	}
 	function calsalary () {
 		switch (document.getElementById("GWleibie").value)
