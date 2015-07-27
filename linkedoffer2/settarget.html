@@ -387,6 +387,7 @@
 			salary[i]=salary[i].toFixed(2);
 		};		
 		graph (salary[0],salary[1],salary[2],salary[3],salary[4],salary[5],basic_GW[0],basic_GW[1],basic_GW[2],basic_GW[3],basic_GW[4],basic_GW[5]);
+		document.title="你五年后的月薪是"+salary[5]+"，超过了平均薪资"+((salary[5]-basic_GW[5])/basic_GW[5]*100).toFixed(2)+"%";
 		console.log(basic_GW);
 		document.getElementById("btn").disabled=true;
 		window.scrollTo(100,500);
