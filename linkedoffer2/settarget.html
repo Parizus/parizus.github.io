@@ -14,7 +14,8 @@
 	<link href="main.css" rel="stylesheet" type="text/css"/>
 	<script src="data.js"></script>
 	<script src="echarts-all.js"></script>
-	<!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/png "> 
+	<link rel="icon" href="favicon.ico" type="image/png "> 
 	<style type="text/css">
 		#myform{
 			margin-top: 20px;
@@ -231,7 +232,8 @@
 	</style>
 </head>
 <body>
-<img id="arrow" src="arrow.png">
+	<div style="display:none;"><img src="weixinpic.png" ></div>
+	<img id="arrow" onclick="hidearrow()" src="arrow.png">
 	
 
 	<form  id="myform" onsubmit="" action="" enctype="" method="post">
@@ -390,7 +392,7 @@
 			salary[i]=salary[i].toFixed(2);
 		};		
 		graph (salary[0],salary[1],salary[2],salary[3],salary[4],salary[5],basic_GW[0],basic_GW[1],basic_GW[2],basic_GW[3],basic_GW[4],basic_GW[5]);
-		document.title="你五年后的月薪是"+salary[5]+"，超过了平均薪资"+((salary[5]-basic_GW[5])/basic_GW[5]*100).toFixed(2)+"%";
+		document.title="我5年后的月薪是"+salary[5]+"，超过了平均薪资"+((salary[5]-basic_GW[5])/basic_GW[5]*100).toFixed(2)+"%，点此测试！";
 		console.log(basic_GW);
 		document.getElementById("btn").disabled=true;
 		window.scrollTo(100,500);
@@ -439,8 +441,11 @@
 	function showarrow () {
 		document.getElementById("arrow").style.display="block";
 		if (a==0) {
-		document.title="你想知道自己五年后拿多少薪水么？点击开始测试！";
-	};
+			document.title="你想知道自己五年后拿多少薪水么？点击开始测试！";
+		};
+	}
+	function hidearrow () {
+		document.getElementById("arrow").style.display="none";
 	}
 	function test()
 	{

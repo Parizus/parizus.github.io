@@ -1,0 +1,23 @@
+ajax提交post到offer.qnsxj.cn/index.php/Getcode/index
+包含name,phone,email,school,graduateyear,job,city几列，全部为必填
+
+返回类型为json其中：
+code有以下几种可能
+0        验证失败，可能是某列没填或者类型不对，比如email没有@和. 手机号不是数字
+1        注册成功，请访问邮箱检查激活连接
+2        邮箱已经注册过了，请勿重复注册
+
+
+
+
+
+
+ajax提交post到offer.qnsxj.cn/index.php/Detail/index
+包含code必填
+
+返回类型为json，
+code可能有以下几种可能
+0        验证失败，code不存在或者不是数字
+1        验证成功，status里返回json的用户数据
+2        尝试了太多次错误的code
+3        系统错误

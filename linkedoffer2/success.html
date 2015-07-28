@@ -11,6 +11,8 @@
 	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
 	<meta name="MSSmartTagsPreventParsing" content="true">
 	<meta http-equiv="imagetoolbar" content="false">
+	<link rel="shortcut icon" href="favicon.ico" type="image/png "> 
+	<link rel="icon" href="favicon.ico" type="image/png "> 
 	<link href="main.css" rel="stylesheet" type="text/css"/>
 	<style>
 		body{
@@ -41,7 +43,9 @@
 	</style>
 </head>
 <body>
-<img id="arrow" src="arrow.png">
+
+	<div style="display:none;"><img src="weixinpic.png" ></div>
+	<img id="arrow" onclick="hidearrow()" src="arrow.png">
 
 
 	<h4>&nbsp;&nbsp;申请成功！</h4>
@@ -51,9 +55,12 @@
 	</div>
 </body>
 <script type="text/javascript">
-		document.title="一键开启互联网招聘—极速链接你身边的HR";	
+		document.title="一键开启互联网招聘—极速连接你身边的HR";	
 	function showarrow () {
 		document.getElementById("arrow").style.display="block";
+	}
+	function hidearrow () {
+		document.getElementById("arrow").style.display="none";
 	}
 </script>
 </html>
