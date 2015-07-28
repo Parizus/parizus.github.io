@@ -11,6 +11,39 @@ body{
 	left:50%;
 	margin:-60px 0 0 -60px;
 }
+#arrow{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	display: none;
+	animation:arrowpoint 2s infinite;
+	-moz-animation:arrowpoint 2s infinite; /* Firefox */
+	-webkit-animation:arrowpoint 2s infinite; /* Safari and Chrome */
+	-o-animation:arrowpoint 2s infinite; /* Opera */
+}
+@keyframes arrowpoint
+{
+0%   {right:0px; top:0px;}
+50%  {right:20px; top:20px;}
+}
+
+@-moz-keyframes arrowpoint /* Firefox */
+{
+0%   {right:0px; top:0px;}
+50%  {right:20px; top:20px;}
+}
+
+@-webkit-keyframes arrowpoint /* Safari 和 Chrome */
+{
+0%   {right:0px; top:0px;}
+50%  {right:20px; top:20px;}
+}
+
+@-o-keyframes arrowpoint /* Opera */
+{
+0%   {right:0px; top:0px;}
+50%  {right:20px; top:20px;}
+}
 h1{	
 	font-size: 24px;
 	font-family: "微软雅黑";
@@ -61,6 +94,7 @@ button:focus{
 	margin-top: 150px;
 	font-size: 14px;
 	color:#a1a1a1;
+	cursor:pointer;
 }
 #footi a{
 	margin-top: -6px;

@@ -231,6 +231,7 @@
 	</style>
 </head>
 <body>
+<img id="arrow" src="arrow.png">
 	
 
 	<form  id="myform" onsubmit="" action="" enctype="" method="post">
@@ -291,13 +292,14 @@
 		<div id="main" style="height:400px"></div>
 	</div>
 	<button type="submit" id="btn2" style="width: 180px;" onclick="test ()">一键开启互联网招聘</button>
-	<div id="footi">点击右上角进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
+	<div id="footi" onclick="showarrow()">点击此处进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
 		<a href="qanda.html">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
 	</div>
 </body>
 <script>
 	console.log(document.getElementsByTagName('meta')["Description"].content);
 	console.log(document.getElementsByTagName('meta')["Copyright"].content);
+	var a=0;
 	function changeopt (obj) {
 		switch (document.getElementById("GWleibie").value)
 		{
@@ -347,6 +349,7 @@
 		};
 	}
 	function calsalary () {
+		a=1;
 		switch (document.getElementById("GWleibie").value)
 		{
 			case "1":
@@ -433,6 +436,12 @@
 		};
 		myChart.setOption(option); 
 	};
+	function showarrow () {
+		document.getElementById("arrow").style.display="block";
+		if (a==0) {
+		document.title="你想知道自己五年后拿多少薪水么？点击开始测试！";
+	};
+	}
 	function test()
 	{
 		document.getElementById("myform").submit(); 
