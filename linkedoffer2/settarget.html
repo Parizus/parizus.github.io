@@ -63,7 +63,7 @@
 		}
 		h4{
 			font-size: 16px;
-			margin-top: 50px;
+			margin-top: 20px;
 		}	
 		textarea{
 			width: 100%;
@@ -294,7 +294,7 @@
 		<div id="main" style="height:400px"></div>
 	</div>
 	<button type="submit" id="btn2" style="width: 180px;" onclick="test ()">一键开启互联网招聘</button>
-	<div id="footi" onclick="showarrow()">点击此处进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
+	<div id="footi" style="margin-top:180px;" onclick="showarrow()">点击此处进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
 		<a href="qanda.html">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
 	</div>
 </body>
@@ -302,6 +302,7 @@
 	console.log(document.getElementsByTagName('meta')["Description"].content);
 	console.log(document.getElementsByTagName('meta')["Copyright"].content);
 	var a=0;
+	hide('tit');hide('box');hide('btn2');
 	function changeopt (obj) {
 		switch (document.getElementById("GWleibie").value)
 		{
@@ -395,7 +396,8 @@
 		document.title="我5年后的月薪是"+salary[5]+"，超过了平均薪资"+((salary[5]-basic_GW[5])/basic_GW[5]*100).toFixed(2)+"%，点此测试！";
 		console.log(basic_GW);
 		document.getElementById("btn").disabled=true;
-		window.scrollTo(100,500);
+		document.getElementById("footi").style.marginTop="70px";		
+		hide('myform');hide('btn');show('tit');show('box');show('btn2');
 	}
 	function graph (a0,a1,a2,a3,a4,a5,b0,b1,b2,b3,b4,b5) {
 		console.log(a0,b0);		
@@ -447,6 +449,13 @@
 	function hidearrow () {
 		document.getElementById("arrow").style.display="none";
 	}
+	function show (obj) {
+		document.getElementById(obj).style.display="block";
+	}
+	function hide (obj) {
+		document.getElementById(obj).style.display="none";
+	}
+
 	function test()
 	{
 		document.getElementById("myform").submit(); 
