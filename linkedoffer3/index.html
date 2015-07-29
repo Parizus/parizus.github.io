@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>请输入密钥</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="robots" content="all">
+	<meta name="author" content="Parizus">
+	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
+	<meta name="MSSmartTagsPreventParsing" content="true">
+	<meta http-equiv="imagetoolbar" content="false">
+	<style>
+		body{
+			margin: 0px;
+			background-color: #2D2D2D;
+			overflow-x: hidden;
+			color: #DCDDDD;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			moz-user-select: -moz-none;
+			-moz-user-select: none;
+			-o-user-select:none;
+			-khtml-user-select:none;
+			-webkit-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+		}
+		h4,h5{
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-weight: normal;
+			text-align: center;
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h4{
+			width: 60%;
+			margin-left: 20%;
+			margin-top: 100px;
+			margin-bottom: 60px;
+			font-size: 21px;
+			line-height: 40px;
+			color: #FFF;
+		}
+		h5{	
+			margin-bottom: 30px;
+			font-size: 14px;
+			text-align: center;
+			line-height: 40px;
+			color: #FFF;
+		}
+		h5 a{
+			background-color: transparent;
+			color: #EC8515;
+			text-decoration: none;
+			color: #EC8515;
+		}
+		#logo{
+			width:120px;
+			height:27px;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			z-index: -1;
+		}
+		#background{
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			z-index: -1;
+		}
+		#button{
+			position: absolute;
+			width: 60px;
+			height: 60px;
+			border-radius: 30px;
+			background-color: #ec8515;
+			text-align: center;
+		}
+		#button p{
+			margin: 10px;
+			height: 40px;
+			font-size: 14px;
+			line-height: 20px;
+		}
+		.buttonback{
+			position: absolute;
+			width: 58px;
+			height: 58px;
+			border-radius: 50px;
+			border-color: #ec8515;
+			border-width: 1px;
+			border-style: solid;
+			text-align: center;
+			line-height: 60px;
+			font-size: 24px;
+			outline-style: none;
+			/*border: 0px;*/
+			padding: 0px;
+		}
+		.buttonback,#button{
+			transition:  1s;
+			-moz-transition: 1s;
+			-webkit-transition:  1s;
+			-o-transition: 1s;
+		}
+		#container{
+			border-style: solid;
+			border-width: 80px;
+			border-color: #ECECEA;
+			background-color: #fff;
+			height: 1000px;
+			color: #57585A;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			text-align: center;
+			padding-top: 60px;
+		}
+
+		ul,li{
+			width: 80%;
+			margin-left: 10%;
+			padding: 0px;
+			font-size: 14px;
+			line-height: 20px;
+			text-align: left;
+			list-style-type: none;
+		}
+		ul{
+			color: #EC8515;
+		}
+		@media (max-width: 768px){
+			#background{
+				width: 768px;
+			}
+			#container{
+				height: 1200px;
+			}
+			h4,ul,li{
+				width: 90%;
+				margin-left: 5%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<img id="background" src="background.jpg">
+	<img id="logo" src="logo.png">
+
+	<h4>Linkedoffer连接你身边的HR  致力于向青年提供互联网职业机会
+		基于连接HR邮箱的社交化招聘   一次申请，十个HR关注，直接领offer
+	</h4>
+	<input id="buttonback" class="buttonback"></input>
+	<div id="button" onclick="check()"><p>输入<br/>密钥</p></div>
+	<h5 style="margin-top: 160px;"></h5>
+	<h5><a href="submitpieces.html">大牛通道</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="fillup.html">获取密钥</a></h5>
+
+	<div id="container">参与流程
+		<ul>01&nbsp;获取登录密钥</ul>
+		<li>填写报名信息即可通过邮箱获取登录密钥，每天将有选择性的发放500个名额，每天0点 更新。</li>
+		<ul>01&nbsp;上传简历并审核</ul>
+		<li>登录offer.qnsxj.cn，输入您的登陆密钥，完善个人资料并上传个人简历。我们会在两个工作日内通知您审核结果，一旦通过审核，将会在互联网公司虚拟招聘会中展示。</li>
+		<ul>01&nbsp;连接HR邮箱，沟通详情</ul>
+		<li>一旦有HR关注您的资料和简历，我们会第一时间通过邮箱通知您，内含公司资料和HR邮箱。您可继续等待对方的邀请，当然，您也可以直接与对方联系。</li>
+		<ul>01&nbsp;大牛通道</ul>
+		<li style="margin-bottom:30px;">如果您已经具备丰富的项目经验，我们为您提供了大牛通道，直接进入终审环节。填写您的产品官网或者demo准确链接，并留下联系方式，我们将在两个工作日内与您联系，一旦通过审核，将为您提供专属的招聘服务。</li>
+
+		常见问题
+		<ul>Q: Linkedoffer主要服务人群和提供的互联网实习/职业机会是？</ul>
+		<li>Linkedoffer主要服务于即将毕业的大学生以及毕业5年之内的年轻人，提供互联网职业机会，分为技术类、设计类、产品类和运营类。</li>
+		<ul>Q:我提交了报名信息一定可以获得登录密钥么？</ul>
+		<li>Linkedoffer会根据您的报名信息有选择性的发放500个登录密钥，每天进行更新。</li>
+		<ul>Q: Linkedoffer的特点是？</ul>
+		<li>Linkedoffer帮助青年进入互联网公司实习/职业机会，获得更好的职业机会。不同于现场招聘会和招聘网站，不需要求职者一家一家拜访企业和重复投递简历。Linkedoffer更像一只无形手，将您与HR的邮箱连接，只需申请一次，就可以获得更多HR的关注。</li>
+		<ul>Q：Linkedoffer的服务城市是？</ul>
+		<li>Linkedoffer提供的是身边的互联网职业机会，主要服务城市：北京、上海、广州、深圳、杭州、武汉、长沙。</li>
+		<ul>Q：我想寻找本地的互联网工作，Linkedoffer会开通更多服务城市么？</ul>
+		<li>Linkedoffer将您与身边的互联网公司的HR邮箱进行连接，即便在非主要服务城市，我们也可为您提供实习/职业机会。</li>
+	</div>
+</body>
+<script type="text/javascript">
+	window.onresize=function(){location.replace(location);}
+	var a=0;
+	function expand () {
+		D("buttonback").style.width=278+"px";
+		D("buttonback").style.left=(w-280)/2-10+"px";
+		D("button").style.left=(w-280)/2-10+"px";
+		D("buttonback").focus();
+		D("button").innerHTML="<p>验证<br/>密钥</p>";
+		a=1;
+	}
+	function check () {
+		if (a==0) {
+			expand ();
+		}
+		else{
+			// document.getElementById("myform").submit(); 
+			window.location.href = 'applynow.html';
+		};
+	}
+	var w=window.innerWidth
+	|| document.documentElement.clientWidth
+	|| document.body.clientWidth;
+	var drag_=false
+	var D=new Function('obj','return document.getElementById(obj);')
+	// D("buttonback").focus()
+	D("buttonback").style.left=(w-58)/2-10+"px";
+	D("button").style.left=(w-58)/2-10+"px";
+</script>
+</html>

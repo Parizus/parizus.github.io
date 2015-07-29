@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>请输入密钥</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="robots" content="all">
+	<meta name="author" content="Parizus">
+	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
+	<meta name="MSSmartTagsPreventParsing" content="true">
+	<meta http-equiv="imagetoolbar" content="false">
+	<script src="data.js"></script>
+	<style>
+		body{
+			margin: 0px;
+			background-color: #2D2D2D;
+			overflow-x: hidden;
+			color: #DCDDDD;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			moz-user-select: -moz-none;
+			-moz-user-select: none;
+			-o-user-select:none;
+			-khtml-user-select:none;
+			-webkit-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+		}
+		#logo{
+			position: fixed;
+			width:120px;
+			height:27px;
+			top: 10px;
+			left: 10px;
+			z-index: 1;
+		}
+		#background{
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			z-index: -1;
+		}
+		#header{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			height: 50px;
+			width: 100%;
+			background-color: #2D2D2D;
+			transition:  1s;
+			-moz-transition: 1s;
+			-webkit-transition:  1s;
+			-o-transition: 1s;
+		}
+		h4,h5{
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-weight: normal;
+			text-align: center;
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h4{
+			width: 60%;
+			margin-left: 20%;
+			margin-top: 100px;
+			margin-bottom: 60px;
+			font-size: 21px;
+			line-height: 40px;
+			color: #FFF;
+		}
+
+		#myform{
+			margin-top: 20px;
+		}
+		.inputt{
+			height: 80px;
+			font-family: "微软雅黑";
+			font-size: 14px;
+			line-height: 40px;
+			text-align: left;
+		}
+		.inputt2{
+			width: 29%;
+			margin-right: 4%;
+			height: 80px;
+			font-family: "微软雅黑";
+			font-size: 14px;
+			line-height: 40px;
+			text-align: left;
+			float: left;
+
+		}
+		input,select {
+			width: 100%;
+			height: 20px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			border: 0px;
+			border-radius: 8px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-size: 14px;
+			line-height: 20px;
+			overflow:hidden;
+			background-color: #D6D6D6;
+			color: #3e3a39;
+			margin: 0 auto;
+		}
+		input,select:focus{
+			outline-style: none;
+		}
+		select{
+			height: 40px;
+			color: #3e3a39;
+		}
+		option{
+			width: 100%;
+		}
+		p{
+			margin-top: 40px;
+			text-align: center;
+			font-size: 14px;
+			font-weight: lighter;
+		}
+		#light{
+			width:10px;
+			height:10px;
+			border-radius: 5px;
+			background:#2D2D2D;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			position:relative;
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
+		#logo{
+			position: fixed;
+			width:120px;
+			height:27px;
+			top: 10px;
+			left: 10px;
+			z-index: 1;
+		}
+		#background{
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			z-index: -1;
+		}
+		button{
+			display: block;
+			margin: 0 auto;
+			font-family: "微软雅黑";
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-top: 10px;
+			border: none;
+			border-radius: 5px;
+			width: 120px;
+			background-color: #ec8515;
+			color: white;
+			font-size: 18px;
+			text-align: center;
+		}
+		button:active{
+			background-color: #FFF6E5;
+			border: none;
+			outline-style: none;
+		}
+		button:focus{
+			background-color: #d67000;
+			border: none;
+			outline-style: none;
+		}
+		.buttonback{
+			position: absolute;
+			width: 58px;
+			height: 58px;
+			border-radius: 50px;
+			border-color: #ec8515;
+			border-width: 1px;
+			border-style: solid;
+			text-align: center;
+			line-height: 60px;
+			font-size: 24px;
+			outline-style: none;
+			/*border: 0px;*/
+			padding: 0px;
+		}
+		.buttonback,#button{
+			transition:  1s;
+			-moz-transition: 1s;
+			-webkit-transition:  1s;
+			-o-transition: 1s;
+		}
+		#container{
+			border-style: solid;
+			border-width: 180px;
+			border-color: #ECECEA;
+			padding: 15px;
+			background-color: #fff;
+			height: 1800px;
+			color: #57585A;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			text-align: center;
+			padding-top: 30px;
+		}
+		@media (max-width: 768px){
+			#background{
+				width: 768px;
+			}
+			#container{
+				height: 1800px;
+				border-width: 80px;
+			}
+			h4,ul,li{
+				width: 90%;
+				margin-left: 5%;
+			}
+		}
+		.breathshut{
+			animation:myfirst 4s ease-in-out 0s alternate;
+			/* Firefox: */
+			-moz-animation:myfirst 4s ease-in-out 0s alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:myfirst 4s ease-in-out 0s alternate;
+			/* Opera: */
+			-o-animation:myfirst 4s ease-in-out 0s alternate;
+		}
+		.breath
+		{			
+			animation:myfirst 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:myfirst 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:myfirst 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:myfirst 4s ease-in-out infinite alternate;
+		}
+		@keyframes myfirst
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-moz-keyframes myfirst /* Firefox */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-webkit-keyframes myfirst /* Safari and Chrome */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-o-keyframes myfirst /* Opera */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		.breath2
+		{			
+			animation:breathw 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:breathw 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:breathw 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:breathw 4s ease-in-out infinite alternate;
+		}
+		@keyframes breathw
+		{
+			0%   {background:#fff; }
+			50%  {background:red; }
+			100% {background:#fff; }
+		}
+		@-moz-keyframes breathw /* Firefox */
+		{
+			0%   {background:#fff; }
+			50%  {background:red; }
+			100% {background:#fff; }
+		}
+		@-webkit-keyframes breathw /* Safari and Chrome */
+		{
+			0%   {background:#fff; }
+			50%  {background:red; }
+			100% {background:#fff; }
+		}
+		@-o-keyframes breathw /* Opera */
+		{
+			0%   {background:#fff; }
+			50%  {background:red; }
+			100% {background:#fff; }
+		}		
+		.breath1
+		{			
+			animation:breathr 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:breathr 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:breathr 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:breathr 4s ease-in-out infinite alternate;
+		}
+		@keyframes breathr
+		{
+			0%   {background:#fff; }
+			50%  {background:green; }
+			100% {background:#fff; }
+		}
+		@-moz-keyframes breathr /* Firefox */
+		{
+			0%   {background:#fff; }
+			50%  {background:green; }
+			100% {background:#fff; }
+		}
+		@-webkit-keyframes breathr /* Safari and Chrome */
+		{
+			0%   {background:#fff; }
+			50%  {background:green; }
+			100% {background:#fff; }
+		}
+		@-o-keyframes breathr /* Opera */
+		{
+			0%   {background:#fff; }
+			50%  {background:green; }
+			100% {background:#fff; }
+		}
+	</style>
+</head>
+<body>
+	<img id="background" src="background.jpg">
+	<img id="logo" src="logo.png">
+	<div id="header"></div>
+	<h4>Linkedoffer连接你身边的HR  致力于向青年提供互联网职业机会
+		基于连接HR邮箱的社交化招聘   一次申请，十个HR关注，直接领offer
+	</h4>
+	
+	<div id="container">
+	<p>基本信息</p>
+		<form  id="myform" onsubmit="" action="" enctype="" method="post">
+			<div class="inputt">姓名
+				<input onblur="check(this)" type="text" name="name" id="name" placeholder="姓名为必填">
+			</div>
+			<div class="inputt">电话
+				<input onblur="check(this)" type="text" name="phone" placeholder="电话为必填">
+			</div>
+			<div class="inputt">邮箱
+				<input onblur="check(this)" type="text" name="email" placeholder="邮箱为必填">
+			</div>
+			<div class="inputt">学校
+				<input onblur="check(this)" type="text" name="school" placeholder="学校为必填">
+			</div>
+			<div class="inputt">毕业年份
+				<input onblur="check(this)" type="text" name="year" placeholder="(2010~2016),必填">
+			</div>
+			<div class="inputt">应聘岗位类别
+				<select id="GWleibie">
+					<option value="1">技术类</option>
+					<option value="2">产品类</option>
+					<option value="3">设计类</option>
+					<option value="4">市场、商务、销售、运营类</option>
+				</select>
+			</div>
+			<div class="inputt">应聘岗位
+				<select onfocus="changeopt(this);"  onmousedown="changeopt(this);" ontouchstart="changeopt(this);" id="mubiaoGW">
+				</select>
+			</div>
+			<div class="inputt">期待工作的城市类别
+				<select id="CSleibie">
+					<option value="1">北上广深杭</option>
+					<option value="2">其它一线</option>
+					<option value="3">一线外的省会城市</option>
+				</select>
+			</div>
+			<div class="inputt">期待工作城市
+				<select onfocus="changeopt2(this);" onmousedown="changeopt2(this);" ontouchstart="changeopt2(this);" id="mubiaoCS">
+				</select>
+			</div>
+		</form>
+		<p>更多信息</p>
+		<form id="myform" style="height:320px;" onsubmit="" action="" enctype="" method="post">
+			<div class="inputt">期待薪资
+				<input onblur="check(this)" type="text" name="year" placeholder="">
+			</div>
+			<div class="inputt">开始上岗时间
+				<input onblur="check(this)" type="text" name="date" placeholder="例如2016.08.08">
+			</div>
+			<div class="inputt2">应聘岗位类别
+				<select id="GWleibie1">
+					<option value="1">技术类</option>
+					<option value="2">产品类</option>
+					<option value="3">设计类</option>
+					<option value="4">市场、商务、销售、运营类</option>
+				</select>
+			</div>
+			<div class="inputt2">应聘岗位类别
+				<select id="GWleibie2">
+					<option value="1">技术类</option>
+					<option value="2">产品类</option>
+					<option value="3">设计类</option>
+					<option value="4">市场、商务、销售、运营类</option>
+				</select>
+			</div>
+			<div class="inputt2">应聘岗位类别
+				<select id="GWleibie3">
+					<option value="1">技术类</option>
+					<option value="2">产品类</option>
+					<option value="3">设计类</option>
+					<option value="4">市场、商务、销售、运营类</option>
+				</select>
+			</div>
+			<div class="inputt2">应聘岗位
+				<select onfocus="changeopt(this);"  onmousedown="changeopt(this);" ontouchstart="changeopt(this);" id="mubiaoGW1">
+				</select>
+			</div>
+			<div class="inputt2">应聘岗位
+				<select onfocus="changeopt(this);"  onmousedown="changeopt(this);" ontouchstart="changeopt(this);" id="mubiaoGW2">
+				</select>
+			</div>	
+			<div class="inputt2">应聘岗位
+				<select onfocus="changeopt(this);"  onmousedown="changeopt(this);" ontouchstart="changeopt(this);" id="mubiaoGW3">
+				</select>
+			</div>	
+		</form>
+		<p>附件</p>
+		<form id="form1" enctype="multipart/form-data" method="post" action="upload.php">
+			<input style="clear:both" type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
+			<h5>（要求：您可以上传以下格式，如：word、pdf、jpg、png 并且您的文件大小需小于2M）</h5>
+			<div id="fileName"></div>
+			<div id="fileSize"></div>
+			<div id="fileType"></div>
+			<div id="progressNumber"></div>
+		</form>
+		
+		<div id="light" class="breath"></div>
+		<div id="warning"></div>
+		<button type="submit" id="btn" onclick="uploadFile()" onfocus="blankc()" ontouchstart="blankc();" onclick="test()">完成</button>
+	</div>
+</body>
+<script type="text/javascript">
+	window.onscroll = function(){
+    var t = document.body.scrollTop; 
+    var top_header = document.getElementById( "header" );
+    var top_h4 = document.getElementsByTagName( "h4" )[0].offsetHeight+100;
+    console.log(top_h4);
+    if( t >= top_h4 ) {
+        top_header.style.opacity = 1;
+    } else {
+        top_header.style.opacity = 0;
+    }
+}
+var s=document.getElementById("name");
+	document.getElementById("name").focus();
+	document.onkeypress=function(){if (event.keyCode==13)blankc();}
+	function blankc () {
+		var inputs = document.getElementsByTagName("input");
+		for (var i=0; i<inputs.length-1; i++) {
+			if (inputs[i].value==null||inputs[i].value==""){
+				document.getElementById("btn").disabled=true;
+				warning (inputs[i].placeholder ,inputs[i]);
+				inputs[i].focus();
+				break;
+			}
+			else{
+				document.getElementById("btn").disabled=false;
+			}
+		}
+	}
+	function check (obj) {
+		validata(obj);
+		switch (obj.name)
+		{
+			// case "phone":
+			// checkMobile(obj);
+			// break;
+			// case "email":
+			// checkEmail(obj);
+			// break;
+			// case "year":
+			// checkYear(obj);
+			// break;
+			case "date":
+			checkData(obj);
+			break;
+		}
+	}
+	function validata(obj)
+	{
+		if (obj.value==null||obj.value=="")
+		{
+			document.getElementById("btn").disabled=true;
+			warning (obj.placeholder,obj);
+		}
+		else {
+			document.getElementById("btn").disabled=false;
+			flicker(1);
+			clearwar();
+		}
+	}
+	function checkMobile(obj){   
+		var regu =/^1[0-9]{1}[0-9]{9}$/; 
+		var re = new RegExp(regu); 
+		if (re.test(obj.value)) {
+			flicker(1);
+			clearwar();
+		}else{ 
+			warning ("请输入正确的手机号",obj);
+			obj.value="";
+		} 
+	} 
+
+	function checkEmail(obj){  
+		var regu = /^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/; 
+		var re = new RegExp(regu); 
+		if (re.test(obj.value)){
+			flicker(1)
+			clearwar();
+		}else{
+			warning ("请输入正确的邮箱",obj);
+			obj.value="";
+		} 
+	}
+	function checkYear(obj) {
+		var regu =/^201[0-6]{1,1}$/; 
+		var re = new RegExp(regu); 
+		if (re.test(obj.value)) { 
+			flicker(1)
+			clearwar();
+		}else{ 
+			warning ("请输入正确的年份，2010~2016",obj);
+			obj.value="";
+		} 
+	}
+	function checkData(obj) {
+		var regu =/^(\d{4}).(\d{2}).(\d{2})$/; 
+		var re = new RegExp(regu); 
+		if (re.test(obj.value)) { 
+			flicker(1)
+			clearwar();
+		}else{ 
+			warning ("请输入正确的日期，如2016.08.08",obj);
+			obj.value="";
+		} 
+	}
+	function warning (text, obj) {
+		// obj.focus();
+		flicker(2);	
+		document.getElementById("btn").disabled=true;
+		document.getElementById("warning").innerHTML="";
+		var para=document.createElement("p");
+		para.id="warningc"
+		var node=document.createTextNode(text+"");
+		para.appendChild(node);
+		var element=document.getElementById("warning");
+		element.appendChild(para);	
+	}
+	function clearwar () {
+		document.getElementById("btn").disabled=false;
+		document.getElementById("warning").innerHTML="";
+	}
+	function flicker (n) 
+	{
+		document.getElementById('light').setAttribute("class", "breathshut"); 
+		if (n==1) {
+			document.getElementById('light').setAttribute("class", "breath1"); 
+		};
+		if (n==2) {
+			document.getElementById('light').setAttribute("class", "breath2"); 
+		};
+	}
+	function test()
+	{
+		document.getElementById("myform").submit(); 
+		window.location.href = 'fillup2.html';
+	}
+
+	function changeopt (obj) {
+		switch (document.getElementById("GWleibie"+obj.id.slice(8)).value)
+		{
+			case "1":
+			fillmubiao (jishu,obj);
+			var basic=jishulei;
+			break;
+			case "2":
+			fillmubiao (chanpin,obj);
+			var basic=chanpinlei;
+			break;
+			case "3":
+			fillmubiao (sheji,obj);
+			var basic=shejilei;
+			break;
+			case "4":
+			fillmubiao (yunying,obj);
+			var basic=yunyinglei;
+			break;
+		}
+	}
+	function changeopt2 (obj) {
+		switch (document.getElementById("CSleibie").value)
+		{
+			case "1":
+			fillmubiao (yixian,obj);
+			break;
+			case "2":
+			fillmubiao (yixian2,obj);
+			var addi_CS=gongzuochengshi[5];
+			break;
+			case "3":
+			fillmubiao (shenghui,obj);
+			var addi_CS=gongzuochengshi[6];
+			break;
+		}
+	}
+	function fillmubiao (obj,pos) {
+		pos.innerHTML="";
+		for (var i = obj.length - 1; i >= 0; i--) {
+			var para=document.createElement("option");
+			para.value=i;
+			var node=document.createTextNode(obj[i]);
+			para.appendChild(node);
+			var element=pos;
+			element.appendChild(para);
+		};
+	}
+
+	function fileSelected() {
+		var file = document.getElementById('fileToUpload').files[0];
+		if (file) {
+			var fileSize = 0;
+			if (file.size > 1024 * 1024)
+				fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+			else
+				fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+
+			document.getElementById('fileName').innerHTML = 'Name: ' + file.name;
+			document.getElementById('fileSize').innerHTML = 'Size: ' + fileSize;
+			document.getElementById('fileType').innerHTML = 'Type: ' + file.type;
+		}
+	}
+
+	function uploadFile() {
+		var fd = new FormData();
+		fd.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
+		var xhr = new XMLHttpRequest();
+		xhr.upload.addEventListener("progress", uploadProgress, false);
+		xhr.addEventListener("load", uploadComplete, false);
+		xhr.addEventListener("error", uploadFailed, false);
+		xhr.addEventListener("abort", uploadCanceled, false);
+		xhr.open("POST", "UploadMinimal.aspx");
+		xhr.send(fd);
+	}
+
+	function uploadProgress(evt) {
+		if (evt.lengthComputable) {
+			var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+			document.getElementById('progressNumber').innerHTML = percentComplete.toString() + '%';
+		}
+		else {
+			document.getElementById('progressNumber').innerHTML = 'unable to compute';
+		}
+	}
+
+	function uploadComplete(evt) {
+		/* This event is raised when the server send back a response */
+		alert(evt.target.responseText);
+	}
+
+	function uploadFailed(evt) {
+		alert("There was an error attempting to upload the file.");
+	}
+
+	function uploadCanceled(evt) {
+		alert("The upload has been canceled by the user or the browser dropped the connection.");
+	}
+</script>
+</html>

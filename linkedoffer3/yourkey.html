@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>申请成功</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="robots" content="all">
+	<meta name="author" content="Parizus">
+	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
+	<meta name="MSSmartTagsPreventParsing" content="true">
+	<meta http-equiv="imagetoolbar" content="false">
+	<link rel="shortcut icon" href="favicon.ico" type="image/png "> 
+	<link rel="icon" href="favicon.ico" type="image/png "> 
+	<style>
+		body{
+			margin: 0px;
+			background-color: #2D2D2D;
+			color: #DCDDDD;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			overflow-x: hidden;
+			moz-user-select: -moz-none;
+			-moz-user-select: none;
+			-o-user-select:none;
+			-khtml-user-select:none;
+			-webkit-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+		}
+		h4,h5{
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-weight: normal;
+			text-align: center;
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h4{
+			width: 60%;
+			margin-left: 20%;
+			margin-top: 100px;
+			margin-bottom: 60px;
+			font-size: 21px;
+			line-height: 40px;
+			color: #FFF;
+		}
+		h5{	
+			margin-bottom: 30px;
+			font-size: 14px;
+			text-align: center;
+			line-height: 40px;
+			color: #FFF;
+		}
+		h5 a{
+			background-color: transparent;
+			color: #EC8515;
+			text-decoration: none;
+			color: #EC8515;
+		}
+		#logo{
+			width:120px;
+			height:27px;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			z-index: -1;
+		}
+		#background{
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			z-index: -1;
+		}
+		#button{
+			position: absolute;
+			width: 60px;
+			height: 60px;
+			border-radius: 30px;
+			background-color: #ec8515;
+			text-align: center;
+		}
+		#button p{
+			margin: 10px;
+			height: 40px;
+			font-size: 14px;
+			line-height: 20px;
+		}
+		.buttonback{
+			position: absolute;
+			width: 278px;
+			height: 58px;
+			border-radius: 50px;
+			border-color: #ec8515;
+			border-width: 1px;
+			border-style: solid;
+			text-align: center;
+			line-height: 60px;
+			font-size: 24px;
+			outline-style: none;
+			/*border: 0px;*/
+			padding: 0px;
+		}
+		#buttonback2{
+			height: 58px;
+			line-height: 60px;
+			background-color: #B5B5B5;
+		}
+		@media (max-width: 768px){
+			#background{
+				width: 768px;
+			}
+			h4{
+				width: 90%;
+				margin-left: 5%;
+			}
+		}
+		#footi{
+			position: fixed;
+			bottom: 10px;
+			left: 8px;
+			font-size: 14px;
+			color:#a1a1a1;
+		}
+	</style>
+</head>
+<body>
+	<img id="background" src="background.jpg">
+	<img id="logo" src="logo.png">
+
+	<h4>Linkedoffer连接你身边的HR  致力于向青年提供互联网职业机会
+		基于连接HR邮箱的社交化招聘   一次申请，十个HR关注，直接领offer
+	</h4>
+	<input id="buttonback" class="buttonback"></input>
+	<div id="buttonback2" class="buttonback"></div>
+	<div id="button" onmouseover='Move_obj("button")'><p>您的<br/>密钥</p></div>
+	<h5 style="margin-top: 160px;"><a onclick="jsCopy(document.getElementById('buttonback'))" href="#">复制密钥</a></h5>
+	<h5>复制密钥后点击<a href="index.html">返回首页</a></h5>
+</body>
+<script type="text/javascript">
+	window.onresize=function(){location.replace(location);}
+	var w=window.innerWidth
+	|| document.documentElement.clientWidth
+	|| document.body.clientWidth;
+	var code="213123124";
+	document.getElementById("buttonback").value=code;
+	var drag_=false
+	var D=new Function('obj','return document.getElementById(obj);')
+	D("buttonback").style.left=(w-280)/2-10+"px";	
+	D("buttonback2").style.left=(w-280)/2-10+"px";	
+	D("button").style.left=(w+280)/2-58+"px";
+	var oevent=new Function('e','if (!e) e = window.event;return e')
+	function Move_obj(obj){
+		var x,y;
+		D(obj).onmousedown=function(e){
+			drag_=true;
+			with(this){
+				style.position="absolute";
+				var temp1=offsetLeft;
+				x=oevent(e).clientX;
+				document.onmousemove=function(e){
+					if(!drag_)return false;
+					with(this){
+						var x1=temp1+oevent(e).clientX-x;
+console.log(x1);
+						if ((x1>(w-280)/2-10)&&(x1<(w+280)/2-60-10)) {
+							style.left=x1+"px";
+							document.getElementById("buttonback2").style.width=x1-(w-280)/2+58+10+"px";
+						};
+					}
+				}
+			}
+			document.onmouseup=new Function("drag_=false");
+		}
+	}
+	function jsCopy(e){ 
+		e.select(); //选择对象 
+		document.execCommand("Copy"); //执行浏览器复制命令 
+		alert("已复制好，可贴粘。"); 
+	} 
+</script>
+</html>
