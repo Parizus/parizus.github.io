@@ -19,19 +19,17 @@
             width: 100%;
             height: 100%;
             background-color: #fff;
-text-align:center; 
-
-font-size:28px;
-            transition:  2s;
-            -moz-transition: 2s;
-            -webkit-transition:  2s;
-            -o-transition: 2s;     
+            text-align:center;
+            font-size:18px;
+            transition: background-color 2s;
+            -moz-transition: background-color 2s;
+            -webkit-transition: background-color 2s;
+            -o-transition: background-color 2s;     
         }
     </style>
 </head>
-<body>
-<div style="width: 100%; height: 100%; opacity: 0; position:fixed;" onmousedown="Pause()"></div>
-<div id="bg">Tap the creen to pause <br>Tap again to continue <br>By Parizus</div>
+<body ontouchend="Pause()" onkeydown="Pause()">
+<div id="bg">Tap the creen/Press any key to pause <br>Tap/Press again to continue <br>By Parizus</div>
 </body>
 <script type="text/javascript">
     var BG = document.getElementById("bg");
@@ -43,6 +41,7 @@ font-size:28px;
     // setTimeout("BG.innerHTML=''",2000);
     var timer1 = self.setInterval("BG.style.backgroundColor = RandomColor ();",2000);
     function Pause() {
+        BG.style.fontSize="28px";
         if (Pause_state==0) {
             var temp= cal_fontcolor (Pause_color);
             BG.style.color = temp[0];
