@@ -29,16 +29,16 @@ font-size:28px;
         }
     </style>
 </head>
-<body>
-<div id="bg"  onmousedown="Pause ()">Tap the creen to pause <br>Tap again to continue <br>By Parizus</div>
+<body onmousedown="Pause()">
+<div id="bg">Tap the creen to pause <br>Tap again to continue <br>By Parizus</div>
 </body>
 <script type="text/javascript">
     var BG = document.getElementById("bg");
     var Pause_state = 0;
-    var Pause_color = 0;
+    var Pause_color = "#000000";
     setTimeout("BG.innerHTML=''",2000);
     var timer1 = self.setInterval("BG.style.backgroundColor = RandomColor ();",2000);
-    function Pause () {
+    function Pause() {
         if (Pause_state==0) {
             var temp= cal_fontcolor (Pause_color);
             BG.style.color = temp[0];
