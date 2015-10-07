@@ -40,15 +40,18 @@ font-size:28px;
     var timer1 = self.setInterval("BG.style.backgroundColor = RandomColor ();",2000);
     function Pause () {
         if (Pause_state==0) {
+            var temp= cal_fontcolor (Pause_color);
+            BG.style.color = temp[0];
             clearInterval(timer1);
             Pause_state = 1;
-            BG.innerHTML=Pause_color;
+            BG.innerHTML=Pause_color+"<br>"+temp[1];
         } else{
             timer1 = self.setInterval("BG.style.backgroundColor = RandomColor ();",2000);
             Pause_state = 0;
             BG.innerHTML='';
         };
     }
+    // generate a random color in the form of a hex
     function RandomColor () {
         var rand = (Math.random()*1000000000).toString(16);
         console.log(rand);
@@ -57,5 +60,19 @@ font-size:28px;
         console.log(Color);
         return Color;
     }
+    // input a background color in the form of a hex, and return the color's RGB value as well as its proper font color
+    function cal_fontcolor (obj) {
+        var r=parseInt(Pause_color.substr(1, 2), 16);
+        var g=parseInt(Pause_color.substr(3, 2), 16);
+        var b=parseInt(Pause_color.substr(5, 2), 16);
+        var Y=0.299*r + 0.587*g + 0.114*b
+        console.log(r,g,b);
+        if (Y>127) {
+            return ["#000","R:"+r+" G:"+g+" B:"+b];
+        } else{
+            return ["#fff","R:"+r+" G:"+g+" B:"+b];
+        };
+    }
+    
 </script>
 </html>
