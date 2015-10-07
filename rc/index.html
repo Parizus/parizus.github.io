@@ -30,12 +30,13 @@ font-size:28px;
     </style>
 </head>
 <body>
-<div id="bg" onclick="Pause ()">Tap the creen to pause <br>Tap again to continue <br>By Parizus</div>
+<div id="bg">Tap the creen to pause <br>Tap again to continue <br>By Parizus</div>
 </body>
 <script type="text/javascript">
     var BG = document.getElementById("bg");
     var Pause_state = 0;
     var Pause_color = 0;
+    document.addEventListener('click',Pause ());
     setTimeout("BG.innerHTML=''",2000);
     var timer1 = self.setInterval("BG.style.backgroundColor = RandomColor ();",2000);
     function Pause () {
