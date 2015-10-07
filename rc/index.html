@@ -7,7 +7,7 @@
     <title>Random Color</title>
     <link rel="stylesheet" href="./normalize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-height, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-height, initial-scale=1.0"> -->
     <style type="text/css">
         html {
             height: 100%;
@@ -29,14 +29,18 @@ font-size:28px;
         }
     </style>
 </head>
-<body onmousedown="Pause()">
+<body>
+<div style="width: 100%; height: 100%; opacity: 0; position:fixed;" onmousedown="Pause()"></div>
 <div id="bg">Tap the creen to pause <br>Tap again to continue <br>By Parizus</div>
 </body>
 <script type="text/javascript">
     var BG = document.getElementById("bg");
     var Pause_state = 0;
     var Pause_color = "#000000";
-    setTimeout("BG.innerHTML=''",2000);
+    BG.style.backgroundColor = RandomColor ();
+    var temp= cal_fontcolor (Pause_color);
+    BG.style.color = temp[0];
+    // setTimeout("BG.innerHTML=''",2000);
     var timer1 = self.setInterval("BG.style.backgroundColor = RandomColor ();",2000);
     function Pause() {
         if (Pause_state==0) {
