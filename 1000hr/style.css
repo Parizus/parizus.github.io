@@ -51,32 +51,6 @@ a,.block{
     margin: 0px;
     float: left;
 }
-
-@media screen and (max-width: 600px) {
-    .discribe{
-        width: 96%;  
-        margin-left: 2%;   
-    }
-    #logo{
-        width: 90%;
-        margin-left: 5%;  
-        margin-bottom: 50px;
-    }
-    #r1{
-        margin-left: 6%;
-    }
-    .role{
-        width:30%;
-        margin-left: 35%;
-    }
-    #page_1 .role{
-        width:18%;
-        margin-left: 1%;
-    }
-    #page_1 #r1{
-        margin-left: 3%;
-    }
-}
 ul{
     padding: 0px; 
 }
@@ -107,6 +81,32 @@ h1{
 }
 #page_1 #r1{
     margin-left: 10%;
+}
+
+@media screen and (max-width: 600px) {
+    .discribe{
+        width: 96%;  
+        margin-left: 2%;   
+    }
+    #logo{
+        width: 90%;
+        margin-left: 5%;  
+        margin-bottom: 50px;
+    }
+    #r1{
+        margin-left: 6%;
+    }
+    .role{
+        width:30%;
+        margin-left: 35%;
+    }
+    #page_1 .role{
+        width:18%;
+        margin-left: 1%;
+    }
+    #page_1 #r1{
+        margin-left: 3%;
+    }
 }
 #page_2{
     padding-top:100px;
