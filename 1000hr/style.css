@@ -16,7 +16,7 @@ a,.block{
     -o-transition: 1s;
 }
 .block{
-    width:80px;
+    width:60px;
     float: right;
     line-height: 50px;
     text-align: center;
