@@ -62,6 +62,20 @@ a,.block{
         margin-left: 5%;  
         margin-bottom: 50px;
     }
+    #r1{
+        margin-left: 6%;
+    }
+    .role{
+        width:30%;
+        margin-left: 35%;
+    }
+    #page_1 .role{
+        width:18%;
+        margin-left: 1%;
+    }
+    #page_1 #r1{
+        margin-left: 3%;
+    }
 }
 ul{
     padding: 0px; 
@@ -114,22 +128,6 @@ h1{
     text-align: center;
     line-height:50px;
     border-radius: 5px;
-}
-@media screen and (max-width: 600px) {
-    #r1{
-        margin-left: 6%;
-    }
-    .role{
-        width:30%;
-        margin-left: 35%;
-    }
-    #page_1 .role{
-        width:18%;
-        margin-left: 1%;
-    }
-    #page_1 #r1{
-        margin-left: 3%;
-    }
 }
 .role a{
     color: #1889C5;
