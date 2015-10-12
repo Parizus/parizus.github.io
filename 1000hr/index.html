@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <title>加入我们</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+    <meta http-equiv="Content-Language" content="zh-cn">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="robots" content="all">
+    <meta name="author" content="Parizus">
+    <meta name="Copyright" content="Copyright QNXG All Rights Reserved.">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta http-equiv="imagetoolbar" content="false">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="jquery-1.7.2.min.js"></script> 
@@ -284,9 +292,9 @@
         var top_page_1 = document.getElementById( "page_1" ).offsetHeight;
         console.log(top_page_1);
         if( t >= top_page_1 ) {
-            top_header.style.opacity = 1;
+            top_header.style.top = "0";
         } else {
-            top_header.style.opacity = 0;
+            top_header.style.top = "-50px";
         }
     }
     $(function(){ 
