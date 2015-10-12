@@ -116,7 +116,7 @@ h1{
     border-radius: 5px;
 }
 @media screen and (max-width: 600px) {
-    #h2333{
+    #r1{
         margin-left: 6%;
     }
     .role{
@@ -127,7 +127,7 @@ h1{
         width:18%;
         margin-left: 1%;
     }
-    #page_1 #h2333{
+    #page_1 #r1{
         margin-left: 3%;
     }
 }
