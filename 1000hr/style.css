@@ -83,6 +83,31 @@ h1{
 #page_1 #r1{
     margin-left: 10%;
 }
+#page_2{
+    padding-top:100px;
+    background-color: #8058a5;
+    color: white;
+    padding-bottom: 30px;
+}
+.rolelist{
+    max-width:1440px;
+    margin-top: 50px;
+    height: 100px;
+}
+.role{
+    height: 50px;
+    background-color: #fff;
+    width:14%;
+    margin-left: 43%;
+    float:left;
+    text-align: center;
+    line-height:50px;
+    border-radius: 5px;
+}
+.role a{
+    color: #1889C5;
+    font-weight: bold;
+}
 
 @media screen and (max-width: 600px) {
     .discribe{
@@ -108,31 +133,6 @@ h1{
     #page_1 #r1{
         margin-left: 3%;
     }
-}
-#page_2{
-    padding-top:100px;
-    background-color: #8058a5;
-    color: white;
-    padding-bottom: 30px;
-}
-.rolelist{
-    max-width:1440px;
-    margin-top: 50px;
-    height: 100px;
-}
-.role{
-    height: 50px;
-    background-color: #fff;
-    width:14%;
-    margin-left: 43%;
-    float:left;
-    text-align: center;
-    line-height:50px;
-    border-radius: 5px;
-}
-.role a{
-    color: #1889C5;
-    font-weight: bold;
 }
 #page_3{
     padding-top:100px;
