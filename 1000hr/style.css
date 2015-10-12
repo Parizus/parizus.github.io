@@ -1,0 +1,324 @@
+a,.block{
+    text-decoration: none; 
+    font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    color: white;
+}
+#header{
+    position: fixed;
+    width: 100%;
+    height:50px;
+    background-color: #42474B;
+    opacity: 0;
+    transition:  1s;
+    -moz-transition: 1s;
+    -webkit-transition:  1s;
+    -o-transition: 1s;
+}
+.block{
+    width:80px;
+    float: right;
+    line-height: 50px;
+    text-align: center;
+    opacity: 1;
+    transition: all 0.3s linear;
+}
+.block:hover{
+    color: white;
+    border-bottom: solid;
+    border-width: 2px;
+}
+#page_1{
+    padding-top:50px;
+    background-color: #1889C5;
+    color: white;
+}
+#logo{
+    width: 50%;
+    margin-left: 25%;  
+    margin-bottom: 50px;
+}
+.discribe{
+    width: 60%;
+    margin-left: 20%;     
+}
+.discribe ul{
+    text-align: center;   
+}
+.discribe div{
+    /*height: 30px;*/
+    width: 25%; 
+    margin: 0px;
+    float: left;
+}
+
+@media screen and (max-width: 600px) {
+    .discribe{
+        width: 96%;  
+        margin-left: 2%;   
+    }
+    #logo{
+        width: 90%;
+        margin-left: 5%;  
+        margin-bottom: 50px;
+    }
+}
+ul{
+    padding: 0px; 
+}
+li {
+    list-style: none;
+    line-height: 40px;
+    font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+    font-size: 16px;
+}
+h1{
+    font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    text-align: center;
+    font-size:24px;
+}
+#page_1 #rolelist{
+    max-width:1440px;
+    margin-top: 50px;
+    height: 100px;
+}
+#page_1 .role{
+    width:14%;
+    margin-left: 2%;
+}
+#page_1 .role a{
+    color: #1889C5;
+    font-weight: bold;
+}
+#page_1 #r1{
+    margin-left: 10%;
+}
+#page_2{
+    padding-top:100px;
+    background-color: #8058a5;
+    color: white;
+    padding-bottom: 30px;
+}
+.rolelist{
+    max-width:1440px;
+    margin-top: 50px;
+    height: 100px;
+}
+.role{
+    height: 50px;
+    background-color: #fff;
+    width:14%;
+    margin-left: 43%;
+    float:left;
+    text-align: center;
+    line-height:50px;
+    border-radius: 5px;
+}
+@media screen and (max-width: 600px) {
+    #h2333{
+        margin-left: 6%;
+    }
+    .role{
+        width:30%;
+        margin-left: 35%;
+    }
+    #page_1 .role{
+        width:18%;
+        margin-left: 1%;
+    }
+    #page_1 #h2333{
+        margin-left: 3%;
+    }
+}
+.role a{
+    color: #1889C5;
+    font-weight: bold;
+}
+#page_3{
+    padding-top:100px;
+    background-color: #f37b1d;
+    color: white;
+    padding-bottom: 30px;
+}
+
+#page_4{
+    padding-top:100px;
+    background-color: #5eb95e;
+    color: white;
+    padding-bottom: 30px;
+}
+
+#page_5{
+    padding-top:100px;
+    background-color: #96BE4E;
+    color: white;
+    padding-bottom: 30px;
+}
+
+#page_6{
+    padding-top:100px;
+    background-color: #dd514c;
+    color: white;
+    padding-bottom: 30px;
+}
+#page_7{
+    padding-top:100px;
+    background-color: #1889C5;
+    color: white;
+}
+input{
+    width: 70%;
+    height: 20px;
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #666666;
+}
+select{
+    width: 70%;
+    height: 30px;
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
+    color: #666666;
+}
+input:focus{
+    outline-style: none;
+}
+#light{
+    width:10px;
+    height:10px;
+    border-radius: 5px;
+    background:#2D2D2D;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position:relative;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+#warning{
+    margin-top: 10px;
+    font-family: "微软雅黑",Arial,Helvetica,sans-serif;elvetica,sans-serif;
+}
+#warningc{
+    margin-top: 10px;
+    margin: 0px;
+    font-family: "微软雅黑",Arial,Helvetica,sans-serif;elvetica,sans-serif;
+    text-align: center;
+}
+button {
+  border: none;
+}
+.breathshut{
+    animation:myfirst 4s ease-in-out 0s alternate;
+    /* Firefox: */
+    -moz-animation:myfirst 4s ease-in-out 0s alternate;
+    /* Safari and Chrome: */
+    -webkit-animation:myfirst 4s ease-in-out 0s alternate;
+    /* Opera: */
+    -o-animation:myfirst 4s ease-in-out 0s alternate;
+}
+.breath
+{           
+    animation:myfirst 4s ease-in-out infinite alternate;
+    /* Firefox: */
+    -moz-animation:myfirst 4s ease-in-out infinite alternate;
+    /* Safari and Chrome: */
+    -webkit-animation:myfirst 4s ease-in-out infinite alternate;
+    /* Opera: */
+    -o-animation:myfirst 4s ease-in-out infinite alternate;
+}
+@keyframes myfirst
+{
+    0%   {background:#1889C5; }
+    50%  {background:white; }
+    100% {background:#1889C5; }
+}
+@-moz-keyframes myfirst /* Firefox */
+{
+    0%   {background:#1889C5; }
+    50%  {background:white; }
+    100% {background:#1889C5; }
+}
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+    0%   {background:#1889C5; }
+    50%  {background:white; }
+    100% {background:#1889C5; }
+}
+@-o-keyframes myfirst /* Opera */
+{
+    0%   {background:#1889C5; }
+    50%  {background:white; }
+    100% {background:#1889C5; }
+}
+.breath2
+{           
+    animation:breathw 4s ease-in-out infinite alternate;
+    /* Firefox: */
+    -moz-animation:breathw 4s ease-in-out infinite alternate;
+    /* Safari and Chrome: */
+    -webkit-animation:breathw 4s ease-in-out infinite alternate;
+    /* Opera: */
+    -o-animation:breathw 4s ease-in-out infinite alternate;
+}
+@keyframes breathw
+{
+    0%   {background:#1889C5; }
+    50%  {background:red; }
+    100% {background:#1889C5; }
+}
+@-moz-keyframes breathw /* Firefox */
+{
+    0%   {background:#1889C5; }
+    50%  {background:red; }
+    100% {background:#1889C5; }
+}
+@-webkit-keyframes breathw /* Safari and Chrome */
+{
+    0%   {background:#1889C5; }
+    50%  {background:red; }
+    100% {background:#1889C5; }
+}
+@-o-keyframes breathw /* Opera */
+{
+    0%   {background:#1889C5; }
+    50%  {background:red; }
+    100% {background:#1889C5; }
+}       
+.breath1
+{           
+    animation:breathr 4s ease-in-out infinite alternate;
+    /* Firefox: */
+    -moz-animation:breathr 4s ease-in-out infinite alternate;
+    /* Safari and Chrome: */
+    -webkit-animation:breathr 4s ease-in-out infinite alternate;
+    /* Opera: */
+    -o-animation:breathr 4s ease-in-out infinite alternate;
+}
+@keyframes breathr
+{
+    0%   {background:#1889C5; }
+    50%  {background:green; }
+    100% {background:#1889C5; }
+}
+@-moz-keyframes breathr /* Firefox */
+{
+    0%   {background:#1889C5; }
+    50%  {background:green; }
+    100% {background:#1889C5; }
+}
+@-webkit-keyframes breathr /* Safari and Chrome */
+{
+    0%   {background:#1889C5; }
+    50%  {background:green; }
+    100% {background:#1889C5; }
+}
+@-o-keyframes breathr /* Opera */
+{
+    0%   {background:#1889C5; }
+    50%  {background:green; }
+    100% {background:#1889C5; }
+}

@@ -1,0 +1,21 @@
+$(function(){
+var $jobs = $('#hr .content-btn-in_1');
+$jobs.click(function() {
+    if ($(this).hasClass("selected")) {
+        $(this).removeClass("selected");
+    } else {
+        $(this).addClass("selected");
+    }
+
+    var $this = $(this);
+    var values = '';
+    $jobs.each(function() {
+        values += ($(this).hasClass("selected") ? '1' : '0');
+    });
+    if (values == '111111') {
+        alert("选这么多真的好吗？如果你真的多才多艺那也是可以的咯~");
+    }
+    $("#jobs").attr('value', values);
+});
+
+});
