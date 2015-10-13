@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>请输入密钥</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="robots" content="all">
+	<meta name="author" content="Parizus">
+	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
+	<meta name="MSSmartTagsPreventParsing" content="true">
+	<meta http-equiv="imagetoolbar" content="false">
+	<link href="main.css" rel="stylesheet" type="text/css"/>
+	<script src="data.js"></script>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?f5c49d861e5d51cf04e8d1ce078b018f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+	<style>
+		body{
+			margin: 0px;
+			background-color: #2D2D2D;
+			overflow-x: hidden;
+			color: #DCDDDD;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			moz-user-select: -moz-none;
+			-moz-user-select: none;
+			-o-user-select:none;
+			-khtml-user-select:none;
+			-webkit-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+		}
+		#logo{
+			position: fixed;
+			width:120px;
+			height:27px;
+			top: 10px;
+			left: 10px;
+			z-index: 1;
+		}
+		#background{
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			z-index: -1;
+		}
+		#header{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			height: 50px;
+			width: 100%;
+			background-color: #2D2D2D;
+			transition:  1s;
+			-moz-transition: 1s;
+			-webkit-transition:  1s;
+			-o-transition: 1s;
+		}
+		h4,h5{
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-weight: normal;
+			text-align: center;
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h4{
+			width: 60%;
+			margin-left: 20%;
+			margin-top: 100px;
+			margin-bottom: 60px;
+			font-size: 21px;
+			line-height: 40px;
+			color: #fff;
+		}
+		p{
+			margin: 0px;
+			text-align: center;
+			font-size: 14px;
+			font-weight: lighter;
+		}
+		#logo{
+			position: fixed;
+			width:120px;
+			height:27px;
+			top: 10px;
+			left: 10px;
+			z-index: 1;
+		}
+		#background{
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			z-index: -1;
+		}
+		#container{
+			height: 400px;
+		}
+		#container h4{
+			color: #EC8515;	
+			margin-top: 30px;		
+		}
+		@media (max-width: 768px){
+			#background{
+				width: 768px;
+			}
+			#container{
+				height: 300px;
+				border-width: 80px;
+			}
+			h4,ul,li{
+				width: 90%;
+				margin-left: 5%;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<img id="background" src="background.jpg">
+	<img id="logo" src="logo.png">
+	<div id="header"></div>
+	<h4>Linkedoffer连接你身边的HR，致力于向青年提供互联网职业机会<br/>基于连接HR邮箱的社交化招聘，一次申请，十个HR关注，直接领offer
+	</h4>
+	
+	<div id="container"> 
+		
+		<h4>&nbsp;&nbsp;提交成功！</h4>
+		<h5>请您保持关注您的邮箱！我们会在2个工作日内通知您审核结果。一旦通过审核，您将会受到各大HR的关注。</h5>
+		<h5>一旦有HR关注您的资料和简历，我们会第一时间通过邮箱通知您。（内含公司资料和HR邮箱。）</h5>
+	</div>
+</body>
+<script type="text/javascript">
+	window.onscroll = function(){
+		if (document.body && document.body.scrollTop)
+		{
+			t=document.body.scrollTop; 
+		}
+		if (document.documentElement && document.documentElement.scrollTop)
+		{
+			t=document.documentElement.scrollTop;
+		}
+		var top_header = document.getElementById( "header" );
+		var top_h4 = document.getElementsByTagName( "h4" )[0].offsetHeight+100;
+		console.log(top_h4);
+		console.log(t);
+		if( t >= top_h4 ) {
+			top_header.style.opacity = 1;
+		} else {
+			top_header.style.opacity = 0;
+		}
+	}
+</script>
+</html>

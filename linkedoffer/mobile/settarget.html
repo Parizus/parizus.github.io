@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>你想知道自己五年后拿多少薪水么？点击开始测试！</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta name="Description" content="Linkedoffer，连接你身边的HR致力于向青年提供互联网职业机会，基于连接HR邮箱的社交化招聘。">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="robots" content="all">
+	<meta name="author" content="Parizus">
+	<meta name="Copyright" content="Copyright linkedoffer All Rights Reserved.">
+	<meta name="MSSmartTagsPreventParsing" content="true">
+	<meta http-equiv="imagetoolbar" content="false">
+	<link href="main.css" rel="stylesheet" type="text/css"/>
+	<script src="data.js"></script>
+	<script src="echarts-all.js"></script>
+	<link rel="shortcut icon" href="favicon.ico" type="image/png "> 
+	<link rel="icon" href="favicon.ico" type="image/png "> <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?f5c49d861e5d51cf04e8d1ce078b018f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+	<style type="text/css">
+		#myform{
+			margin-top: 20px;
+		}
+		#box{
+			width: 100%;
+			margin-top: 20px;
+			border-radius: 8px;
+			background-color: #fff;
+			/*display: none;*/
+			overflow: scroll;
+		}
+		@media screen and (max-device-width: 600px){ 
+			#main{
+				width: 600px;
+			}
+		}
+		select {
+			width: 75%;
+			height: 40px;
+			/*height: 20px;*/
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 5px;
+			border: 0px;
+			border-radius: 0px 8px 8px 0px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-size: 14px;
+			line-height: 20px;
+			overflow:hidden;
+			background-color: #D6D6D6;
+			color: #3e3a39;
+			float: right;
+		}
+		select:focus{
+			outline-style: none;
+		}
+		h4,h5{
+			font-family: "微软雅黑";
+			font-weight: normal;
+			/*text-align: center;*/
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h4{
+			font-size: 16px;
+			margin-top: 20px;
+		}	
+		textarea{
+			width: 100%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 8px;
+			padding-right: 0px;
+			border: 0px;
+			border-radius: 8px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+			font-size: 14px;
+			line-height:1.5;
+			overflow:hidden;
+			background-color: #595757;
+			color: #FFF;
+			float: right;
+			resize : none;
+		}
+		textarea:first-child{/*
+			width: 75%;
+			height: 20px;
+			border-radius: 0px 8px 8px 0px;
+			margin: 0px;
+			padding-left: 5px;
+			background-color: #D6D6D6;*/
+		}
+		button{
+			margin-top: 50px;
+		}
+		#light{
+			width:10px;
+			height:10px;
+			border-radius: 5px;
+			background:#2D2D2D;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			position:relative;
+			margin-right: auto;
+			margin-left: auto;
+			text-align: center;
+		}
+		#warning{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+		}
+		#warningc{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+		}
+		.breathshut{
+			animation:myfirst 4s ease-in-out 0s alternate;
+			/* Firefox: */
+			-moz-animation:myfirst 4s ease-in-out 0s alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:myfirst 4s ease-in-out 0s alternate;
+			/* Opera: */
+			-o-animation:myfirst 4s ease-in-out 0s alternate;
+		}
+		.breath
+		{			
+			animation:myfirst 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:myfirst 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:myfirst 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:myfirst 4s ease-in-out infinite alternate;
+		}
+		@keyframes myfirst
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-moz-keyframes myfirst /* Firefox */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-webkit-keyframes myfirst /* Safari and Chrome */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		@-o-keyframes myfirst /* Opera */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:white; }
+			100% {background:#2D2D2D; }
+		}
+		.breath2
+		{			
+			animation:breathw 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:breathw 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:breathw 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:breathw 4s ease-in-out infinite alternate;
+		}
+		@keyframes breathw
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}
+		@-moz-keyframes breathw /* Firefox */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}
+		@-webkit-keyframes breathw /* Safari and Chrome */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}
+		@-o-keyframes breathw /* Opera */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:red; }
+			100% {background:#2D2D2D; }
+		}		
+		.breath1
+		{			
+			animation:breathr 4s ease-in-out infinite alternate;
+			/* Firefox: */
+			-moz-animation:breathr 4s ease-in-out infinite alternate;
+			/* Safari and Chrome: */
+			-webkit-animation:breathr 4s ease-in-out infinite alternate;
+			/* Opera: */
+			-o-animation:breathr 4s ease-in-out infinite alternate;
+		}
+		@keyframes breathr
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+		@-moz-keyframes breathr /* Firefox */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+		@-webkit-keyframes breathr /* Safari and Chrome */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+		@-o-keyframes breathr /* Opera */
+		{
+			0%   {background:#2D2D2D; }
+			50%  {background:green; }
+			100% {background:#2D2D2D; }
+		}
+
+	</style>
+</head>
+<body>
+	<div style="display:none;"><img src="weixinpic.png" ></div>
+	<img id="arrow" onclick="hidearrow()" src="arrow.png">
+	
+
+	<form  id="myform" onsubmit="" action="" enctype="" method="post">
+		<div class="inputt">岗位类别
+			<select id="GWleibie">
+				<option value="1">技术类</option>
+				<option value="2">产品类</option>
+				<option value="3">设计类</option>
+				<option value="4">市场、商务、销售、运营类</option>
+			</select>
+		</div>
+		<div class="inputt">目标岗位
+			<select onfocus="changeopt(this);" ontouchstart="changeopt(this);" id="mubiaoGW">
+			</select>
+		</div>
+		<div class="inputt">城市类别
+			<select id="CSleibie">
+				<option value="1">北上广深杭</option>
+				<option value="2">其它一线</option>
+				<option value="3">一线外的省会城市</option>
+			</select>
+		</div>
+		<div class="inputt">目标城市
+			<select onfocus="changeopt2(this);" ontouchstart="changeopt2(this);" id="mubiaoCS">
+			</select>
+		</div>
+		<div class="inputt">目标企业
+			<select id="mubiaoQY">
+				<option value="0">已上市</option>
+				<option value="1">成熟型</option>
+				<option value="2">成长型</option>
+				<option value="3">初创型</option>
+			</select>
+		</div>
+		<div class="inputt">学历
+			<select id="XL">
+				<option value="0">博士</option>
+				<option value="1">硕士</option>
+				<option value="2">本科</option>
+				<option value="3">专科</option>
+			</select>
+		</div>		
+		<div class="inputt">相关经历
+			<select id="JL">
+				<option value="0">互联网企业实习经历</option>
+				<option value="1">校园项目经历</option>
+				<option value="2">校外项目经历</option>
+				<option value="3">创业经历</option>
+			</select>
+		</div>
+		<div id="pieces1" style="display:none;padding-left: 8px;" >
+			<textarea name="" id="" cols="30" rows="6" placeholder="相关描述及您所负责的部分（例：linkedoffer互联网校园垂直招聘平台：php程序员，负责产品后端开发工作）"></textarea>
+		</div>
+	</form>
+	<button type="submit" id="btn" onclick="calsalary ()">提交</button>
+	<h4 id="tit" style="display:none;">您毕业之后五年内的月薪和所选岗位的平均薪酬：</h4>
+	<div id="box" style="display:none;">
+		<div id="main" style="height:400px"></div>
+	</div>
+	<button type="submit" id="btn2" style="width: 180px;display:none;" onclick="test ()">一键开启互联网招聘</button>
+	<div id="footi" style="margin-top:180px;" onclick="showarrow()">点击此处进行<font color="#EC8515">分享</font>，一起拿offer一起飞~
+		<a href="qanda.html">&nbsp;&nbsp;&nbsp;?&nbsp;&nbsp;&nbsp;</a>
+	</div>
+</body>
+<script>
+	console.log(document.getElementsByTagName('meta')["Description"].content);
+	console.log(document.getElementsByTagName('meta')["Copyright"].content);
+	var a=0;
+	function show (obj) {
+		document.getElementById(obj).style.display="block";
+	}
+	function hide (obj) {
+		document.getElementById(obj).style.display="none";
+	}
+	hide('tit');hide('box');hide('btn2');
+	function changeopt (obj) {
+		switch (document.getElementById("GWleibie").value)
+		{
+			case "1":
+			fillmubiao (jishu,obj);
+			var basic=jishulei;
+			break;
+			case "2":
+			fillmubiao (chanpin,obj);
+			var basic=chanpinlei;
+			break;
+			case "3":
+			fillmubiao (sheji,obj);
+			var basic=shejilei;
+			break;
+			case "4":
+			fillmubiao (yunying,obj);
+			var basic=yunyinglei;
+			break;
+		}
+	}
+	function changeopt2 (obj) {
+		switch (document.getElementById("CSleibie").value)
+		{
+			case "1":
+			fillmubiao (yixian,obj);
+			break;
+			case "2":
+			fillmubiao (yixian2,obj);
+			var addi_CS=gongzuochengshi[5];
+			break;
+			case "3":
+			fillmubiao (shenghui,obj);
+			var addi_CS=gongzuochengshi[6];
+			break;
+		}
+	}
+	function fillmubiao (obj,pos) {
+		pos.innerHTML="";
+		for (var i = obj.length - 1; i >= 0; i--) {
+			var para=document.createElement("option");
+			para.value=i;
+			var node=document.createTextNode(obj[i]);
+			para.appendChild(node);
+			var element=pos;
+			element.appendChild(para);
+		};
+	}
+	function calsalary () {
+		hide('myform');hide('btn');show('btn2');show('box');show('tit');
+		a=1;
+		switch (document.getElementById("GWleibie").value)
+		{
+			case "1":
+			var basic=jishulei;
+			break;
+			case "2":
+			var basic=chanpinlei;
+			break;
+			case "3":
+			var basic=shejilei;
+			break;
+			case "4":
+			var basic=yunyinglei;
+			break;
+		};
+		switch (document.getElementById("CSleibie").value)
+		{
+			case "1":{
+				var addi_CS=gongzuochengshi[document.getElementById("mubiaoCS").value];
+			}
+			break;
+			case "2":
+			var addi_CS=gongzuochengshi[5];
+			break;
+			case "3":
+			var addi_CS=gongzuochengshi[6];
+			break;
+		};
+		var basic_GW=basic[document.getElementById("mubiaoGW").value];
+		var addi_QY=mobiaoqiye[document.getElementById("mubiaoQY").value];
+		
+		var addi_XL=xueli[document.getElementById("XL").value];
+		
+		var addi_JL=xiangguanjingli[document.getElementById("JL").value];
+		var salary=[0,0,0,0,0,0];
+		for (var i = salary.length - 1; i >= 0; i--) {
+			salary[i]=basic_GW[i]+addi_CS[i]+addi_QY[i]+addi_XL[i]+addi_JL[i];
+			salary[i]=salary[i].toFixed(2);
+		};		
+		graph (salary[0],salary[1],salary[2],salary[3],salary[4],salary[5],basic_GW[0],basic_GW[1],basic_GW[2],basic_GW[3],basic_GW[4],basic_GW[5]);
+		document.title="我5年后的月薪是"+salary[5]+"，超过了平均薪资"+((salary[5]-basic_GW[5])/basic_GW[5]*100).toFixed(2)+"%，点此测试！";
+		console.log(basic_GW);
+		document.getElementById("btn").disabled=true;
+		document.getElementById("footi").style.marginTop="70px";		
+	}
+	function graph (a0,a1,a2,a3,a4,a5,b0,b1,b2,b3,b4,b5) {
+		console.log(a0,b0);		
+		var myChart = echarts.init(document.getElementById('main')); 
+		var option = {
+			tooltip : {
+				trigger: 'axis'
+			},
+			legend: {
+				data:['预测工资','该岗位平均工资']
+			},
+			calculable : true,
+			xAxis : [
+			{
+				type : 'category',
+				boundaryGap : false,
+				data : ['初始工资','第一年','第二年','第三年','第四年','第五年',]
+			}
+			],
+			yAxis : [
+			{
+				type : 'value',
+				axisLabel : {
+					formatter: '{value}元'
+				}
+			}
+			],
+			series : [
+			{
+				name:'预测工资',
+				type:'line',
+				data:[a0, a1, a2, a3, a4, a5, ],
+			},
+			{
+				name:'该岗位平均工资',
+				type:'line',
+				data:[b0, b1, b2, b3, b4, b5, ],
+			},
+			]
+		};
+		myChart.setOption(option); 
+	};
+	function showarrow () {
+		document.getElementById("arrow").style.display="block";
+		if (a==0) {
+			document.title="你想知道自己五年后拿多少薪水么？点击开始测试！";
+		};
+	}
+	function hidearrow () {
+		document.getElementById("arrow").style.display="none";
+	}
+	function show (obj) {
+		document.getElementById(obj).style.display="block";
+	}
+	function hide (obj) {
+		document.getElementById(obj).style.display="none";
+	}
+
+	function test()
+	{
+		document.getElementById("myform").submit(); 
+		window.location.href = 'getkeys.html';
+	}
+</script>
+</html>
