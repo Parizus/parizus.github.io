@@ -266,25 +266,25 @@ button {
 @keyframes breathw
 {
     0%   {background:#1889C5; }
-    50%  {background:red; }
+    50%  {background:yellow; }
     100% {background:#1889C5; }
 }
 @-moz-keyframes breathw /* Firefox */
 {
     0%   {background:#1889C5; }
-    50%  {background:red; }
+    50%  {background:yellow; }
     100% {background:#1889C5; }
 }
 @-webkit-keyframes breathw /* Safari and Chrome */
 {
     0%   {background:#1889C5; }
-    50%  {background:red; }
+    50%  {background:yellow; }
     100% {background:#1889C5; }
 }
 @-o-keyframes breathw /* Opera */
 {
     0%   {background:#1889C5; }
-    50%  {background:red; }
+    50%  {background:yellow; }
     100% {background:#1889C5; }
 }       
 .breath1
