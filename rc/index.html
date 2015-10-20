@@ -15,24 +15,42 @@
         body {
             height: 100%;
         }
-        #bg{
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
+        #describe{
             text-align:center;
-            font-size:18px;
+            font-size:18px;  
+            height: 100px;
+            font-family: Microsoft YaHei,proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        #bg{
+            width: 38%;
+            margin-left: 31%;
+            border: 10px  #fff; 
+            background-color: #fff;
+            border: 10px solid #fff;
             transition: background-color 2s;
             -moz-transition: background-color 2s;
             -webkit-transition: background-color 2s;
-            -o-transition: background-color 2s;     
+            -o-transition: background-color 2s;  
+        }
+        .fill{
+            width: 100%;
+            height: 100%;
+            position: absolute;
         }
     </style>
 </head>
 <body ontouchend="Pause()" onkeydown="Pause()">
-<div id="bg">Tap the screen/Press any key to pause <br>Tap/Press again to continue <br>By Parizus</div>
+    <div id="describe">Tap the screen/Press any key to pause <br>Tap/Press again to continue <br>By Parizus</div>
+    <div id="bg"></div>    
+    <div class="fill" style="background: linear-gradient(120deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -8; padding: 0px;"></div>
+    <div class="fill" style="opacity:0.3; background: linear-gradient(240deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -7; padding: 0px;"></div>
 </body>
 <script type="text/javascript">
+    window.onload=function(){quadrate ('bg')};
+    window.onresize=function(){quadrate ('bg')};
+
     var BG = document.getElementById("bg");
+    var desc = document.getElementById("describe");
     var Pause_state = 0;
     var Pause_color = "#000000";
     BG.style.backgroundColor = RandomColor ();
@@ -40,18 +58,23 @@
     BG.style.color = temp[0];
     // setTimeout("BG.innerHTML=''",2000);
     var timer1 = self.setInterval("BG.style.backgroundColor = RandomColor ();",2000);
+    function quadrate (obj) {
+        o = document.getElementById(obj)
+        o.style.height = o.offsetWidth-20+"px";
+        o.style.borderRadius = o.offsetWidth+"px";
+    }
     function Pause() {
         BG.style.fontSize="28px";
         if (Pause_state==0) {
             var temp= cal_fontcolor (Pause_color);
-            BG.style.color = temp[0];
+            desc.style.color = temp[0];
             clearInterval(timer1);
             Pause_state = 1;
-            BG.innerHTML=Pause_color+"<br>"+temp[1];
+            desc.innerHTML=Pause_color+"<br>"+temp[1];
         } else{
             timer1 = self.setInterval("BG.style.backgroundColor = RandomColor ();",2000);
             Pause_state = 0;
-            BG.innerHTML='';
+            desc.innerHTML='';
         };
     }
     // generate a random color in the form of a hex
