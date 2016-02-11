@@ -1,207 +1,186 @@
 <!DOCTYPE html>
+<!-- saved from url=(0024)http://contact.qnxg.net/ -->
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Random Color</title>
+    <link rel="stylesheet" href="./normalize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-height, initial-scale=1.0"> -->
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        }
+        #describe{
+            z-index: 1;
+            text-align:center;
+            font-size:18px;  
+            height: 100px;
+            font-family: Microsoft YaHei,proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        #b_ring,#g_ring,#r_ring,#bgc,#bg{
+            z-index: -1;
+            width: 38%;
+            max-width:  400px;
+            position: absolute;
+            border: 10px  #fff; 
+            /*background-color: #fff;*/
+            transition: background-color 2s,transform 2s;;
+            -moz-transition: background-color 2,stransform 2s;;
+            -webkit-transition: background-color 2,stransform 2s;;
+            -o-transition: background-color 2,stransform 2s;;  
+        }
+        #bg{            
+            height: 72%;
+            width: 72%;
+            border-radius: 400px;
+            text-align: center;
+            margin-left: 14%;
+            margin-top: 14%;
+        }
+        .fill{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    </style>
 </head>
-<style type="text/css">
-	body{
-		margin: 0;
-		padding: 0;
-	}
-	#cross{
-		position: fixed;
-        height: 55px;
-        width: 100%;
-		z-index: 3;
-        background-color: black
-	}
-	#content{
-		position: absolute;
-		background-color: #000000;
-		opacity: 0.4;
-		margin: 0 auto; 
-	}
-	.block{
-		margin: 0;
-		padding: 0;
-		font-size: 14px;
-		font-family: "微软雅黑";
-		text-align: center;
-		float: left;
-		width: 55px;
-		height: 55px;
-		line-height: 55px;
-		color: #fff;
-		background-color:#000000;
-		border-color: #000;
-		transition: all 0.3s linear;
-	}
-	.block:hover{
-		color: #12A5FF;
-		border-bottom: solid;
-		border-width: 2px;
-	}
-	li{
-		position: relative;
-		height: 55px;
-		top: -220px;
-		margin-left: 0px;
-		list-style-type: none;
-		background-color:#fff;
-		overflow: hidden;
-		transition: all 0.3s linear;
-        z-index: -1;
-	}
-	ul li a{
-		text-decoration:none;
-	}
-	ul:hover li{
-		height: 55px;
-		width: 55px;
-        top: 0px;
-		opacity: 1;
-        list-style-type: none;
-	}
-	#img1:after{
-		content:url(1A.png);
-	}
-	#p1:after{
-		
-	}
-	.card{
-		width: 290px;
-		position: absolute;
-		left: 0px;
-		top: 0px;
-		transition-property: left,top;
-		transition-duration: 2s;
-		-moz-transition-property: left,top; /* Firefox 4 */
-		-moz-transition-duration: 2s; /* Firefox 4 */
-		-webkit-transition-property: left,top; /* Safari and Chrome */
-		-webkit-transition-duration: 2s; /* Safari and Chrome */
-		-webkit-transition-timing-function: ease, ease;
-		-o-transition-property: left,top; /* Opera */
-		-o-transition-duration: 2s; /* Opera */
-		background-color: #57D5D8;
-		clear: both;
-		display: block;
-	}
-	p{
-		margin-top: 10px;
-	}
-	h5{
-		font-family: "Microsoft Yahei";
-		font-weight: lighter;
-		font-size: 16px;
-		margin: 10px;
-	}
+<body ontouchend="Pause()" onkeydown="Pause()">
+    <div id="bgc">
+        <div id="bg">
+        </div>          
+    </div>    
+    <div id="describe">Tap the screen/Press any key to pause <br>Tap/Press again to continue <br>By Parizus</div>
+    <div id="r_ring">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="图层_1"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-428 -107.8 600 600"
+     xml:space="preserve">
+<linearGradient id="XMLID_215_" gradientUnits="userSpaceOnUse" x1="-128" y1="-97.8" x2="-128" y2="432.2">
+    <stop  offset="0" style="stop-color:#FF0000"/>
+    <stop  offset="8e-002" style="stop-color:#999999"/>
+    <stop  offset="0.3" style="stop-color:#999999"/>
+</linearGradient>
+<circle fill="none" cx="-128" cy="192.2" r="300"/>
+<path fill="url(#XMLID_215_)" d="M-116.8-53.1L-128-97.8l-11.2,44.7c-0.8,3.3-3.7,5.8-7.1,6C-271.4-37.7-369.7,67.6-368,195.5
+    c1.7,131,109.3,236.9,240.4,236.7C4.8,432,112,324.6,112,192.2C112,65.8,14.3-37.7-109.7-47.1C-113.1-47.4-116-49.8-116.8-53.1z
+     M-128,402.2c-116,0-210-94-210-210s94-210,210-210s210,94,210,210S-12,402.2-128,402.2z"/>
+</svg>
 
-</style>
-<body>
-	<div id="cross">
-		<ul class="block" style="border:none;">
-            <img src="Pa2.png" style="width:55px;height:55px;">
-		</ul>
-		<ul class="block">Code
-			<li><a href="#">1st</a></li> 
-			<li><a href="#">2nd</a></li> 
-			<li><a href="#">3rd</a></li> 
-		</ul>
-		<ul class="block">Poster
-			<li><a href="#">1st</a></li> 
-			<li><a href="#">2nd</a></li> 
-			<li><a href="#">3rd</a></li> 
-		</ul>
-		<ul class="block">Design
-			<li><a href="#">1st</a></li> 
-			<li><a href="#">2nd</a></li> 
-			<li><a href="#">3rd</a></li> 
-		</ul>
-	</div>
-	<!-- <img id="back" src="back.jpg"> -->
-<!--	<img id="back">-->
-<!--
-	<div id="content">
 
-	</div>
--->
-<!--
-	<div style="text-align:center;margin-left:auto;margin-right:auto;height:800px;overflow-y: scroll;">
-		<div class="card" id="h0"><p id="img1"></p><h5 id="p1">海滨公寓的鸟巢的设计<br/>Beachside Apartment by Nest Designs</h5></div>
-		<div class="card" id="h1"><p id="img1"></p><p id="p1"></p></div>
-		<div class="card" id="h2"><p id="img1"></p><p id="p1"></p></div>
-		<div class="card" id="h3"><p id="p1">海滨公寓的鸟巢的设计<br/>Beachside Apartment by Nest Designs</p></div>
-		<div class="card" id="h4"><p id="img1"></p><p id="p1"></p></div>
-		<div class="card" id="h5"><p id="img1"></p><p id="p1"></p></div>
-		<div class="card" id="h6"><p id="img1"></p><p id="p1"></p></div>
-		<div class="card" id="h7"><p id="img1"></p><p id="p1"></p></div>
-		<div class="card" id="h8"><p id="img1"></p><p id="p1"></p></div>
+    </div>
+    <div id="g_ring">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="图层_1"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-428 -107.8 600 600"
+     xml:space="preserve">
+<linearGradient id="XMLID_216_" gradientUnits="userSpaceOnUse" x1="-128" y1="-97.8" x2="-128" y2="432.2">
+    <stop  offset="0" style="stop-color:#00FF00"/>
+    <stop  offset="8e-002" style="stop-color:#808080"/>
+    <stop  offset="0.3" style="stop-color:#808080"/>
+</linearGradient>
+<circle fill="none" cx="-128" cy="192.2" r="300"/>
+<path fill="url(#XMLID_216_)" d="M-114.3-42.9L-128-97.8l-13.7,54.9c-0.8,3.3-3.6,5.7-7,6C-265.2-26.5-356.7,70.8-358,189.6
+    c-1.4,127.1,102.8,232.6,230,232.6c127,0,230-103,230-230c0-120-91.9-218.6-209.2-229.1C-110.6-37.2-113.4-39.6-114.3-42.9z
+     M-128,402.2c-116,0-210-94-210-210s94-210,210-210s210,94,210,210S-12,402.2-128,402.2z"/>
+</svg>
 
-	</div>
--->
+
+    </div>
+    <div id="b_ring">
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg version="1.2" baseProfile="tiny" id="图层_1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-428 -107.8 600 600"
+        xml:space="preserve">
+<linearGradient id="XMLID_217_" gradientUnits="userSpaceOnUse" x1="-128" y1="-97.8" x2="-128" y2="432.2">
+    <stop  offset="0" style="stop-color:#0000FF"/>
+    <stop  offset="8e-002" style="stop-color:#666666"/>
+    <stop  offset="0.3" style="stop-color:#666666"/>
+</linearGradient>
+        <circle fill="none" cx="-128" cy="192.2" r="300"/>
+        <path fill="url(#XMLID_217_)" d="M-111.7-32.6L-128-97.8l-16.3,65.2c-0.8,3.3-3.6,5.7-6.9,6c-126.5,13.3-221.1,133.8-191.2,268.9
+        c18.3,82.8,83.8,147.4,166.7,164.8C-33.4,437.1,92,329.3,92,192.2C92,78.5,5.8-15-104.8-26.6C-108.1-26.9-110.9-29.3-111.7-32.6z
+        M-100.7,400.5c-137.4,17.3-252.9-98.2-235.6-235.6c11.9-94.3,86.6-169.1,181-181C-17.9-33.4,97.6,82.1,80.3,219.5
+        C68.4,313.8-6.4,388.6-100.7,400.5z"/></svg>
+
+    </div>
+    <div class="fill" style="background: linear-gradient(120deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -8; padding: 0px;"></div>
+    <div class="fill" style="opacity:0.3; background: linear-gradient(240deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -7; padding: 0px;"></div>
 </body>
 <script type="text/javascript">
-//	window.onload=function(){setpos (9);repos ()};
-//	// window.onload=function(){repos ()};
-//	window.onresize=function(){repos ();setpos (9)};
-//	// 禁止鼠标选中
-//	document.getElementById("cross").onselectstart=function(){return false};
-//	// 获取元素
-//	ecross=document.getElementById("cross").style;
-//	econtent=document.getElementById("content").style;
-//	eback=document.getElementById("back").style;
-//	// *
-//	function repos (argument) {
-//		x=document.documentElement.clientWidth;
-//		y=document.documentElement.clientHeight;
-//		document.body.style.height=y+"px";
-//		document.body.style.width=x+"px";
-//		console.log(x,y);
-//		if (x<y) {
-//			ecross.height=55+"px";
-//			ecross.width="100%";
-//			econtent.height=y-55+"px";
-//			econtent.width=x+"px";
-//			econtent.left=0+"px";
-//			econtent.top=55+"px";
-//			eback.height="100%";
-//			eback.width=y+"px";
-//			menuFix("top");
-//		}
-//		else{
-//			ecross.height="100%";
-//			ecross.width=55+"px";
-//			econtent.height=y+"px";
-//			econtent.width=x-55+"px";
-//			econtent.left=55+"px";
-//			econtent.top=0+"px";
-//			eback.width="100%";
-//			eback.height=x+"px";
-//			menuFix("left");
-//		};
-//	}
-//	function menuFix(pos) { 
-//		var sfEls = document.getElementById("cross").getElementsByTagName("li"); 
-//		for (var i=0; i<sfEls.length; i++) { 
-//			sfEls[i].className="li"+pos;
-//		} 
-//	}
-//	function setpos (n) {
-//		var noc=Math.floor((window.innerWidth-55)/300);
-//		var marginleft=(window.innerWidth+55)/2-300*noc/2-5;
-//		for (var i=0;i<n;i++) {
-//			var left=(i%noc)*300;
-//			document.getElementById("h"+i).style.left=left+10+marginleft+"px";
-//		};
-//		for (k=0;k<noc;k++){
-//			preHeight=document.getElementById("h"+k).offsetTop;
-//			var preHeight=0;
-//			for (var i=k;i<n;i=i+noc) {	
-//				document.getElementById("h"+i).style.top=preHeight+10+"px";
-//				var preHeight=preHeight+10+document.getElementById("h"+i).offsetHeight;	
-//			};	
-//		};
-//	}
+    window.onload=function(){quadrate ('bgc'),quadrate ('b_ring'),quadrate ('g_ring'),quadrate ('r_ring')};
+    window.onresize=function(){quadrate ('bgc'),quadrate ('b_ring'),quadrate ('g_ring'),quadrate ('r_ring')};
+    function quadrate (obj) {
+        o = document.getElementById(obj)
+        o.style.height = o.offsetWidth+"px";
+        o.style.top = (document.documentElement.clientHeight-o.offsetHeight)/2-10+"px";
+        o.style.left = (document.documentElement.clientWidth-o.offsetHeight)/2+"px";
+        o.style.borderRadius = o.offsetWidth+"px";
+    }
+
+    var BG = document.getElementById("bg");
+    var desc = document.getElementById("describe");
+    var R_ring = document.getElementById("r_ring");
+    var G_ring = document.getElementById("g_ring");
+    var B_ring = document.getElementById("b_ring");
+    // B_ring.style.transform="rotate(9deg)";
+    
+    var Pause_state = 0;
+    var Pause_color = RandomColor ();
+    BG.style.backgroundColor = Pause_color;
+    rotate (R_ring,G_ring,B_ring);
+    var temp= cal_fontcolor (Pause_color);
+    BG.style.color = temp[0];
+    // setTimeout("BG.innerHTML=''",2000);
+    var timer1 = self.setInterval("BG.style.backgroundColor = RandomColor (); rotate (R_ring,G_ring,B_ring)",2000);
+    function Pause() {
+        BG.style.fontSize="28px";
+        if (Pause_state==0) {
+            var temp= cal_fontcolor (Pause_color);
+            desc.style.color = temp[0];
+            clearInterval(timer1);
+            Pause_state = 1;
+            desc.innerHTML=Pause_color+"<br>"+temp[1];
+        } else{
+            timer1 = self.setInterval("BG.style.backgroundColor = RandomColor (); rotate (R_ring,G_ring,B_ring)",2000);
+            Pause_state = 0;
+            desc.innerHTML='';
+        };
+    }
+    // generate a random color in the form of a hex
+    function RandomColor () {
+        var rand = (Math.random()*1000000000).toString(16);
+        console.log(rand);
+        Color = "#"+rand.substr(0, 6);
+        Pause_color = Color;
+        console.log(Color);
+        return Color;
+    }
+    // input a background color in the form of a hex, and return the color's RGB value as well as its proper font color
+    function cal_fontcolor (obj) {
+        var r=parseInt(Pause_color.substr(1, 2), 16);
+        var g=parseInt(Pause_color.substr(3, 2), 16);
+        var b=parseInt(Pause_color.substr(5, 2), 16);
+        var Y=0.299*r + 0.587*g + 0.114*b
+        console.log(r,g,b);
+        if (Y>127) {
+            return ["#000","R:"+r+" G:"+g+" B:"+b,r,g,b];
+        } else{
+            return ["#fff","R:"+r+" G:"+g+" B:"+b,r,g,b];
+        };
+    }
+    function rotate (obj1,obj2,obj3) {
+        obj1.style.transform="rotate("+cal_fontcolor (Pause_color)[2]/255*360+"deg)";
+        obj2.style.transform="rotate("+cal_fontcolor (Pause_color)[3]/255*360+"deg)";
+        obj3.style.transform="rotate("+cal_fontcolor (Pause_color)[4]/255*360+"deg)";
+    }
+    
 </script>
 </html>
