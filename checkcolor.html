@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://contact.qnxg.net/ -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Random Color</title>
+    <link rel="stylesheet" href="./normalize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-height, initial-scale=1.0"> -->
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        }
+        #inp_region{
+            text-align: center;
+            margin: 0 auto; 
+
+        }
+
+        .c_inp{
+            border-style: solid;
+            border-width: 2px;
+            border-color: #fff;
+            border-radius: 5px;
+            font-size:18px; 
+            color: #fff;
+            font-family: Microsoft YaHei,proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            /*background-color: #f8f8f8;*/            
+            transition: 0.5s,transform 0.5s;;
+            -moz-transition: 0.5s,transform 0.5s;;
+            -webkit-transition: 0.5s,transform 0.5s;;
+            -o-transition: 0.5s,transform 0.5s;;  
+        }
+        .c_inp:hover{
+        }
+
+        #Red_inp{
+            background-color: red;
+        }
+        #Green_inp{
+            background-color: green;
+        }
+        #Blue_inp{
+            background-color: Blue;
+        }
+        #Red_inp:hover{
+            border-color: red;
+            background-color: #f8f8f8;
+        }
+        #Green_inp:hover{
+            border-color: green;
+            background-color: #f8f8f8;
+        }
+        #Blue_inp:hover{
+            border-color: Blue;
+            background-color: #f8f8f8;
+        }
+        #describe{
+            z-index: 1;
+            text-align:center;
+            font-size:18px;  
+            height: 100px;
+            font-family: Microsoft YaHei,proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        #b_ring,#g_ring,#r_ring,#bgc,#bg{
+            z-index: -1;
+            width: 38%;
+            max-width:  400px;
+            position: absolute;
+            border: 10px  #fff; 
+            /*background-color: #fff;*/
+            transition: background-color 2s,transform 2s;;
+            -moz-transition: background-color 2,stransform 2s;;
+            -webkit-transition: background-color 2,stransform 2s;;
+            -o-transition: background-color 2,stransform 2s;;  
+        }
+        #bg{            
+            height: 72%;
+            width: 72%;
+            border-radius: 400px;
+            text-align: center;
+            margin-left: 14%;
+            margin-top: 14%;
+        }
+        .fill{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="inp_region">
+        <input class="c_inp" id="Red_inp"></input>
+        <input class="c_inp" id="Green_inp"></input>
+        <input class="c_inp" id="Blue_inp"></input>
+        <div class="fill" style="background: linear-gradient(120deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -8; padding: 0px;"></div>
+        <div class="fill" style="opacity:0.3; background: linear-gradient(240deg, #999999 0%, #e6e6e6 80%); height: 100%; position: fixed; top: 0px; z-index: -7; padding: 0px;"></div>
+    </div>
+</body>
+<script type="text/javascript">
+    window.onload=function(){quadrate ('bgc'),quadrate ('b_ring'),quadrate ('g_ring'),quadrate ('r_ring')};
+    window.onresize=function(){quadrate ('bgc'),quadrate ('b_ring'),quadrate ('g_ring'),quadrate ('r_ring')};
+    function quadrate (obj) {
+        o = document.getElementById(obj)
+        o.style.height = o.offsetWidth+"px";
+        o.style.top = (document.documentElement.clientHeight-o.offsetHeight)/2-10+"px";
+        o.style.left = (document.documentElement.clientWidth-o.offsetHeight)/2+"px";
+        o.style.borderRadius = o.offsetWidth+"px";
+    }
+
+    var BG = document.getElementById("bg");
+    var desc = document.getElementById("describe");
+    var R_ring = document.getElementById("r_ring");
+    var G_ring = document.getElementById("g_ring");
+    var B_ring = document.getElementById("b_ring");
+    // B_ring.style.transform="rotate(9deg)";
+    
+    var Pause_state = 0;
+    var Pause_color = RandomColor ();
+    BG.style.backgroundColor = Pause_color;
+    rotate (R_ring,G_ring,B_ring);
+    var temp= cal_fontcolor (Pause_color);
+    BG.style.color = temp[0];
+    // setTimeout("BG.innerHTML=''",2000);
+    var timer1 = self.setInterval("BG.style.backgroundColor = RandomColor (); rotate (R_ring,G_ring,B_ring)",2000);
+    function Pause() {
+        BG.style.fontSize="28px";
+        if (Pause_state==0) {
+            var temp= cal_fontcolor (Pause_color);
+            desc.style.color = temp[0];
+            clearInterval(timer1);
+            Pause_state = 1;
+            desc.innerHTML=Pause_color+"<br>"+temp[1];
+        } else{
+            timer1 = self.setInterval("BG.style.backgroundColor = RandomColor (); rotate (R_ring,G_ring,B_ring)",2000);
+            Pause_state = 0;
+            desc.innerHTML='';
+        };
+    }
+    // generate a random color in the form of a hex
+    function RandomColor () {
+        var rand = (Math.random()*1000000000).toString(16);
+        console.log(rand);
+        Color = "#"+rand.substr(0, 6);
+        Pause_color = Color;
+        console.log(Color);
+        return Color;
+    }
+    // input a background color in the form of a hex, and return the color's RGB value as well as its proper font color
+    function cal_fontcolor (obj) {
+        var r=parseInt(Pause_color.substr(1, 2), 16);
+        var g=parseInt(Pause_color.substr(3, 2), 16);
+        var b=parseInt(Pause_color.substr(5, 2), 16);
+        var Y=0.299*r + 0.587*g + 0.114*b
+        console.log(r,g,b);
+        if (Y>127) {
+            return ["#000","R:"+r+" G:"+g+" B:"+b,r,g,b];
+        } else{
+            return ["#fff","R:"+r+" G:"+g+" B:"+b,r,g,b];
+        };
+    }
+    function rotate (obj1,obj2,obj3) {
+        obj1.style.transform="rotate("+cal_fontcolor (Pause_color)[2]/255*360+"deg)";
+        obj2.style.transform="rotate("+cal_fontcolor (Pause_color)[3]/255*360+"deg)";
+        obj3.style.transform="rotate("+cal_fontcolor (Pause_color)[4]/255*360+"deg)";
+    }
+    
+</script>
+</html>
