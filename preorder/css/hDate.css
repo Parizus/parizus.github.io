@@ -1,10 +1,10 @@
 ﻿ul, li, a, dd, dt, dl, i, em{ margin:0px;padding:0px;list-style:none;text-decoration:none;list-style:none;font-style:normal;font-style:normal;}
 /*www.sucaijiayuan.com*/
 /* calendar */
-.calendar{width:210px;position:absolute;
+.calendar{width:300px;position:absolute;
 	top: 0px;
-	width: 70%;
-	margin-left: 15%;
+	width: 80%;
+	margin-left: 10%;
 	margin-top: 40px;
 	/*background-color:#f9f9f9;*/
 	/*border:1px solid #ddd;*/

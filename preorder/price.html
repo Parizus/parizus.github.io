@@ -9,11 +9,59 @@
         /*background-color: #FFD900;*/
         padding: 0;
         margin: 0;
-        background-image:   url('./img/price.png');
-        background-size: 100%;
+        /*background-image:   url('./img/price.png');*/
+        /*background-size: 100%;*/
         background-repeat: no-repeat;
         font-family: "微软雅黑",Arial,Helvetica,sans-serif;
         font-weight: bold;
+    }
+    .main{
+        position: relative;
+        background-color: #FFD900;
+        height: 240px;
+        font-size: 14px;
+        width: 80%;
+        margin-left: 10%;
+        padding-top: 10px;
+    }
+    .main2{
+        position: relative;
+        background-color: #FFD900;
+        height: 90px;
+        font-size: 14px;
+        margin-top: 20px;
+        width: 80%;
+        margin-left: 10%;
+        line-height: 28px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    .main ul{
+        line-height: 28px;
+    }
+    .main2 ul{
+        /*width: 240px;*/
+    }
+    .inf-text{
+        width: 100px;
+        background-color: #FFD900;
+        border-style: none none solid none;
+        border-width: 1px;
+    }
+    .sex-btn{
+        width: 40px;
+        height: 20px;
+        border-style: solid solid solid solid;
+        border-width: 1px;
+        border-radius: 5px;
+        border-color: #000;
+        background-color: #FFD900;
+    }
+    #preorder{
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
     }
     ul,li{
         list-style: none;
@@ -36,102 +84,21 @@
         background-color:  #FFD900;
         border: none;
     }
-    .sex{}
-    #preorder{
-        width: 100%;
-    }
-    .main{
-        position: relative;
-        height: 140px;
-        margin-top: 80px;
-        font-size: 14px;
-        width: 70%;margin-left: 15%;
-    }
-    .main2{
-        position: relative;
-        background-color: #FFD900;
-        margin-top: 185px;
-        font-size: 14px;
-        width: 70%;margin-left: 15%;
-        line-height: 28px;
-    }
-    .main2 input{
-        width: 100px;
-        background-color: #FFD900;
-        border-style: none none solid none;
-        border-width: 1px;
-    }
-    .main2 input[type="button"]{
-        width: 40px;
-        height: 20px;
-        border-style: solid solid solid solid;
-        border-width: 1px;
-        border-radius: 5px;
-        border-color: #000;
-        background-color: #FFD900;
-    }
-    .main2 a{
-        display: block;
-        width: 30px;
-        height: 30px;
-        float: left;
-    }
-    #select{
-        width: 100%;height: 32px;position: fixed;bottom: 95px;
-    }
-    .main ul{
-        line-height: 28px;
-    }
-    .calpri{
-        margin-top: 20px;
-    }
-    .calpri ul{
-        font-weight: lighter;
-        line-height: 20px;
-    }
-    @media screen and (max-width: 330px) {
-        .main{
-            margin-top: 60px;
-        }
-        .main2{
-            margin-top: 140px;
-        }
+    @media screen and (max-width: 360px) {
         .main ul{
             line-height: 24px;
             font-size: 12px;
         }
-        a{
-            height: 33px;
-        }.main2 input {
-            width: 72px;
-        }
     } 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 375px) {
         .main{
-            width: 290px;
-            margin-top: 90px;
-        }
-        .main2{
-            width: 290px;
-            margin-top: 210px;
-        }
-        .payselect,#select{
-            width: 414px;
-        }
-        a{
-            height: 43px;
-        }    
-        body{
-            background-size: 414px;
-            width: 414px;
-        }
-        #preorder{
-            width: 414px;
+            height: 270px;
         }
     }  
 </style>
 </head>
 <body>
+    <img src="./img/photocontent.png" style="margin-top:20px;margin-bottom: 20px; width: 100%">
     <div class="main" style="">
         <p></p><p></p><p></p><p></p>
         <ul><li>内容</li><li>人数</li><li>价格</li></ul>
@@ -200,7 +167,7 @@
                             setTotal(); GetCount();tsetTotal();
                         })
                         $("#min3").click(function () {
-                           if (parseInt(t.val())>=1) {
+                         if (parseInt(t.val())>=1) {
                             t.val(parseInt(t.val()) - 1)
                             setTotal(); GetCount();tsetTotal();
                         }
@@ -227,7 +194,7 @@
                             setTotal(); GetCount();tsetTotal();
                         })
                         $("#min4").click(function () {
-                           if (parseInt(t.val())>=1) {
+                         if (parseInt(t.val())>=1) {
                             t.val(parseInt(t.val()) - 1)
                             setTotal(); GetCount();tsetTotal();
                         }
@@ -254,7 +221,7 @@
                             setTotal(); GetCount();tsetTotal();
                         })
                         $("#min5").click(function () {
-                           if (parseInt(t.val())>=1) {
+                         if (parseInt(t.val())>=1) {
                             t.val(parseInt(t.val()) - 1)
                             setTotal(); GetCount();tsetTotal();
                         }
@@ -281,10 +248,11 @@
     <div class="main2">
         <ul>
             <span class="inf-pj">姓名</span>
-            <input type="text" class="inf-text" name="username">
+            <input type="text" class="inf-text" style="width: 50px;" name="username">
             <span class="inf-pj">姓别</span> 
-            <input type="button" name="sex" value="男" />
-            <input type="button" name="sex" value="女" />
+            <input type="button" name="sex" class="sex-btn" value="男" />
+            <input type="button" name="sex" class="sex-btn" value="女" />
+        </ul>
         <ul>
             <span class="inf-pj">手机</span>
             <input type="text" class="inf-text" style="width: 170px;" name="username">
@@ -296,7 +264,7 @@
     </ul>
 
 </div>
-<a href="pay.html"><img src="./img/nextstep.png" id="preorder" style="position: absolute ;bottom: 50px;left: 0px;"></a>
+<a href="selecttime.html"><img src="./img/nextstep.png" id="preorder"></a>
 </body>
 <script type="text/javascript">
     pri1=0,pri2=0,pri3=0,pri4=0,pri5=0;
