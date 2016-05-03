@@ -5,100 +5,114 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <style type="text/css">
     body{
-        /*background-color: #FFD900;*/
         padding: 0;
         margin: 0;
-        background-image:   url('./img/pay.png');
+        background-image: url('./img/BGI2.png');
         background-size: 100%;
         background-repeat: no-repeat;
         font-family: "微软雅黑",Arial,Helvetica,sans-serif;
         font-weight: bold;
     }
-    ul,li{
-        list-style: none;
-        margin: 0px;
+    .main{
+        background-color: #FFD900;
+        height: 185px;
+        font-size: 14px;
+        width: 80%;
+        margin-left: 10%;
+        padding-top: 10px;
+        margin-top: -10px;
+    }
+    .main ul{
+        line-height: 28px;
+        margin-left: 30px;
         padding: 0px;
     }
-    a{
-        width: 50%;height: 39px;display: block;float: left;
-    }
-    .payselect{
-        bottom: 50px;
-        position: fixed;
-        width: 100%;
-    }
-    #preorder{
-        width: 100%;
-    }
-    .main{
-        position: relative;
-        height: 140px;
-        margin-top: 100px;
-        font-size: 14px;
-        width: 70%;margin-left: 15%;
+    p{
+        text-align: right;
+        display: inline-block;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        float: right;
+        font-size: 12px;
     }
     .main2{
         position: relative;
         background-color: #FFD900;
-        margin-top: 40px;
-        font-size: 6px;
-        width: 70%;margin-left: 15%;
-        line-height: 14px;
+        /*font-weight: normal;*/
+        height: 185px;
+        font-size: 11px;
+        margin-top: 20px;
+        width: 80%;
+        margin-left: 10%;
+        line-height: 22px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
-    ,#select{
-        width: 100%;height: 32px;position: fixed;bottom: 95px;
+    .main2 ul{        
+        /*line-height: 12px;*/
+        padding-left: 5px;
+        padding-right: 5px;
     }
-    .main ul{
-        line-height: 28px;
+    #select{
+        width: 100%;height: 50px;margin-top: 20px;
+        background-image: url('./img/payselect.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
     }
-    .mian2 ul{        
-        line-height: 12px;
+    #select a{
+        width: 50%;height: 39px;display: block;float: left;
+    }
+    #preorder{
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+    }
+    ul,li{
+        list-style: none;
+        margin: 0px;
+        /*padding: 0px;*/
     }
     @media screen and (max-width: 330px) {
         .main ul{
             line-height: 24px;
             font-size: 12px;
         }
-        a{
-            height: 33px;
+        .main2{
+            height: 245px;
         }
     } 
     @media screen and (min-width: 400px) {
-        .main{
-            width: 414px;
-            margin-top: 120px;
-        }
         .payselect,#select{
-            width: 414px;
-        }
-        a{
-            height: 43px;
-        }    
-        body{
-            background-size: 414px;
-            width: 414px;
-        }
-        #preorder{
             width: 414px;
         }
     } 
 </style>
 </head>
 <body>
+    <img src="./img/BGIlogo.png" id="preorder" style="margin-top:20px; width: 80%; margin-left: 10%">
     <div class="main" style="">
         <ul>门店地址：麓山南路242号</ul>
         <ul>到店时间：5月1日&nbsp;&nbsp;下午 2:30</ul>
         <ul>拍摄内容：证件照x1&nbsp;&nbsp;宠物照x1</ul>
         <ul>服务价格：198元</ul>
         <ul>顾客姓名：李大宝</ul>
+        <p>*在线支付20元预付金即可完成预约，到店付尾款*</p>
     </div>
-    <!-- <img src="./img/detail.png" style="width: 100%;position: absolute   ;"> -->
+    <div class="main2">
+        <ul>Tips：</ul>
+        <ul>1.摄影价格即为预约时的价格，无任何隐形消费</ul>
+        <ul>2.请准时到店拍摄，本店将现场修图取照</ul>
+        <ul>3.淡妆或素颜到店，我们将为您打造最适合的妆容</ul>
+        <ul>4.成片为您保存半年，半年内都可再次印刷/20元/张</ul>
+        <ul>5.加修加拍/60元/张，快递服务需到付</ul>
+        <ul>6.如需修改订单请致电 186-2756-2126</ul>
+        <ul>7.如预约当天未能按时到店，预付金恕不退回</ul>
+    </div>
     <div id="select" style="">
         <a href=""></a>
         <a href=""></a>
     </div>
-    <img class="payselect" src="./img/payselect.png" id="preorder" style="position: absolute ;left: 0px;">
-    <a href="complete.html"><img src="./img/paynow.png" id="preorder" style="position: absolute ;bottom: 0px;left: 0px;"></a>
+    <a href="complete.html"><img src="./img/paynow.png" id="preorder" style=""></a>
 </body>
 <script type="text/javascript">
 </script>
