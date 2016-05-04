@@ -105,10 +105,15 @@
             <ul><li>内容</li><li>人数</li><li>价格</li></ul>
             <ul>
                 <li>证件照</li>
-                <li>
+                <li>       
+                    <input id="min1" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
+                    <input id="text_box1" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
+                    <input id="add1" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
                     <script type="text/javascript">
+                        document.getElementById("text_box1").value=sessionStorage.p1;
                         $(function () {
                             var t = $("#text_box1");
+                            t.value=sessionStorage.p1;
                             $("#add1").click(function () {
                                 t.val(parseInt(t.val()) + 1)
                                 setTotal(); GetCount();tsetTotal();
@@ -124,15 +129,16 @@
                             }
                             tsetTotal();
                         })
-                    </script>                
-                    <input id="min1" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
-                    <input id="text_box1" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
-                    <input id="add1" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
+                    </script>         
                 </li><li id="total1" >￥108</li>
             </ul>
             <ul><li>写真照</li>
-                <li>
+                <li>                            
+                    <input id="min2" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
+                    <input id="text_box2" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
+                    <input id="add2" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
                     <script type="text/javascript">
+                        document.getElementById("text_box2").value=sessionStorage.p2;
                         $(function () {
                             var t = $("#text_box2");
                             $("#add2").click(function () {
@@ -148,19 +154,21 @@
                             function setTotal() {
                                 pri2=(t.val()) * 88;
                             }
-                            tsetTotal();
+                            setTotal();tsetTotal();
                         })
-                    </script>                              
-                    <input id="min2" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
-                    <input id="text_box2" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
-                    <input id="add2" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
+                    </script>  
                 </li><li id="total2" >￥88</li>
             </ul>
             <ul><li>结婚照</li>
-                <li>
+                <li>                         
+                    <input id="min3" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
+                    <input id="text_box3" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
+                    <input id="add3" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
                     <script type="text/javascript">
+                        document.getElementById("text_box3").value=sessionStorage.p3;
                         $(function () {
                             var t = $("#text_box3");
+                            t.value=sessionStorage.p3;
                             $("#add3").click(function () {
                                 t.val(parseInt(t.val()) + 1)
                                 setTotal(); GetCount();tsetTotal();
@@ -174,19 +182,21 @@
                             function setTotal() {
                                 pri3=(t.val()) * 168;
                             }
-                            tsetTotal();
+                            setTotal();tsetTotal();
                         })
-                    </script>                              
-                    <input id="min3" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
-                    <input id="text_box3" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
-                    <input id="add3" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
+                    </script>     
                 </li><li id="total3" >￥198</li>
             </ul>
             <ul><li>宠物照</li>
-                <li>
+                <li>                            
+                    <input id="min4" name="" class="cbtn"  style=" width:20px; height:18px;" type="button" value="-" />
+                    <input id="text_box4" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
+                    <input id="add4" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
                     <script type="text/javascript">
+                        document.getElementById("text_box4").value=sessionStorage.p4;
                         $(function () {
                             var t = $("#text_box4");
+                            t.value=sessionStorage.p4;
                             $("#add4").click(function () {
                                 t.val(parseInt(t.val()) + 1)
                                 setTotal(); GetCount();tsetTotal();
@@ -200,19 +210,21 @@
                             function setTotal() {
                                 pri4=(t.val()) * 128;
                             }
-                            tsetTotal();
+                            setTotal();tsetTotal();
                         })
-                    </script>                              
-                    <input id="min4" name="" class="cbtn"  style=" width:20px; height:18px;" type="button" value="-" />
-                    <input id="text_box4" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
-                    <input id="add4" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
+                    </script>  
                 </li><li id="total4" >￥148</li>
             </ul>
             <ul style="margin-bottom: 5px;"><li>毕业照</li>
-                <li>
+                <li>                            
+                    <input id="min5" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
+                    <input id="text_box5" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
+                    <input id="add5" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
                     <script type="text/javascript">
+                        document.getElementById("text_box5").value=sessionStorage.p5;
                         $(function () {
                             var t = $("#text_box5");
+                            t.value=sessionStorage.p5;
                             $("#add5").click(function () {
                                 t.val(parseInt(t.val()) + 1)
                                 setTotal(); GetCount();tsetTotal();
@@ -226,12 +238,9 @@
                             function setTotal() {
                                 pri5=(t.val()) * 128;
                             }
-                            tsetTotal();
+                            setTotal();tsetTotal();
                         })
-                    </script>                              
-                    <input id="min5" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
-                    <input id="text_box5" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
-                    <input id="add5" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
+                    </script>  
                 </li><li id="total5" >￥148</li>
             </ul>
             <div class="calpri">

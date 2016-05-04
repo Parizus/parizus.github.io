@@ -24,6 +24,9 @@
         text-decoration: none;
         color: #000;
     }
+    a:hover{
+        cursor:pointer;
+    }
     @media screen and (min-width: 400px) {
         a{
             /*font-size: 25px;*/
@@ -35,17 +38,16 @@
     <img src="./img/BGI.png" style="width: 100%;position: fixed;">
     <img id="tribgi" src="./img/tribgi.png" style="position: fixed;width:40%;margin-left: 30%;">
     <div id="preorder" style="position: fixed; width: 40%;margin-left: 30%;">
-        <ul style="float: left;text-align: left;"><a onclick="fill('p1')">证件照</a></ul>
-        <ul style="float: right;text-align: right;"><a onclick="fill('p2')">写真照</a></ul>
-        <ul style="float: left;text-align: left;"><a onclick="fill('p3')">结婚照</a></ul>
-        <ul style="float: right;text-align: right;"><a onclick="fill('p4')">宠物照</a></ul>
-        <ul style="float: left;text-align: left;"><a onclick="fill('p5')">毕业照</a></ul>
+        <ul style="float: left;text-align: left;"><a onclick="p1=1;fill()">证件照</a></ul>
+        <ul style="float: right;text-align: right;"><a onclick="p2=1;fill()">写真照</a></ul>
+        <ul style="float: left;text-align: left;"><a onclick="p3=1;fill()">结婚照</a></ul>
+        <ul style="float: right;text-align: right;"><a onclick="p4=1;fill()">宠物照</a></ul>
+        <ul style="float: left;text-align: left;"><a onclick="p5=1;fill()">毕业照</a></ul>
     </div>
-    <form id="myform" onsubmit="" action="" enctype="" method="post" style="display: none;">
-        <input id="subcont" name=""></input>
-    </form>
 </body>
 <script type="text/javascript">
+    p1=0;p2=0;p3=0,p4=0,p5=0;
+    // sessionStorage.p1=0;sessionStorage.p2=0;sessionStorage.p3=0;sessionStorage.p4=0;sessionStorage.p5=0;
     window.onload=function(){
         th=document.getElementById("tribgi").offsetHeight;
         for (var i = 0; i < 5; i++) {
@@ -65,12 +67,10 @@
         bh_=document.getElementById(obj).offsetHeight/2;
         document.getElementById(obj).style.marginTop=bh-bh_+"px";    
     }
-    function submit(obj) {
-        document.getElementById("myform").submit();
+    function fill() {
+        sessionStorage.p1=p1;sessionStorage.p2=p2;sessionStorage.p3=p3;sessionStorage.p4=p4;sessionStorage.p5=p5;
+        console.log(p1,p2,p3,p4,p5)
         window.location.href = 'price.html';
-    }
-    function fill(obj) {
-        document.getElementById("subcont").value=obj;
     }
 </script>
 </html>
