@@ -76,6 +76,24 @@
         line-height: 28px;    
         text-align: center;
     }
+    .showtime{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 20px;
+        width: 80%;margin-left: 10%;
+        background-color: #FFD900;
+        text-align: center;
+        font-size: 12px;
+        font-weight: lighter;
+    }
+    .showtime input{
+        background-color: #FFD900;
+        width: 25%;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        text-align: center;
+    }
     @media screen and (max-width: 330px) {
         .time-btn{
             width: 35px;
@@ -89,53 +107,89 @@
 </style>
 </head>
 <body>
-    <div id="contant">
-        <img src="./img/phototime.png" style="position: absolute;left: 0px;top: 20px;width: 100%">
-        <div>
-            <input id="Text1" type="text" style="display: none;" />
-        </div>
-        <div class="main" id="_main">
-            <ul><input class="time-btn" type="button" name="sex" value="10:00" />
-                <input class="time-btn" type="button" name="sex" value="10:30" />
-                <input class="time-btn" type="button" name="sex" value="11:00" />
-                <input class="time-btn" type="button" name="sex" value="11:30" />
-            </ul>
-            <ul>
-                <input class="time-btn" type="button" name="sex" value="12:00" />
-                <input class="time-btn" type="button" name="sex" value="12:30" />            
-            </ul>    
-        </div>
-        <div class="main2">
-            <ul><input class="time-btn" type="button" name="sex" value="13:00" />
-                <input class="time-btn" type="button" name="sex" value="13:30" />
-                <input class="time-btn" type="button" name="sex" value="14:00" />
-                <input class="time-btn" type="button" name="sex" value="14:30" />
-                <input class="time-btn" type="button" name="sex" value="15:00" />
-            </ul>
-            <ul><input class="time-btn" type="button" name="sex" value="15:30" />
-                <input class="time-btn" type="button" name="sex" value="16:00" />
-                <input class="time-btn" type="button" name="sex" value="16:30" />
-                <input class="time-btn" type="button" name="sex" value="17:00" />
-                <input class="time-btn" type="button" name="sex" value="17:30" />
-            </ul>
-            <ul><input class="time-btn" type="button" name="sex" value="18:00" />
-                <input class="time-btn" type="button" name="sex" value="18:30" />
-                <input class="time-btn" type="button" name="sex" value="19:00" />
-                <input class="time-btn" type="button" name="sex" value="19:30" />
-                <input class="time-btn" type="button" name="sex" value="20:00" />
-            </ul> 
-        </div>
+    <img src="./img/phototime.png" style="position: absolute;left: 0px;top: 20px;width: 100%">
+    <div class="main" id="_main">
+        <ul><input class="time-btn" type="button" value="10:00"  onclick="set(this,1)"/>
+            <input class="time-btn" type="button" value="10:30"  onclick="set(this,2)"/>
+            <input class="time-btn" type="button" value="11:00"  onclick="set(this,3)"/>
+            <input class="time-btn" type="button" value="11:30"  onclick="set(this,4)"/>
+        </ul>
+        <ul>
+            <input class="time-btn" type="button" value="12:00"  onclick="set(this,5)"/>
+            <input class="time-btn" type="button" value="12:30"  onclick="set(this,6)"/>            
+        </ul>    
     </div>
-    <a href="pay.html"><img src="./img/nextstep.png" id="preorder"></a>
+    <div class="main2">
+        <ul><input class="time-btn" type="button" value="13:00"  onclick="set(this,7)"/>
+            <input class="time-btn" type="button" value="13:30"  onclick="set(this,8)"/>
+            <input class="time-btn" type="button" value="14:00"  onclick="set(this,9)"/>
+            <input class="time-btn" type="button" value="14:30"  onclick="set(this,10)"/>
+            <input class="time-btn" type="button" value="15:00"  onclick="set(this,11)"/>
+        </ul>
+        <ul><input class="time-btn" type="button" value="15:30"  onclick="set(this,12)"/>
+            <input class="time-btn" type="button" value="16:00"  onclick="set(this,13)"/>
+            <input class="time-btn" type="button" value="16:30"  onclick="set(this,14)"/>
+            <input class="time-btn" type="button" value="17:00"  onclick="set(this,15)"/>
+            <input class="time-btn" type="button" value="17:30"  onclick="set(this,16)"/>
+        </ul>
+        <ul><input class="time-btn" type="button" value="18:00"  onclick="set(this,17)"/>
+            <input class="time-btn" type="button" value="18:30"  onclick="set(this,18)"/>
+            <input class="time-btn" type="button" value="19:00"  onclick="set(this,19)"/>
+            <input class="time-btn" type="button" value="19:30"  onclick="set(this,20)"/>
+            <input class="time-btn" type="button" value="20:00"  onclick="set(this,21)"/>
+        </ul> 
+    </div>
+    <div class="showtime" style="width: 80%;margin-left: 10%;">
+    <span>您预约的日期为</span>
+        <input id="Text1" type="text"/>
+    <span>时间为</span>
+        <input id="Text2" type="text"/>
+    </div>
+    <a onclick="writeform();submit()"><img src="./img/nextstep.png" id="preorder"></a>
+    <form id="myform" action="wx.senselover.com/Order/order" method="post" style="display: none;">
+        <input value="" name="name"></input>
+        <input value="" name="sex"></input>
+        <input value="" name="phone"></input>
+        <input value="" name="address"></input>
+        <input value="" name="p1"></input>
+        <input value="" name="p2"></input>
+        <input value="" name="p3"></input>
+        <input value="" name="p4"></input>
+        <input value="" name="p5"></input>
+        <input value="" name="photo_date"></input>
+        <input value="" name="photo_time_period"></input>
+    </form>
 </body>
 <script type="text/javascript">
+    photo_time_period=13-00;
     calendar.show({ id: Text1 });
     mainmar=document.getElementById("_calendar").offsetHeight+document.getElementById('_calendar').offsetTop+50;;
     document.getElementById("_main").style.marginTop=mainmar+"px";
-
     var div=document.getElementById("_calendar");  
     var span=document.createElement("p");  
     span.innerHTML="*白色部分代表预约已满*"  
     div.appendChild(span); 
+    function set(obj,value) {
+        sessionStorage.photo_time_period=value; 
+        sessionStorage.photo_date=document.getElementById("Text1").value;
+        document.getElementById("Text2").value=obj.value;
+    }
+    function writeform() {
+        document.getElementsByName("name")[0].value=sessionStorage.name;
+        document.getElementsByName("sex")[0].value=sessionStorage.sex;
+        document.getElementsByName("phone")[0].value=sessionStorage.phone;
+        document.getElementsByName("address")[0].value=sessionStorage.address;
+        document.getElementsByName("p1")[0].value=sessionStorage.p1;
+        document.getElementsByName("p2")[0].value=sessionStorage.p2;
+        document.getElementsByName("p3")[0].value=sessionStorage.p3;
+        document.getElementsByName("p4")[0].value=sessionStorage.p4;
+        document.getElementsByName("p5")[0].value=sessionStorage.p5;
+        document.getElementsByName("photo_date")[0].value=sessionStorage.photo_date;
+        document.getElementsByName("photo_time_period")[0].value=sessionStorage.photo_time_period;
+    }
+    function submit() {
+        document.getElementById("myform").submit(); 
+        window.location.href = 'complete.html';
+    }
 </script>
 </html>

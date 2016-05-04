@@ -246,27 +246,25 @@
                 <span class="inf-pj">姓名</span>
                 <input type="text" class="inf-text" style="width: 50px;" name="username">
                 <span class="inf-pj">姓别</span> 
-                <input type="button" name="sex" class="sex-btn" value="男" onclick="set(sex,0)" />
-                <input type="button" name="sex" class="sex-btn" value="女" onclick="set(sex,1)" />
+                <input type="button" name="sex" class="sex-btn" value="男" onclick="set(0)" />
+                <input type="button" name="sex" class="sex-btn" value="女" onclick="set(1)" />
             </ul>
             <ul>
                 <span class="inf-pj">手机</span>
-                <input type="text" class="inf-text" style="width: 170px;" name="username">
+                <input type="text" name="phone" class="inf-text" style="width: 170px;" name="username">
             </ul>  
             <ul>
                 <span class="inf-pj">地址</span>
-                <input type="text" class="inf-text" style="width: 170px;" name="username">
+                <input type="text" name="address" class="inf-text" style="width: 170px;" name="username">
             </ul>
         </ul>
 
     </div>
 </div>
-
-<a href="selecttime.html" onclick="jump()"><img src="./img/nextstep.png" id="preorder"></a>
+<a onclick="set_();jump()"><img src="./img/nextstep.png" id="preorder"></a>
 </body>
 <script type="text/javascript">
-    pri1=0,pri2=0,pri3=0,pri4=0,pri5=0;sex=0;address='';
-    document.cookie="userId=320; path=/";
+    pri1=0,pri2=0,pri3=0,pri4=0,pri5=0;sex=0;address='';phone=0;name="";sex=0;
     function GetCount() {
         var conts = 0;
         var aa = 0;
@@ -289,12 +287,25 @@
         num_=pri1/88*108+pri2+pri3/168*198+pri4/128*148+pri5/128*148-num;
         $("#zong3").text(parseInt(num_).toFixed(2));
     }
-    function set(obj,value) {
-        
+    function set(value) {
+        sex=value; 
     }
-    // function jump(argument) {
-        document.cookie.a="saddsasdsda"; 
-    // }
-
+    function set_(argument) {
+        phone=document.getElementsByName("phone")[0].value;
+        address=document.getElementsByName("address")[0].value;
+        name=document.getElementsByName("username")[0].value;
+    }
+    function jump() {
+        sessionStorage.p1=pri1/88;
+        sessionStorage.p2=pri2/88;
+        sessionStorage.p3=pri3/168;
+        sessionStorage.p4=pri4/128;
+        sessionStorage.p5=pri5/128;
+        sessionStorage.sex=sex;        
+        sessionStorage.address=address;   
+        sessionStorage.phone=phone; 
+        sessionStorage.name=name;   
+        window.location.href = 'selecttime.html';        
+    }
 </script>
 </html>
