@@ -9,9 +9,6 @@
         /*background-color: #FFD900;*/
         padding: 0;
         margin: 0;
-        background-image: url('./img/BGI2.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
         font-family: "微软雅黑",Arial,Helvetica,sans-serif;
         font-weight: bold;
     }
@@ -100,179 +97,176 @@
 </style>
 </head>
 <body>
-    <div id="contant2">
-        <img src="./img/photocontent.png" style="margin-top:20px;margin-bottom: 20px; width: 100%">
-        <div class="main" style="">
-            <p></p><p></p><p></p><p></p>
-            <ul><li>内容</li><li>人数</li><li>价格</li></ul>
-            <ul>
-                <li>证件照</li>
-                <li>       
-                    <input id="min1" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
-                    <input id="text_box1" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
-                    <input id="add1" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
-                    <script type="text/javascript">
-                        document.getElementById("text_box1").value=sessionStorage.p1;
-                        $(function () {
-                            var t = $("#text_box1");
-                            t.value=sessionStorage.p1;
-                            $("#add1").click(function () {
-                                t.val(parseInt(t.val()) + 1)
-                                setTotal(); GetCount();tsetTotal();
-                            })
-                            $("#min1").click(function () {
-                                if (parseInt(t.val())>=1) {
-                                    t.val(parseInt(t.val()) - 1)
-                                    setTotal(); GetCount();tsetTotal();
-                                }
-                            })
-                            function setTotal() {
-                                pri1=(t.val()) * 88;
-                            }
-                            tsetTotal();
+    <img src="./img/photocontent.png" style="margin-top:20px;margin-bottom: 20px; width: 100%">
+    <img src="./img/BGI2.png" style="position: fixed;bottom: 0px;right: 0px;width: 100%;">
+    <div class="main" style="">
+        <p></p><p></p><p></p><p></p>
+        <ul><li>内容</li><li>人数</li><li>价格</li></ul>
+        <ul>
+            <li>证件照</li>
+            <li>       
+                <input id="min1" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
+                <input id="text_box1" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
+                <input id="add1" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
+                <script type="text/javascript">
+                    document.getElementById("text_box1").value=sessionStorage.p1;
+                    $(function () {
+                        var t = $("#text_box1");
+                        t.value=sessionStorage.p1;
+                        $("#add1").click(function () {
+                            t.val(parseInt(t.val()) + 1)
+                            setTotal(); GetCount();tsetTotal();
                         })
-                    </script>         
-                </li><li id="total1" >￥108</li>
-            </ul>
-            <ul><li>写真照</li>
-                <li>                            
-                    <input id="min2" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
-                    <input id="text_box2" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
-                    <input id="add2" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
-                    <script type="text/javascript">
-                        document.getElementById("text_box2").value=sessionStorage.p2;
-                        $(function () {
-                            var t = $("#text_box2");
-                            $("#add2").click(function () {
-                                t.val(parseInt(t.val()) + 1)
-                                setTotal(); GetCount();tsetTotal();
-                            })
-                            $("#min2").click(function () {
-                                if (parseInt(t.val())>=1) {
-                                    t.val(parseInt(t.val()) - 1)
-                                    setTotal(); GetCount();tsetTotal();
-                                }
-                            })
-                            function setTotal() {
-                                pri2=(t.val()) * 88;
-                            }
-                            setTotal();tsetTotal();
-                        })
-                    </script>  
-                </li><li id="total2" >￥88</li>
-            </ul>
-            <ul><li>结婚照</li>
-                <li>                         
-                    <input id="min3" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
-                    <input id="text_box3" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
-                    <input id="add3" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
-                    <script type="text/javascript">
-                        document.getElementById("text_box3").value=sessionStorage.p3;
-                        $(function () {
-                            var t = $("#text_box3");
-                            t.value=sessionStorage.p3;
-                            $("#add3").click(function () {
-                                t.val(parseInt(t.val()) + 1)
-                                setTotal(); GetCount();tsetTotal();
-                            })
-                            $("#min3").click(function () {
-                               if (parseInt(t.val())>=1) {
+                        $("#min1").click(function () {
+                            if (parseInt(t.val())>=1) {
                                 t.val(parseInt(t.val()) - 1)
                                 setTotal(); GetCount();tsetTotal();
                             }
                         })
-                            function setTotal() {
-                                pri3=(t.val()) * 168;
-                            }
-                            setTotal();tsetTotal();
-                        })
-                    </script>     
-                </li><li id="total3" >￥198</li>
-            </ul>
-            <ul><li>宠物照</li>
-                <li>                            
-                    <input id="min4" name="" class="cbtn"  style=" width:20px; height:18px;" type="button" value="-" />
-                    <input id="text_box4" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
-                    <input id="add4" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
-                    <script type="text/javascript">
-                        document.getElementById("text_box4").value=sessionStorage.p4;
-                        $(function () {
-                            var t = $("#text_box4");
-                            t.value=sessionStorage.p4;
-                            $("#add4").click(function () {
-                                t.val(parseInt(t.val()) + 1)
-                                setTotal(); GetCount();tsetTotal();
-                            })
-                            $("#min4").click(function () {
-                               if (parseInt(t.val())>=1) {
-                                t.val(parseInt(t.val()) - 1)
-                                setTotal(); GetCount();tsetTotal();
-                            }
-                        })
-                            function setTotal() {
-                                pri4=(t.val()) * 128;
-                            }
-                            setTotal();tsetTotal();
-                        })
-                    </script>  
-                </li><li id="total4" >￥148</li>
-            </ul>
-            <ul style="margin-bottom: 5px;"><li>毕业照</li>
-                <li>                            
-                    <input id="min5" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
-                    <input id="text_box5" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
-                    <input id="add5" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
-                    <script type="text/javascript">
-                        document.getElementById("text_box5").value=sessionStorage.p5;
-                        $(function () {
-                            var t = $("#text_box5");
-                            t.value=sessionStorage.p5;
-                            $("#add5").click(function () {
-                                t.val(parseInt(t.val()) + 1)
-                                setTotal(); GetCount();tsetTotal();
-                            })
-                            $("#min5").click(function () {
-                               if (parseInt(t.val())>=1) {
-                                t.val(parseInt(t.val()) - 1)
-                                setTotal(); GetCount();tsetTotal();
-                            }
-                        })
-                            function setTotal() {
-                                pri5=(t.val()) * 128;
-                            }
-                            setTotal();tsetTotal();
-                        })
-                    </script>  
-                </li><li id="total5" >￥148</li>
-            </ul>
-            <div class="calpri">
-                <ul style="line-height: 18px;"><li style="width: 66%">线上预约立减</li><li id="zong3" style="text-align: center;font-weight: bold;"></li></ul>
-                <ul style="line-height: 18px;border-bottom: 1px solid;"> <li style="width: 66%">组合优惠</li><li id="zong2" style="text-align: center;font-weight: bold;">-￥0</li></ul>
-                <ul style="line-height: 18px;"><li style="width: 66%">应付金额</li><li id="zong1" style="text-align: center;font-weight: bold;color: red;"></li></ul>
-            </div>
-
-        </div>
-        <div class="main2">
-            <ul>
-                <span class="inf-pj">姓名</span>
-                <input type="text" class="inf-text" style="width: 50px;" name="username">
-                <span class="inf-pj">姓别</span> 
-                <input type="button" name="sex" class="sex-btn" value="男" onclick="set(0)" />
-                <input type="button" name="sex" class="sex-btn" value="女" onclick="set(1)" />
-            </ul>
-            <ul>
-                <span class="inf-pj">手机</span>
-                <input type="text" name="phone" class="inf-text" style="width: 170px;" name="username">
-            </ul>  
-            <ul>
-                <span class="inf-pj">地址</span>
-                <input type="text" name="address" class="inf-text" style="width: 170px;" name="username">
-            </ul>
+                        function setTotal() {
+                            pri1=(t.val()) * 88;
+                        }
+                        tsetTotal();
+                    })
+                </script>         
+            </li><li id="total1" >￥108</li>
         </ul>
+        <ul><li>写真照</li>
+            <li>                            
+                <input id="min2" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
+                <input id="text_box2" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
+                <input id="add2" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
+                <script type="text/javascript">
+                    document.getElementById("text_box2").value=sessionStorage.p2;
+                    $(function () {
+                        var t = $("#text_box2");
+                        $("#add2").click(function () {
+                            t.val(parseInt(t.val()) + 1)
+                            setTotal(); GetCount();tsetTotal();
+                        })
+                        $("#min2").click(function () {
+                            if (parseInt(t.val())>=1) {
+                                t.val(parseInt(t.val()) - 1)
+                                setTotal(); GetCount();tsetTotal();
+                            }
+                        })
+                        function setTotal() {
+                            pri2=(t.val()) * 88;
+                        }
+                        setTotal();tsetTotal();
+                    })
+                </script>  
+            </li><li id="total2" >￥88</li>
+        </ul>
+        <ul><li>结婚照</li>
+            <li>                         
+                <input id="min3" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
+                <input id="text_box3" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
+                <input id="add3" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
+                <script type="text/javascript">
+                    document.getElementById("text_box3").value=sessionStorage.p3;
+                    $(function () {
+                        var t = $("#text_box3");
+                        t.value=sessionStorage.p3;
+                        $("#add3").click(function () {
+                            t.val(parseInt(t.val()) + 1)
+                            setTotal(); GetCount();tsetTotal();
+                        })
+                        $("#min3").click(function () {
+                           if (parseInt(t.val())>=1) {
+                            t.val(parseInt(t.val()) - 1)
+                            setTotal(); GetCount();tsetTotal();
+                        }
+                    })
+                        function setTotal() {
+                            pri3=(t.val()) * 168;
+                        }
+                        setTotal();tsetTotal();
+                    })
+                </script>     
+            </li><li id="total3" >￥198</li>
+        </ul>
+        <ul><li>宠物照</li>
+            <li>                            
+                <input id="min4" name="" class="cbtn"  style=" width:20px; height:18px;" type="button" value="-" />
+                <input id="text_box4" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
+                <input id="add4" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
+                <script type="text/javascript">
+                    document.getElementById("text_box4").value=sessionStorage.p4;
+                    $(function () {
+                        var t = $("#text_box4");
+                        t.value=sessionStorage.p4;
+                        $("#add4").click(function () {
+                            t.val(parseInt(t.val()) + 1)
+                            setTotal(); GetCount();tsetTotal();
+                        })
+                        $("#min4").click(function () {
+                           if (parseInt(t.val())>=1) {
+                            t.val(parseInt(t.val()) - 1)
+                            setTotal(); GetCount();tsetTotal();
+                        }
+                    })
+                        function setTotal() {
+                            pri4=(t.val()) * 128;
+                        }
+                        setTotal();tsetTotal();
+                    })
+                </script>  
+            </li><li id="total4" >￥148</li>
+        </ul>
+        <ul style="margin-bottom: 5px;"><li>毕业照</li>
+            <li>                            
+                <input id="min5" name=""  class="cbtn" style=" width:20px; height:18px;" type="button" value="-" />
+                <input id="text_box5" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
+                <input id="add5" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
+                <script type="text/javascript">
+                    document.getElementById("text_box5").value=sessionStorage.p5;
+                    $(function () {
+                        var t = $("#text_box5");
+                        t.value=sessionStorage.p5;
+                        $("#add5").click(function () {
+                            t.val(parseInt(t.val()) + 1)
+                            setTotal(); GetCount();tsetTotal();
+                        })
+                        $("#min5").click(function () {
+                           if (parseInt(t.val())>=1) {
+                            t.val(parseInt(t.val()) - 1)
+                            setTotal(); GetCount();tsetTotal();
+                        }
+                    })
+                        function setTotal() {
+                            pri5=(t.val()) * 128;
+                        }
+                        setTotal();tsetTotal();
+                    })
+                </script>  
+            </li><li id="total5" >￥148</li>
+        </ul>
+        <div class="calpri">
+            <ul style="line-height: 18px;"><li style="width: 66%">线上预约立减</li><li id="zong3" style="text-align: center;font-weight: bold;"></li></ul>
+            <ul style="line-height: 18px;border-bottom: 1px solid;"> <li style="width: 66%">组合优惠</li><li id="zong2" style="text-align: center;font-weight: bold;">-￥0</li></ul>
+            <ul style="line-height: 18px;"><li style="width: 66%">应付金额</li><li id="zong1" style="text-align: center;font-weight: bold;color: red;"></li></ul>
+        </div>
 
     </div>
-</div>
-<a onclick="set_();jump()"><img src="./img/nextstep.png" id="preorder"></a>
+    <div class="main2">
+        <ul>
+            <span class="inf-pj">姓名</span>
+            <input type="text" class="inf-text" style="width: 50px;" name="username">
+            <span class="inf-pj">姓别</span> 
+            <input type="button" name="sex" class="sex-btn" value="男" onclick="set(0)" />
+            <input type="button" name="sex" class="sex-btn" value="女" onclick="set(1)" />
+        </ul>
+        <ul>
+            <span class="inf-pj">手机</span>
+            <input type="text" name="phone" class="inf-text" style="width: 170px;" name="username">
+        </ul>  
+        <ul>
+            <span class="inf-pj">地址</span>
+            <input type="text" name="address" class="inf-text" style="width: 170px;" name="username">
+        </ul>
+    </div>
+    <a onclick="set_();jump()"><img src="./img/nextstep.png" id="preorder"></a>
 </body>
 <script type="text/javascript">
     pri1=0,pri2=0,pri3=0,pri4=0,pri5=0;sex=0;address='';phone=0;name="";sex=0;
