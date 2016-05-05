@@ -12,6 +12,9 @@
         font-family: "微软雅黑",Arial,Helvetica,sans-serif;
         font-weight: bold;
     }
+    input[type="button"], input[type="submit"], input[type="reset"] {
+        -webkit-appearance: none;
+    }
     .main{
         position: relative;
         background-color: #FFD900;
@@ -98,7 +101,7 @@
 </head>
 <body>
     <img src="./img/photocontent.png" style="margin-top:20px;margin-bottom: 20px; width: 100%">
-    <img src="./img/BGI2.png" style="position: fixed;bottom: 0px;right: 0px;width: 100%;">
+    <img src="./img/BGI2.png" style="position: absolute;bottom: 0px;right: 0px;width: 100%;">
     <div class="main" style="">
         <p></p><p></p><p></p><p></p>
         <ul><li>内容</li><li>人数</li><li>价格</li></ul>
@@ -173,7 +176,7 @@
                             setTotal(); GetCount();tsetTotal();
                         })
                         $("#min3").click(function () {
-                           if (parseInt(t.val())>=1) {
+                         if (parseInt(t.val())>=1) {
                             t.val(parseInt(t.val()) - 1)
                             setTotal(); GetCount();tsetTotal();
                         }
@@ -201,7 +204,7 @@
                             setTotal(); GetCount();tsetTotal();
                         })
                         $("#min4").click(function () {
-                           if (parseInt(t.val())>=1) {
+                         if (parseInt(t.val())>=1) {
                             t.val(parseInt(t.val()) - 1)
                             setTotal(); GetCount();tsetTotal();
                         }
@@ -229,7 +232,7 @@
                             setTotal(); GetCount();tsetTotal();
                         })
                         $("#min5").click(function () {
-                           if (parseInt(t.val())>=1) {
+                         if (parseInt(t.val())>=1) {
                             t.val(parseInt(t.val()) - 1)
                             setTotal(); GetCount();tsetTotal();
                         }
