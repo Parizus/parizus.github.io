@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>预约拍摄</title>
+<title>拍摄内容</title>
 <!-- <link rel="stylesheet" href="./css/style.css"> -->
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="./js/jquery.1.4.2-min.js"></script>
 <style type="text/css">
+    [placeholder] { font-family: 'Microsoft yahei'; }
+    ::-moz-placeholder {
+        color: #FFF8CF;
+        text-indent: 5px; /* 没有用 */
+        opacity: 1!important;
+    }
+    :-ms-input-placeholder {
+        color: #FFF8CF;
+        text-indent: 5px;
+    }
+    ::-webkit-input-placeholder {
+        color: #FFF8CF;
+        text-indent: 5px;
+    }
     body{
         /*background-color: #FFD900;*/
         padding: 0;
@@ -14,7 +29,6 @@
     }
     input[type="button"], input[type="submit"], input[type="reset"] {
         -webkit-appearance: none;
-        width: 40px;
         height: 20px;
         border-style: solid solid solid solid;
         border-width: 1px;
@@ -25,7 +39,7 @@
     .main{
         position: relative;
         background-color: #FFD900;
-        height: 240px;
+        height: 255px;
         font-size: 14px;
         width: 80%;
         margin-left: 10%;
@@ -34,7 +48,7 @@
     .main2{
         position: relative;
         background-color: #FFD900;
-        height: 90px;
+        height: 115px;
         font-size: 14px;
         margin-top: 20px;
         width: 80%;
@@ -82,6 +96,15 @@
         width: 33%;
         text-align: center;
     }
+    p{
+        text-align: right;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        float: right;
+        font-size: 12px;
+        font-weight: lighter;
+    }
     .number,.sex{
         border-width: 1px;
         border-radius: 5px;
@@ -92,6 +115,9 @@
         background-color:  #FFD900;
         border: none;
         -webkit-appearance:none;
+        width: 10px;
+        height: 10px;
+        padding: 0px;
     }
     @media screen and (max-width: 360px) {
         .main ul{
@@ -101,14 +127,14 @@
     } 
     @media screen and (min-width: 375px) {
         .main{
-            height: 270px;
+            height: 280px;
         }
     }  
 </style>
 </head>
 <body>
     <img src="./img/photocontent.png" style="margin-top:20px;margin-bottom: 20px; width: 100%">
-    <img src="./img/BGI2.png" style="position: absolute;bottom: 0px;right: 0px;width: 100%;">
+    <img src="./img/BGI2.png" style="position: fixed;bottom: 0px;right: 0px;width: 100%;">
     <div class="main" style="">
         <p></p><p></p><p></p><p></p>
         <ul><li>内容</li><li>人数</li><li>价格</li></ul>
@@ -119,24 +145,31 @@
                 <input id="text_box1" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
                 <input id="add1" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
                 <script type="text/javascript">
-                    document.getElementById("text_box1").value=sessionStorage.p1;
                     $(function () {
                         var t = $("#text_box1");
+                        document.getElementById("text_box1").value=sessionStorage.p1;
+                        if (sessionStorage.p1!=0) {
+                            t.css({ "color": "#fff", "background-color": "#ff9900" });                        
+                        }
                         t.value=sessionStorage.p1;
                         $("#add1").click(function () {
                             t.val(parseInt(t.val()) + 1)
                             setTotal(); GetCount();tsetTotal();
+                            t.css({ "color": "#fff", "background-color": "#ff9900" });
                         })
                         $("#min1").click(function () {
                             if (parseInt(t.val())>=1) {
                                 t.val(parseInt(t.val()) - 1)
                                 setTotal(); GetCount();tsetTotal();
                             }
+                            if (parseInt(t.val())==0) {  
+                                t.css({ "color": "#000", "background-color": "#FFD900" });                       
+                            }
                         })
                         function setTotal() {
                             pri1=(t.val()) * 88;
                         }
-                        tsetTotal();
+                        setTotal();tsetTotal();
                     })
                 </script>         
             </li><li id="total1" >￥108</li>
@@ -147,24 +180,33 @@
                 <input id="text_box2" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
                 <input id="add2" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
                 <script type="text/javascript">
-                    document.getElementById("text_box2").value=sessionStorage.p2;
                     $(function () {
                         var t = $("#text_box2");
+                        document.getElementById("text_box2").value=sessionStorage.p2;
+                        if (sessionStorage.p2!=0) {
+                            t.css({ "color": "#fff", "background-color": "#ff9900" });                        
+                        }
                         $("#add2").click(function () {
-                            t.val(parseInt(t.val()) + 1)
-                            setTotal(); GetCount();tsetTotal();
+                            if (parseInt(t.val())<=5) {
+                                t.val(parseInt(t.val()) + 1)
+                                setTotal(); GetCount();tsetTotal();
+                                t.css({ "color": "#fff", "background-color": "#ff9900" });
+                            }
                         })
                         $("#min2").click(function () {
                             if (parseInt(t.val())>=1) {
                                 t.val(parseInt(t.val()) - 1)
-                                setTotal(); GetCount();tsetTotal();
+                                setTotal(); GetCount();tsetTotal();    
+                            }
+                            if (parseInt(t.val())==0) {  
+                                t.css({ "color": "#000", "background-color": "#FFD900" });                       
                             }
                         })
                         function setTotal() {
                             pri2=(t.val()) * 88;
                         }
                         setTotal();tsetTotal();
-                    })
+                    })   
                 </script>  
             </li><li id="total2" >￥88</li>
         </ul>
@@ -174,22 +216,29 @@
                 <input id="text_box3" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
                 <input id="add3" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
                 <script type="text/javascript">
-                    document.getElementById("text_box3").value=sessionStorage.p3;
                     $(function () {
                         var t = $("#text_box3");
+                        document.getElementById("text_box3").value=sessionStorage.p3;
+                        if (sessionStorage.p3!=0) {
+                            t.css({ "color": "#fff", "background-color": "#ff9900" });                        
+                        }
                         t.value=sessionStorage.p3;
                         $("#add3").click(function () {
-                            t.val(parseInt(t.val()) + 1)
+                            t.val(parseInt(t.val()) + 2)
                             setTotal(); GetCount();tsetTotal();
+                            t.css({ "color": "#fff", "background-color": "#ff9900" });
                         })
                         $("#min3").click(function () {
                          if (parseInt(t.val())>=1) {
-                            t.val(parseInt(t.val()) - 1)
+                            t.val(parseInt(t.val()) - 2)
                             setTotal(); GetCount();tsetTotal();
+                        }
+                        if (parseInt(t.val())==0) {  
+                            t.css({ "color": "#000", "background-color": "#FFD900" });                       
                         }
                     })
                         function setTotal() {
-                            pri3=(t.val()) * 168;
+                            pri3=(t.val()) /2* 168;
                         }
                         setTotal();tsetTotal();
                     })
@@ -202,22 +251,29 @@
                 <input id="text_box4" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
                 <input id="add4" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
                 <script type="text/javascript">
-                    document.getElementById("text_box4").value=sessionStorage.p4;
                     $(function () {
                         var t = $("#text_box4");
+                        document.getElementById("text_box4").value=sessionStorage.p4;
+                        if (sessionStorage.p4!=0) {
+                            t.css({ "color": "#fff", "background-color": "#ff9900" });                        
+                        }
                         t.value=sessionStorage.p4;
                         $("#add4").click(function () {
                             t.val(parseInt(t.val()) + 1)
                             setTotal(); GetCount();tsetTotal();
+                            t.css({ "color": "#fff", "background-color": "#ff9900" });
                         })
                         $("#min4").click(function () {
                          if (parseInt(t.val())>=1) {
                             t.val(parseInt(t.val()) - 1)
                             setTotal(); GetCount();tsetTotal();
                         }
+                        if (parseInt(t.val())==0) {  
+                            t.css({ "color": "#000", "background-color": "#FFD900" });                       
+                        }
                     })
                         function setTotal() {
-                            pri4=(t.val()) * 128;
+                            pri4=(t.val()) * 148;
                         }
                         setTotal();tsetTotal();
                     })
@@ -230,18 +286,25 @@
                 <input id="text_box5" name="" type="text" value="0" class="number" style=" width:20px; text-align:center; " />
                 <input id="add5" name="" class="cbtn" style=" width:20px; height:18px;" type="button" value="+" />
                 <script type="text/javascript">
-                    document.getElementById("text_box5").value=sessionStorage.p5;
                     $(function () {
                         var t = $("#text_box5");
+                        document.getElementById("text_box5").value=sessionStorage.p5;
+                        if (sessionStorage.p5!=0) {
+                            t.css({ "color": "#fff", "background-color": "#ff9900" });                        
+                        }
                         t.value=sessionStorage.p5;
                         $("#add5").click(function () {
                             t.val(parseInt(t.val()) + 1)
                             setTotal(); GetCount();tsetTotal();
+                            t.css({ "color": "#fff", "background-color": "#ff9900" });
                         })
                         $("#min5").click(function () {
                          if (parseInt(t.val())>=1) {
                             t.val(parseInt(t.val()) - 1)
                             setTotal(); GetCount();tsetTotal();
+                        }
+                        if (parseInt(t.val())==0) {  
+                            t.css({ "color": "#000", "background-color": "#FFD900" });                       
                         }
                     })
                         function setTotal() {
@@ -257,29 +320,30 @@
             <ul style="line-height: 18px;border-bottom: 1px solid;"> <li style="width: 66%">组合优惠</li><li id="zong2" style="text-align: center;font-weight: bold;">-￥0</li></ul>
             <ul style="line-height: 18px;"><li style="width: 66%">应付金额</li><li id="zong1" style="text-align: center;font-weight: bold;color: red;"></li></ul>
         </div>
-
+        <p>*所有产品均含化妆服装、精修底片1张*</p>
     </div>
     <div class="main2">
         <ul>
             <span class="inf-pj">姓名</span>
-            <input type="text" class="inf-text" style="width: 50px;" name="username">
+            <input type="text" id="cont1" class="inf-text" style="width: 50px;" name="username">
             <span class="inf-pj">姓别</span> 
             <input type="button" name="sex" class="sex-btn" value="男" onclick="set(0)" />
             <input type="button" name="sex" class="sex-btn" value="女" onclick="set(1)" />
         </ul>
         <ul>
             <span class="inf-pj">手机</span>
-            <input type="text" name="phone" class="inf-text" style="width: 170px;" name="username">
+            <input type="text" id="cont2" name="phone" class="inf-text" style="width: 170px;" name="username">
         </ul>  
         <ul>
             <span class="inf-pj">地址</span>
-            <input type="text" name="address" class="inf-text" style="width: 170px;" name="username">
+            <input type="text" id="cont3" name="address"  placeholder="学校/单位" class="inf-text" style="width: 170px;" name="username">
         </ul>
+        <p>*请填写真实信息，我们将严格保密*</p>
     </div>
-    <a onclick="set_();jump()"><img src="./img/nextstep.png" id="preorder"></a>
+    <a onclick="set_();validate();" style="display: block;height: 0px;"><img src="./img/nextstep.png" id="preorder"></a>
 </body>
 <script type="text/javascript">
-    pri1=0,pri2=0,pri3=0,pri4=0,pri5=0;sex=0;address='';phone=0;name="";sex=0;
+    pri1=0,pri2=0,pri3=0,pri4=0,pri5=0;sex=0;address='';phone=0;name="";sex=0;num=0;
     function GetCount() {
         var conts = 0;
         var aa = 0;
@@ -299,9 +363,15 @@
     function tsetTotal() {
         num=pri1+pri2+pri3+pri4+pri5;
         $("#zong1").text(parseInt(num).toFixed(2));
-        num_=pri1/88*108+pri2+pri3/168*198+pri4/128*148+pri5/128*148-num;
+        num_=pri1/88*108+pri2+pri3/2/168*198+pri4/148*148+pri5/128*148-num;
         $("#zong3").text(parseInt(num_).toFixed(2));
     }
+    b=1;
+    $(".sex-btn").click(function () {
+        b=0;
+        $(".sex-btn").removeAttr("style");
+        $(this).css({ "color": "#fff", "background-color": "#ff9900" });
+    }); 
     function set(value) {
         sex=value; 
     }
@@ -313,14 +383,39 @@
     function jump() {
         sessionStorage.p1=pri1/88;
         sessionStorage.p2=pri2/88;
-        sessionStorage.p3=pri3/168;
+        sessionStorage.p3=pri3/2/168;
         sessionStorage.p4=pri4/128;
         sessionStorage.p5=pri5/128;
         sessionStorage.sex=sex;        
         sessionStorage.address=address;   
         sessionStorage.phone=phone; 
-        sessionStorage.name=name;   
+        sessionStorage.name=name;
+        sessionStorage._price=num;     
         window.location.href = 'selecttime.html';        
+    }
+    function validate(){
+        a=0;
+        for (var i = 1; i < 4; i++) {
+            obj=document.getElementById("cont"+i);
+            if (obj.value==null||obj.value=="")
+            {
+                a=1;
+                alert("请完成信息填写");
+                break;
+            }   
+        }   
+        var regu =/^1[0-9]{1}[0-9]{9}$/; 
+        var re = new RegExp(regu); 
+        if (!re.test(phone)) {
+            a=1;
+            alert ("请输入正确的手机号",obj);
+        } 
+        if (b==1) {
+            alert("请选择性别");
+        }
+        else{
+            if (a==0) {jump();}
+        }
     }
 </script>
 </html>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>完成付费</title>
+<title>选择拍照类型</title>
 <!-- <link rel="stylesheet" href="./css/style.css"> -->
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script type="text/javascript" src="js/jquery.js"></script>
 <style type="text/css">
     body{
         background-color: #FFD900;
@@ -12,6 +13,7 @@
     ul{
         /*line-height: 80px;*/
         width: 100px;
+        line-height: 70px;
         margin-top: 0px;
         margin-bottom: 0px;
         padding-left: 8px;
@@ -19,7 +21,7 @@
         padding-top: 0px;
         padding-bottom: 0px;
         font-size: 20px;
-        font-family: "Microsoft YaHei";
+        font-family: "微软雅黑",Arial,Helvetica,sans-serif;
         font-weight: bold;
     }
     a{
@@ -29,15 +31,24 @@
     a:hover{
         cursor:pointer;
     }
+    #preorder,#tribgi{
+        position: fixed;
+        width: 128px;
+        height: 420px;
+        margin-left: -64px;
+        margin-top: -210px;
+        top: 50%;
+        left: 50%;
+    }
 </style>
 </head>
 <body>
     <img src="./img/BGI.png" style="width: 100%;position: fixed;">
-    <img id="tribgi" src="./img/tribgi.png" style="position: fixed;width:40%;margin-left: 30%;">
-    <div id="preorder" style="position: fixed; width: 40%;margin-left: 30%;">
-        <ul style="float: left;text-align: left;"><a onclick="p1=1;fill()">证件照</a></ul>
+    <img id="tribgi" src="./img/tribgi.png" style="">
+    <div id="preorder" style="">
+        <ul style="float: left;text-align: left;margin-top: 35px;"><a onclick="p1=1;fill()">证件照</a></ul>
         <ul style="float: right;text-align: right;"><a onclick="p2=1;fill()">写真照</a></ul>
-        <ul style="float: left;text-align: left;"><a onclick="p3=1;fill()">结婚照</a></ul>
+        <ul style="float: left;text-align: left;"><a onclick="p3=2;fill()">结婚照</a></ul>
         <ul style="float: right;text-align: right;"><a onclick="p4=1;fill()">宠物照</a></ul>
         <ul style="float: left;text-align: left;"><a onclick="p5=1;fill()">毕业照</a></ul>
     </div>
@@ -46,12 +57,13 @@
     p1=0;p2=0;p3=0,p4=0,p5=0;
     // sessionStorage.p1=0;sessionStorage.p2=0;sessionStorage.p3=0;sessionStorage.p4=0;sessionStorage.p5=0;
     window.onload=function(){
-        th=document.getElementById("tribgi").offsetHeight;
+
+        // th=document.getElementById("tribgi").offsetHeight;
         for (var i = 0; i < 5; i++) {
-            document.getElementsByTagName("ul")[i].style.lineHeight=th/6+"px";
+            document.getElementsByTagName("ul")[i].style.fontsize=20+"px";
+            document.getElementsByTagName("ul")[i].style.lineheight=70+"px";
         } 
-        pos("tribgi");
-        pos("preorder");
+        // pos("tribgi");
     } ;
     function pos(obj) {
         if (window.innerHeight){
@@ -69,5 +81,10 @@
         console.log(p1,p2,p3,p4,p5)
         window.location.href = 'price.html';
     }
+    $.get("http://wx.senselover.com/Auth/checkLogin", function(data){
+        if(data.status == 0){
+            window.location.href = data.url;
+        }
+    });
 </script>
 </html>

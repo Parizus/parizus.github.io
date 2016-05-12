@@ -10,11 +10,17 @@
     body{
         padding: 0;
         margin: 0;
-        background-image: url('./img/BGI2.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
         font-family: "微软雅黑",Arial,Helvetica,sans-serif;
         font-weight: bold;
+    }
+    input[type="button"], input[type="submit"], input[type="reset"] {
+        -webkit-appearance: none;
+        height: 20px;
+        border-style: solid solid solid solid;
+        border-width: 1px;
+        border-radius: 5px;
+        border-color: #000;
+        background-color: #FFD900;
     }
     .calendar{
         margin-top: 78px;
@@ -108,6 +114,7 @@
 </head>
 <body>
     <img src="./img/phototime.png" style="position: absolute;left: 0px;top: 20px;width: 100%">
+    <img src="./img/BGI2.png" style="position: fixed;bottom: 0px;right: 0px;width: 100%;">
     <div class="main" id="_main">
         <ul><input class="time-btn" type="button" value="10:00"  onclick="set(this,1)"/>
             <input class="time-btn" type="button" value="10:30"  onclick="set(this,2)"/>
@@ -140,12 +147,12 @@
         </ul> 
     </div>
     <div class="showtime" style="width: 80%;margin-left: 10%;">
-    <span>您预约的日期为</span>
+        <span>预约日期</span>
         <input id="Text1" type="text"/>
-    <span>时间为</span>
+        <span>时间</span>
         <input id="Text2" type="text"/>
     </div>
-    <a onclick="writeform();submit()"><img src="./img/nextstep.png" id="preorder"></a>
+    <a onclick="writeform();submit()" style="display: block;height: 0px;"><img src="./img/nextstep.png" id="preorder" style="margin-bottom: 20px;"></a>
     <form id="myform" action="wx.senselover.com/Order/order" method="post" style="display: none;">
         <input value="" name="name"></input>
         <input value="" name="sex"></input>
@@ -168,15 +175,41 @@
     var div=document.getElementById("_calendar");  
     var span=document.createElement("p");  
     span.innerHTML="*白色部分代表预约已满*"  
-    div.appendChild(span); 
+    div.appendChild(span);    
+
+    var date = new Date();
+    var today = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+    var hour = date.getHours();
+    document.getElementById("Text1").value=today;
+
+    $("td").click(function () {
+        dtoday=date.getDate();
+        dat=document.getElementById("Text1").value; 
+        dat_=dat.substr(dat.length-2);
+        if ((dat_-dtoday)>7) {
+            alert("暂时只支持一周以内的预定");
+        }
+        else if((dat_-dtoday)<1){
+            alert("过去的日期可是无法预订哦")
+        }else{
+            $("td").removeAttr("style");
+            $(this).css({ "color": "#fff", "background-color": "#ff9900" });            
+        }
+    }); 
+    $(".time-btn").click(function () {
+        $(".time-btn").removeAttr("style");
+        $(this).css({ "color": "#fff", "background-color": "#ff9900" });
+    }); 
+
     function set(obj,value) {
         sessionStorage.photo_time_period=value; 
         sessionStorage.photo_date=document.getElementById("Text1").value;
         document.getElementById("Text2").value=obj.value;
+        sessionStorage._photo_time=obj.value;
     }
     function writeform() {
         document.getElementsByName("name")[0].value=sessionStorage.name;
-        document.getElementsByName("sex")[0].value=sessionStorage.sex;
+        document.getElementsByName("sex")[0].value=sessionStorage.sex;        
         document.getElementsByName("phone")[0].value=sessionStorage.phone;
         document.getElementsByName("address")[0].value=sessionStorage.address;
         document.getElementsByName("p1")[0].value=sessionStorage.p1;
@@ -187,9 +220,30 @@
         document.getElementsByName("photo_date")[0].value=sessionStorage.photo_date;
         document.getElementsByName("photo_time_period")[0].value=sessionStorage.photo_time_period;
     }
+    $("#submit").click(function(){
+    });
+    sessionStorage.url="";
+    sessionStorage.orderid="";
     function submit() {
-        document.getElementById("myform").submit(); 
-        window.location.href = 'complete.html';
+        $.ajax({
+            url:'http://wx.senselover.com/Order/order',
+            type:"POST",
+            data:$('#myform').serialize(),
+            success: function(data) {
+                if(data.status == 1){
+                    window.location.href = 'pay.html';
+                    sessionStorage.orderid=data.orderid;
+                    sessionStorage.url=data.url; 
+                } else{
+                    console.log(data.message);
+                }            
+            }
+        });
     }
+    $.get("http://wx.senselover.com/Auth/checkLogin", function(data){
+        if(data.status == 0){
+            window.location.href = data.url;
+        }
+    });
 </script>
 </html>

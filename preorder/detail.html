@@ -4,20 +4,19 @@
 <!-- <link rel="stylesheet" href="./css/style.css"> -->
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/hDate.js"></script>
 <style type="text/css">
     body{
         padding: 0;
         margin: 0;
-        background-image: url('./img/BGI2.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
+        /*background-image: url('./img/BGI2.png');*/
+        /*background-size: 100%;*/
+        /*background-repeat: no-repeat;*/
         font-family: "微软雅黑",Arial,Helvetica,sans-serif;
         font-weight: bold;
     }
     .main{
         background-color: #FFD900;
-        height: 185px;
+        height: 155px;
         font-size: 14px;
         width: 80%;
         margin-left: 10%;
@@ -41,12 +40,12 @@
         position: relative;
         background-color: #FFD900;
         /*font-weight: normal;*/
-        height: 185px;
-        font-size: 11px;
+        height: 215px;
+        font-size: 13px;
         margin-top: 20px;
         width: 80%;
         margin-left: 10%;
-        line-height: 22px;
+        line-height: 24px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -77,10 +76,16 @@
     @media screen and (max-width: 330px) {
         .main ul{
             line-height: 24px;
+            font-size: 13px;
+        }
+        .main p{
             font-size: 12px;
         }
         .main2{
-            height: 245px;
+        	font-size: 12px;
+        }
+        .main2{
+            height: 262px;
         }
     } 
     @media screen and (min-width: 400px) {
@@ -92,13 +97,9 @@
 </head>
 <body>
     <img src="./img/BGIlogo.png" id="preorder" style="margin-top:20px; width: 80%; margin-left: 10%">
-    <div class="main" style="">
+    <img src="./img/BGI2.png" style=" z-index: -1;position: fixed;bottom: 0px;right: 0px;width: 100%;">
+    <div class="main" id="pay" style="">
         <ul>门店地址：麓山南路242号</ul>
-        <ul>到店时间：5月1日&nbsp;&nbsp;下午 2:30</ul>
-        <ul>拍摄内容：证件照x1&nbsp;&nbsp;宠物照x1</ul>
-        <ul>服务价格：198元</ul>
-        <ul>顾客姓名：李大宝</ul>
-        <!-- <p>*在线支付20元预付金即可完成预约，到店付尾款*</p> -->
     </div>
     <div class="main2">
         <ul>Tips：</ul>
@@ -108,10 +109,35 @@
         <ul>4.成片为您保存半年，半年内都可再次印刷/20元/张</ul>
         <ul>5.加修加拍/60元/张，快递服务需到付</ul>
         <ul>6.如需修改订单请致电 186-2756-2126</ul>
-        <ul>7.如预约当天未能按时到店，预付金恕不退回</ul>
+        <ul>7.如预约当天未能按时到店，预付金不予退回</ul>
     </div>
-    <img src="./img/modify.png" id="preorder" style="">
+    <a href="tel:18627562126"><img src="./img/modify.png" id="preorder" style="margin-bottom: 20px;"></a>
 </body>
 <script type="text/javascript">
+    a="";b="";
+    time_chart=new Array('10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30','18:00','18:30','19:00','19:30','20:00');
+    $.get("http://wx.senselover.com/Order/list", function(data){
+     a=data.order;
+     b=a.length;
+     filldetail(a[b-1]);
+ });
+    function filldetail(obj) {
+        photocontant="";
+        if (obj.p1>=1) {photocontant=photocontant+"证件照×"+obj.p1+"&nbsp;&nbsp;"}
+        if (obj.p2>=1) {photocontant=photocontant+"写真照×"+obj.p2+"&nbsp;&nbsp;"}
+        if (obj.p3>=1) {photocontant=photocontant+"结婚照×"+obj.p3+"&nbsp;&nbsp;"}
+        if (obj.p4>=1) {photocontant=photocontant+"宠物照×"+obj.p4+"&nbsp;&nbsp;"}
+        if (obj.p5>=1) {photocontant=photocontant+"毕业照×"+obj.p5+"&nbsp;&nbsp;"}
+        appendc("拍摄内容："+photocontant);
+        appendc("到店时间："+obj.photo_date+";&nbsp;&nbsp;"+time_chart[obj.photo_time_period-1]);
+        appendc("服务价格："+obj.price);
+        appendc("顾客姓名："+obj.name);
+    }
+    var div=document.getElementById("pay"); 
+    function appendc(char) {
+        var span=document.createElement("ul");  
+        span.innerHTML=char; 
+        div.appendChild(span);
+    }
 </script>
 </html>

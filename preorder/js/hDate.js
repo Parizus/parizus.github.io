@@ -216,8 +216,8 @@
             }
             // calendar.colse();
         }).live("mouseover", function () {
-            $(this).css({ "color": "#fff", "background-color": "#ff9900" });
-        }).live("mouseout", function () { $(this).removeAttr("style") });
+            $(this).css({ });
+        }).live("mouseout", function () { });
 
 
         $("#calendar_head em").click(function () {
@@ -239,22 +239,22 @@
         }
     },
     hide: function (event, Target, obj) {
-        var oPare = Target.parentNode;
-        var isChild = true;
-        if (oPare == obj || Target == obj) {
-            isChild = true;
-        } else {
-            loop: while (oPare != document.getElementById("_calendar")) {
-                oPare = oPare.parentNode;
-                if (oPare == obj || oPare == null) {
-                    isChild = false;
-                    break loop;
-                }
-            }
-        }
-        if (!isChild) {
-            // calendar.colse();
-        }
+        // var oPare = Target.parentNode;
+        // var isChild = true;
+        // if (oPare == obj || Target == obj) {
+        //     isChild = true;
+        // } else {
+        //     loop: while (oPare != document.getElementById("_calendar")) {
+        //         oPare = oPare.parentNode;
+        //         if (oPare == obj || oPare == null) {
+        //             isChild = false;
+        //             break loop;
+        //         }
+        //     }
+        // }
+        // if (!isChild) {
+        //     // calendar.colse();
+        // }
     },
     _selCal: function (e) {
         $("#_tdCal tr:gt(0) td[date!='']").click(function () {

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>预约拍摄</title>
+<title>付款</title>
 <!-- <link rel="stylesheet" href="./css/style.css"> -->
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jQuery.md5.js"></script>
 <style type="text/css">
     body{
+        background-color: #fff;
         padding: 0;
         margin: 0;
-        background-image: url('./img/BGI2.png');
-        background-size: 100%;
-        background-repeat: no-repeat;
         font-family: "微软雅黑",Arial,Helvetica,sans-serif;
         font-weight: bold;
     }
@@ -39,12 +39,12 @@
         position: relative;
         background-color: #FFD900;
         /*font-weight: normal;*/
-        height: 185px;
-        font-size: 11px;
+        height: 195px;
+        font-size: 13px;
         margin-top: 20px;
         width: 80%;
         margin-left: 10%;
-        line-height: 22px;
+        line-height: 24px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -75,7 +75,13 @@
     @media screen and (max-width: 330px) {
         .main ul{
             line-height: 24px;
+            font-size: 13px;
+        }
+        .main p{
             font-size: 12px;
+        }
+        .main2{
+        	font-size: 12px;
         }
         .main2{
             height: 245px;
@@ -90,13 +96,9 @@
 </head>
 <body>
     <img src="./img/BGIlogo.png" id="preorder" style="margin-top:20px; width: 80%; margin-left: 10%">
-    <div class="main" style="">
+    <img src="./img/BGI2.png" style=" z-index: -1;position: fixed;bottom: 0px;right: 0px;width: 100%;">
+    <div class="main" id="pay" style="">
         <ul>门店地址：麓山南路242号</ul>
-        <ul>到店时间：5月1日&nbsp;&nbsp;下午 2:30</ul>
-        <ul>拍摄内容：证件照x1&nbsp;&nbsp;宠物照x1</ul>
-        <ul>服务价格：198元</ul>
-        <ul>顾客姓名：李大宝</ul>
-        <p>*在线支付20元预付金即可完成预约，到店付尾款*</p>
     </div>
     <div class="main2">
         <ul>Tips：</ul>
@@ -105,15 +107,86 @@
         <ul>3.淡妆或素颜到店，我们将为您打造最适合的妆容</ul>
         <ul>4.成片为您保存半年，半年内都可再次印刷/20元/张</ul>
         <ul>5.加修加拍/60元/张，快递服务需到付</ul>
-        <ul>6.如需修改订单请致电 186-2756-2126</ul>
-        <ul>7.如预约当天未能按时到店，预付金恕不退回</ul>
+        <ul>6.如预约当天未能按时到店，预付不予退还</ul>
     </div>
     <div id="select" style="">
-        <a href=""></a>
-        <a href=""></a>
+        <a href="#" onclick="pay();"></a>
+        <a href="#" onclick="alert('暂不支持支付宝支付')"></a>
     </div>
-    <a href="complete.html"><img src="./img/paynow.png" id="preorder" style=""></a>
+    <a><img src="./img/paynow.png" id="preorder" style="margin-bottom: 20px;"></a>
 </body>
 <script type="text/javascript">
+    var div=document.getElementById("pay");  
+    function appendc(char) {
+        var span=document.createElement("ul");  
+        span.innerHTML=char; 
+        div.appendChild(span);
+    }
+    photocontant="";
+    if (sessionStorage.p1>=1) {photocontant=photocontant+"证件照×"+sessionStorage.p1+"&nbsp;&nbsp;"}
+    if (sessionStorage.p2>=1) {photocontant=photocontant+"写真照×"+sessionStorage.p2+"&nbsp;&nbsp;"}
+    if (sessionStorage.p3>=1) {photocontant=photocontant+"结婚照×"+sessionStorage.p3+"&nbsp;&nbsp;"}
+    if (sessionStorage.p4>=1) {photocontant=photocontant+"宠物照×"+sessionStorage.p4+"&nbsp;&nbsp;"}
+    if (sessionStorage.p5>=1) {photocontant=photocontant+"毕业照×"+sessionStorage.p5+"&nbsp;&nbsp;"}
+    appendc("拍摄内容："+photocontant);
+    appendc("到店时间："+sessionStorage.photo_date+";&nbsp;&nbsp;"+sessionStorage._photo_time);
+    appendc("服务价格："+sessionStorage._price);
+    appendc("顾客姓名："+sessionStorage.name);
+    var span=document.createElement("p");  
+    span.innerHTML="*在线支付20元预付金即可完成预约，到店付尾款*"; 
+    // span.style=" text-align: right; display: inline-block;margin-top:20px;margin-bottom: 0px;float: right;font-size: 12px;";
+    div.appendChild(span);
+    $.get("http://wx.senselover.com/Auth/checkLogin", function(data){
+        if(data.status == 0){
+            window.location.href = data.url;
+        }
+    });
+
+    // 支付调用
+    prepay_id="";
+    sign="";
+    timestamp=parseInt(new Date().getTime() / 1000);
+    nonceStr=$.md5("Math.random()");
+
+    function pay() {
+	// body...
+	$.get(sessionStorage.url, function(data){
+		sessionStorage.prepay_id=data.prepay_id;
+		prepay_id = "prepay_id="+data.prepay_id;
+        // console.log(data);
+        $.post("http://wx.senselover.com/Pay/signApi" , { appId : "wxe083120fa3df05d0" , nonceStr : nonceStr , package : prepay_id+"" , signType : "MD5" , timeStamp : timestamp} , function(data){
+        	sign=data.sign;
+        	console.log(1232);
+        	onBridgeReady();
+        });
+    });}
+
+	function onBridgeReady(){
+		WeixinJSBridge.invoke(
+			'getBrandWCPayRequest', {
+           "appId" : "wxe083120fa3df05d0",     //公众号名称，由商户传入     
+           "timeStamp": timestamp+"",         //时间戳，自1970年以来的秒数     
+           "nonceStr" : nonceStr, //随机串     
+           "package" : prepay_id,     
+           "signType" : "MD5",         //微信签名方式：     
+           "paySign" : sign //微信签名 
+       },
+       function(res){     
+       	if(res.err_msg == "get_brand_wcpay_request：ok" ) {}
+       }
+   ); 
+	}
+   // if (typeof WeixinJSBridge == "undefined")
+   // {
+   //     if( document.addEventListener ){
+   //         document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+   //     }else if (document.attachEvent){
+   //         document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+   //         document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+   //     }
+   // }else{
+   //     // onBridgeReady();
+   // }
+
 </script>
 </html>

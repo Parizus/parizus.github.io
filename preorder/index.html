@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>预约拍摄</title>
+<title>开始预约</title>
 <!-- <link rel="stylesheet" href="./css/style.css"> -->
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script type="text/javascript" src="js/jquery.js"></script>
 <style type="text/css">
     body{
         background-color: #FFD900;
@@ -26,5 +27,10 @@
     bh_=document.getElementById("preorder").offsetHeight/2;
     document.getElementById("preorder").style.marginTop=bh-bh_+"px";
 }
+    $.get("http://wx.senselover.com/Auth/checkLogin", function(data){
+        if(data.status == 0){
+            window.location.href = data.url;
+        }
+    });
 </script>
 </html>
