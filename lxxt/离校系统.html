@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- 2016-05-25 00:47:36 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>湖南大学毕业生离校系统</title>
+<!-- <link rel="stylesheet" href="./css/style.css"> -->
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script type="text/javascript" src="./js/jquery.1.4.2-min.js"></script>
+<style type="text/css">
+    html,body{height:100%;margin:0px;}
+    body{
+        margin: 0px;
+        font-family: "Microsoft YaHei";
+        overflow-x: hidden;
+        position: absolute;
+        width: 100%;
+        /*height: 100%;*/
+        background-color: #eeeeee;
+    }
+    .pg-head {
+        position: relative;
+        top: 0;
+        height: 100px;
+        line-height: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: #42a5f5;
+    }
+    #logo{
+        height: 100px;
+        background-image: url(./img/logopc.png);        
+        background-repeat: no-repeat;
+    }
+    @media screen and (max-width: 415px) {
+        #logo{
+            height: 60px;
+            width: 270px;
+            margin: 0 auto;
+            background-image: url(./img/logomobile.png);        
+            background-repeat: no-repeat;
+        }
+        .pg-head {
+            height: 60px;
+        }
+    } 
+    #info{
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 5px;
+        border: 1px solid #b3b3b3;
+        color: #666666;
+    }
+    .inf-main{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 415px) {
+        #info{
+            width: 240px;
+            height: 60px;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .inf-main{
+            width: 240px;
+            margin: 0 auto;
+        }
+    } 
+    .checkblock{
+        width: 220px;
+        height: 170px;
+        float: left;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom:10px; 
+        background-color: #fff;
+        box-shadow: 2px 2px 0px 0px #e6e6e6;
+    }
+    .checkhead{
+        width: 100%;
+        height: 30px;
+        background-color: #42a5f5;
+        line-height: 30px;
+        text-align: center;
+        font-size: 18px;
+        color: #fff;
+    }
+    .checkmain{
+        line-height: 60px;
+        text-align: center;
+        font-size: 14px;
+        color: #666666;
+    }
+    .checkimg{
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    .pg-foot {
+        position: absolute;
+        bottom: 0px;
+        height: 30px;
+        width: 100%;
+        line-height: 30px;
+        font-weight: lighter;
+        text-align: center;
+        color: #fff;
+        background-color: #474747;
+    }
+    @media screen and (max-width: 415px) {
+        .pg-foot {
+            position: relative;
+            margin-top: 20px;
+        }
+    } 
+</style>
+</head>
+<body>
+    <div class="pg-head">
+        <div id="logo"></div>
+    </div>
+    <div id="info">
+        姓名：张海新&nbsp&nbsp|&nbsp&nbsp学号：201208070633&nbsp&nbsp|&nbsp&nbsp类别：本科生
+    </div>
+    <div class="inf-main">
+        <div class="checkblock" id="c1">
+            <div class="checkhead">
+                学生资助管理中心
+            </div>
+            <div class="checkmain">
+                确认国家助学贷款还款手续
+                <img class="checkimg" src="./img/green.png">
+            </div>
+        </div>
+        <div class="checkblock" id="c2">
+            <div class="checkhead">
+                计财处
+            </div>
+            <div class="checkmain">
+                清理学费、住宿费
+                <img class="checkimg" src="./img/green.png">
+            </div>
+        </div>
+        <div class="checkblock" id="c3">
+            <div class="checkhead">
+                图书馆
+            </div>
+            <div class="checkmain">
+                清理图书
+                <img class="checkimg" src="./img/green.png">
+            </div>
+        </div>
+        <div class="checkblock" id="c4">
+            <div class="checkhead">
+                园区管理办公室
+            </div>
+            <div class="checkmain">
+                清理家具、办理退宿手续
+                <img class="checkimg" src="./img/green.png">
+            </div>
+        </div>
+        <div class="checkblock" id="c5">
+            <div class="checkhead">
+                校医院
+            </div>
+            <div class="checkmain">
+                毕业体检
+                <img class="checkimg" src="./img/green.png">
+            </div>
+        </div>
+        <div class="checkblock" id="c6">
+            <div class="checkhead">
+                教材科
+            </div>
+            <div class="checkmain">
+                结算教材费
+                <img class="checkimg" src="./img/green.png">
+            </div>
+        </div>
+        <div class="checkblock" id="c7">
+            <div class="checkhead">
+                实验室建设与设备管理处
+            </div>
+            <div class="checkmain">
+                清理绘算仪器
+                <img class="checkimg" src="./img/green.png">
+            </div>
+        </div>
+        <div class="checkblock" id="c7" style="float: right;">
+            <div class="checkhead" style="background-color: #00bfaa">
+                说明
+            </div>
+            <div class="checkmain" style="line-height: 25px;font-size: 12px;padding-top: 30px;">
+                “绿色”：表示满足该部门的离校要求<br/>“灰色”：表示未满足该部门的离校要求<br/>双击图标可以查看办理该项目的要求
+            </div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    <div class="pg-foot">千年弦歌网络工作室</div>
+    <script type="text/javascript">
+        function changestate(i) {
+            checkhead=$("#c"+i).children()[0];
+            checkhead.style.backgroundColor="#666666";
+            checkimg=$("#c"+i).find(".checkimg")[0];
+            checkimg.src="./img/gray.png";
+        }
+        function validate(){
+            document.getElementById('form1').submit();
+        }
+    </script>
+
+
+</body></html>

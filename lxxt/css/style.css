@@ -1,0 +1,368 @@
+
+body{
+    margin: 0px;
+    font-family: "Microsoft YaHei";
+    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+    /*height: 100%;*/
+    background-color: #F2F2F2;
+}
+.pg-sidebar{
+    transition: 0.5s;
+}
+.pg-head {
+    position: relative;
+    top: 0;
+    height: 40px;
+    line-height: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #468BCF;
+}
+.pg-sidebar{
+    height: 500px;
+    background-color: #2C4C6B;
+    width: 100%;
+    height: 260px;
+    position: fixed;
+    z-index: 1;
+    bottom: -300px;
+}
+.pg-sidebar-btn{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    width: 50px;
+    height: 50px;
+    background-color: #468BCF;
+    opacity: 0.5;
+    border-radius: 25px;
+}
+.pg-sidebar:hover{
+    background-color: #468BCF;
+    bottom: 0px;
+}
+.pg-main {
+    width: 100%;
+    text-align: center;
+}
+.inf-head {
+    position: relative;
+    width: 70%;
+    margin:auto;
+    padding-top: 30px;
+    color: #DDDDDD;
+}
+.inf-head span {
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    top: -15px;
+    position: inherit;
+    font-size: 24px;
+    color: #4D4D4D;
+    background-color: #F2F2F2;
+    display: inline-block;
+}
+.inf-head hr{
+    height:2px;
+    margin: 0px;
+    border-width: 0px;
+}
+.inf-content {
+    position: relative;
+    float: left;
+    width: 320px;
+}
+.inf-content-2 {
+    position: relative;
+    float: left;
+    width: 640px;
+}
+.inf-main-1{
+    width: 320px;
+    display: inline-block;
+}
+.inf-main-2{
+    width: 660px;
+    display: inline-block;
+}
+.inf-main-3{
+    width: 980px;
+    display: inline-block;
+}
+.inf-main-4{
+    width: 1300px;
+    display: inline-block;
+}
+.inf-foot {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+@media screen and (max-width: 420px) {
+    .inf-main-1,.inf-main-2,.inf-main-3,.inf-main-4{
+        width: 100%;
+    }
+    .inf-content,.inf-content-2,.inf-head{
+        width: 100%;        
+    }
+    iframe{
+        display: none;
+    }
+} 
+@media screen and (min-width: 420px) {
+    .inf-main-1,.inf-main-2,.inf-main-3,.inf-main-4{
+        width: 320px;
+    }
+} 
+@media screen and (min-width: 660px) {
+    .inf-main-2,.inf-main-3,.inf-main-4{
+        width: 640px;
+    }
+} 
+@media screen and (min-width: 980px) {
+    .inf-main-3,.inf-main-4{
+        width: 960px;
+    }
+} 
+@media screen and (min-width: 1300px) {
+    .inf-main-4{
+        width: 1280px;
+    }
+} 
+input{    
+    width: 220px;
+    line-height: 30px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 3px;
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+}
+/*two types of button*/
+.button-big,
+.button-small{
+    display: block;
+    text-decoration:none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #F2F2F2;
+    font-family: SimSun;
+}
+.button-big {
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+}
+.button-small {
+    width: 64px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+/*two colors of button*/
+.button-green{ background-color: #66CC66;}
+.button-yellow{ background-color: #FCCB4D;}
+.button-green:hover{ background-color: #3BB03B;}
+.button-yellow:hover{ background-color: #ECAA04;}
+#research,
+#research-img {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+#research a{
+    text-decoration: none;
+    font-family: SimHei;
+    font-size: 21px;
+    color: #FFFFFF;
+}
+#research-img { display: none;}
+@media screen and (max-width: 600px) {
+    #research a { display:none;}
+    #research-img { display: inline-block;}
+} 
+/* 内容部分 */
+/*.button-big,
+.pg-main>div,
+.pg-main section>div,
+.inf-foot>div {
+    margin-left: auto;
+    margin-right: auto;
+}*/
+#congra p {
+    padding-top: 40px;
+    font-size: 18px;
+}
+#academy {
+    width: 56%;
+    line-height: 25px;
+    margin-left: 5px;
+    margin-right: 60px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+#re-text {
+    width: 160px;
+    height: 30px;
+    margin-left: 0px;
+    background-color: #FFFFFF;
+    border-style : solid;
+    border-width: 1px;
+    border-color : #E6E6E6;
+}
+.inf-content div {
+    padding-top: 10px;
+    text-align: right;
+}
+.inf-content div span { 
+    display: inline-block;
+    vertical-align: top;
+    width: 70px;
+    text-align: left;
+}
+
+@media screen and (min-width: 340px) {
+    .inf-content div span { 
+        text-align: right;
+    }
+} 
+.inf-content div span>span+span {
+    display: inline-block;
+    padding-top: 10px;
+    text-align: right;
+}
+.inf-content div p {
+    margin-left: 80px;
+    color: #808080; 
+    font-size: 12px;
+    text-align: left;
+}
+.re-pj { 
+    margin-top: 10px;
+    height: 150px;
+    overflow: auto;
+}
+.inf-content header { color: #4D4D4D; margin-left: 80px;}
+.inf-content-re { 
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.inf-content-re header{ 
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.inf-content-re div {
+    text-align: center;
+}
+.re-radio { display: none;}
+.chb-label {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    margin-top: 3px;
+    line-height: 30px;
+    border: none;
+    border-radius: 3px;
+    border-style : solid;
+    border-width: 1px;
+    border-color : #E6E6E6;
+}
+.re-radio:checked+.chb-label { 
+    background-color: #FFFFFF;
+    border-color : #468BCF;
+}
+#re-academy {
+    width: 310px;
+}
+#inv-permission {
+    padding-left: 2px; 
+    text-align: left;
+} 
+#inv-permission span { vertical-align: top;}
+#inv-radio {
+    text-align: left;
+    width: 56%;
+    margin-left: 10px;
+    color: #5E5E5E;
+}
+#invitee { 
+    margin-right: 20px;
+    width: 200px;
+}
+.inf-text {
+    background-color: #FFFFFF;
+    border-style : solid;
+    border-width: 1px;
+    border-color : #E6E6E6;
+}
+.inf-text[readonly="true"] { 
+    text-align: center;
+    background-color: #E6E6E6;
+    border-width: 0px;
+    padding-left: 0px;
+}
+.small { 
+    width: 100px;
+    margin-left: 5px;
+}
+#back { 
+    color: #4D4D4D;
+    font-size: 14px;
+}
+#thead { margin-top: 15px;}
+#sheet {
+    position: relative;
+    margin: 0 auto;
+    height: auto;
+}
+.sheet-ctn {
+    display: inline-block;
+    /*height: 25px;*/
+    margin-top: 5px;
+    margin-left: 10px;
+    line-height: 25px;
+    border: none;
+    border-radius: 3px;
+    background-color: #E6E6E6;
+}
+.sheet-ctn-1,
+.sheet-ctn-2 { width: 100px;}
+.sheet-ctn-3 { width: 136px;}
+.sheet-ctn-4 { background-color: #F2F2F2;}
+#page a{
+    margin-left: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #1A1A1A;
+}
+/* 脚 */
+.pg-foot {
+    /*position: absolute;*/
+    /*bottom: -115px;*/
+    height: 100px;
+    width: 100%;
+    line-height: 22px;
+    padding-top: 15px;
+    text-align: center;
+    font-weight: lighter;
+    background-color: #474747;
+}
+.pg-foot a {
+    display: inline-block;
+    width: 70px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.pg-foot a:hover { text-decoration: underline;}
+/*地瓜2016年1月3日23:21:56;*/

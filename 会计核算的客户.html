@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>湖南省首届大学生思想政治理论课研究性学习成果展示竞赛</title>
+<!-- <link rel="stylesheet" href="./css/style.css"> -->
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<style type="text/css">
+    body{
+        padding: 0;
+        margin: 0;
+        background-color: #f2f2f2;
+    }
+    li{
+        list-style-type: none;
+        float: left;
+        padding: 0;
+    }
+    ul{
+        padding: 0;
+        text-align: center;
+        font-family: 微软雅黑;
+    }
+    p{
+        text-align: center;
+        margin-top: 30px;
+        font-weight: bold;
+        font-family: 微软雅黑;
+    }
+    .header{
+        /*height: 60px;*/
+        background-color: #42a5f5;
+        font-family: 黑体;
+        font-size: 36px;
+        line-height: 60px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    #school-box{
+        margin: 0 auto;
+        width: 204px;
+        margin-top: 30px;
+    }
+    #triangle-left {
+        margin-top: 9px;
+        width: 16px;
+        height: 0;
+        border-top: 16px solid transparent;
+        border-right: 16px solid #000;
+        border-bottom: 16px solid transparent;
+    }
+    #triangle-right {
+        margin-top: 9px;
+        width: 16px;
+        height: 0;
+        border-top: 16px solid transparent;
+        border-left: 16px solid #000;
+        border-bottom: 16px solid transparent;
+    }
+    #school{
+        display: block;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 100px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    #random{
+        border: 1px solid #b3b3b3;
+        border-radius: 5px;
+        width: 300px;
+        margin: 0 auto;
+        padding: 0px 20px 0px 20px;
+        margin-top: 30px;
+    }
+    #number{
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    .btn{
+        width: 80px;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 30px;
+        border-radius: 5px;
+        float: left;
+        line-height: 30px;
+        color: #fff;
+    }
+    #detail{
+        width: 600px;
+        border-top: 1px solid #b3b3b3;
+        border-bottom: 1px solid #b3b3b3;
+        margin: 0 auto;
+    }
+    #detail ul{
+        height: 30px;
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #detail ul li:first-child{
+        width: 100px;
+    }
+</style>
+</head>
+<body>
+    <div class="header">湖南省首届大学生思想政治理论课研究性学习成果展示竞赛</div>
+    <div id="school-box">
+        <ul style="height: 50px;">
+            <li id="triangle-left"></li>
+            <li id="school"></li>
+            <li id="triangle-right"></li>
+        </ul>
+        <ul>组数:</ul>
+    </div>
+    <div id="random">
+        <ul style="font-weight: bold;">随机抽取小组编号为</ul>
+        <ul style="height: 50px;width: 180px;margin: 0 auto;">
+            <li style="line-height: 50px;padding-right: 20px;width: 20px">第</li>
+            <li id="number"></li>
+            <li style="line-height: 50px;padding-left: 20px;width: 20px">组</li>
+        </ul>
+        <ul style="height: 30px;">
+            <div class="btn" style="background-color: #42a5f5;">随机抽取</div>
+            <div class="btn" style="background-color: #42a5f5;">停止</div>
+            <div class="btn" style="background-color: #00bfaa;">打印</div>
+        </ul>
+    </div>
+    <p>抽签结果</p>
+    <div id="detail">
+        <ul>
+            <li>学校：</li>
+            <li></li>
+        </ul>        
+        <ul>
+            <li>班级：</li>
+            <li></li>
+        </ul>
+        <ul>
+            <li>小组成员：</li>
+            <li></li>
+        </ul>
+        <ul>
+            <li>课题：</li>
+            <li></li>
+        </ul>
+        <ul>
+            <li>指导老师：</li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript">
+    window.onload=function (argument) {
+    // body...    
+    if (window.innerHeight)
+        winHeight = window.innerHeight;
+    else if ((document.body) && (document.body.clientHeight))
+        winHeight = document.body.clientHeight;
+    bh=winHeight/2;
+    bh_=document.getElementById("preorder").offsetHeight/2;
+    document.getElementById("preorder").style.marginTop=bh-bh_+"px";
+}
+$.get("http://wx.senselover.com/Auth/checkLogin", function(data){
+    if(data.status == 0){
+        window.location.href = data.url;
+    }
+});
+
+</script>
+</html>
